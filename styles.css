@@ -5,7 +5,6 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-between;
 }
 
 .container {
@@ -27,4 +26,20 @@ body {
 .container {
   margin-right: 10px; /* Añade un espacio entre los contenedores */
 }
+.dados {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dado {
+  width: 100px; /* Ajusta el tamaño según sea necesario */
+  height: 100px; /* Mismo tamaño que el ancho para hacerlo cuadrado */
+  background-color: #ddd;
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
 /* Otros estilos... */
+
