@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Función para actualizar las estadísticas según la clase seleccionada
   function actualizarEstadisticas() {
     var claseSeleccionada = claseSelect.value;
-    var puntosDisponibles = parseInt(nivelInput.value) * 6;
 
     switch (claseSeleccionada) {
       case 'Arquero':
@@ -38,9 +37,46 @@ document.addEventListener('DOMContentLoaded', function() {
         break;
     }
 
-    puntosDisponiblesSpan.innerText = puntosDisponibles;
+    actualizarPuntosDisponibles(); // Actualizar puntos disponibles al cambiar de clase
   }
 
+  // Función para asignar estadísticas y actualizar campos de entrada
+  function asignarEstadisticas(vida, fuerza, inteligencia, agilidad) {
+    vidaInput.value = vida;
+    fuerzaInput.value = fuerza;
+    inteligenciaInput.value = inteligencia;
+    agilidadInput.value = agilidad;
+  }
+
+  // Evento de cambio para la selección de clase
+  claseSelect.addEventListener('change', actualizarEstadisticas);
+
+  // Evento de cambio para el nivel
+  nivelInput.addEventListener('change', function() {
+    actualizarEstadisticas();
+    actualizarPuntosDisponibles();
+  });
+
+  // Eventos de cambio para las estadísticas
+  [vidaInput, fuerzaInput, inteligenciaInput, agilidadInput].forEach(function(input) {
+    input.addEventListener('change', function() {
+      actualizarPuntosDisponibles();
+    });
+  });
+
+  // Función para actualizar puntos disponibles
+  function actualizarPuntosDisponibles() {
+    var puntosDisponibles = parseInt(nivelInput.value) * 6;
+    var puntosAsignados = 0;
+
+    [vidaInput, fuerzaInput, inteligenciaInput, agilidadInput].forEach(function(input) {
+      puntosAsignados += parseInt(input.value);
+    });
+
+    var puntosRestantes = puntosDisponibles - puntosAsignados;
+    puntosDisponiblesSpan.innerText = puntosRestantes;
+  }
+});
   // Función para asignar estadísticas y actualizar campos de entrada
   function asignarEstadisticas(vida, fuerza, inteligencia, agilidad) {
     vidaInput.value = vida;
