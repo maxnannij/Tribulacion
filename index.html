@@ -44,39 +44,38 @@
       </ul>
       <a href="#" id="add-item">Agregar Item</a>
     </div>
- <div class="equipamiento">
-      <h2>Equipamiento</h2>
-      <ul id="equipamiento-list">
-        <li>
-          Cabeza: <input type="text" class="equipamiento-input" placeholder="Cabeza">
-          <input type="number" class="stat-input" placeholder="Vida" style="width: 40px;">
-        </li>
-        <li>
-          Pecho: <input type="text" class="equipamiento-input" placeholder="Pecho">
-          <input type="number" class="stat-input" placeholder="Vida" style="width: 40px;">
-        </li>
-        <li>
-          Piernas: <input type="text" class="equipamiento-input" placeholder="Piernas">
-          <input type="number" class="stat-input" placeholder="Vida" style="width: 40px;">
-        </li>
-        <li>
-          Brazos: <input type="text" class="equipamiento-input" placeholder="Brazos">
-          <input type="number" class="stat-input" placeholder="Vida" style="width: 40px;">
-        </li>
-        <li>
-          Mano derecha: <input type="text" class="equipamiento-input" placeholder="Mano derecha">
-          <input type="number" class="stat-input" placeholder="Vida" style="width: 40px;">
-        </li>
-        <li>
-          Mano izquierda: <input type="text" class="equipamiento-input" placeholder="Mano izquierda">
-          <input type="number" class="stat-input" placeholder="Vida" style="width: 40px;">
-        </li>
-      </ul>
-    </div>
-    <button id="guardar">Guardar</button>
-  </div>
-  
-  <script src="actualizarEstadisticas.js"></script>
-  <script src="app.js"></script>
-</body>
-</html>
+<div class="equipamiento">
+  <h2>Equipamiento</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Pieza de Equipo</th>
+        <th>Nombre</th>
+        <th>Vida</th>
+        <th>Ataque</th>
+        <th>Inteligencia</th>
+        <th>Agilidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Casco</td>
+        <td><input type="text" class="nombre-input" placeholder="Nombre"></td>
+        <td><input type="number" class="vida-input" placeholder="0"></td>
+        <td><input type="number" class="ataque-input" placeholder="0"></td>
+        <td><input type="number" class="inteligencia-input" placeholder="0"></td>
+        <td><input type="number" class="agilidad-input" placeholder="0"></td>
+      </tr>
+      <tr>
+        <td>Pecho</td>
+        <td><input type="text" class="nombre-input" placeholder="Nombre"></td>
+        <td><input type="number" class="vida-input" placeholder="0"></td>
+        <td><input type="number" class="ataque-input" placeholder="0"></td>
+        <td><input type="number" class="inteligencia-input" placeholder="0"></td>
+        <td><input type="number" class="agilidad-input" placeholder="0"></td>
+      </tr>
+      <!-- Repite este patrón para el resto de piezas de equipo -->
+    </tbody>
+  </table>
+</div>
+
