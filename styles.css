@@ -7,73 +7,23 @@ body {
   display: flex;
 }
 
-.container, .HojadePersonaje-container{
-  flex: 1; /* Divide el espacio disponible en partes iguales */
-  height: 100vh; /* Ocupa toda la altura de la ventana */
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
 .container, .dados-container {
-  flex: 1; /* Divide el espacio disponible en partes iguales */
   height: 100vh; /* Ocupa toda la altura de la ventana */
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.container {
-  margin-right: 10px; /* Añade un espacio entre los contenedores */
-}
-
-/* Estilos para la hoja de personaje */
 .container {
   width: 50%; /* Ancho del contenedor */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.info label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.info select, .info input[type="number"], .info span {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.inventario h2 {
-  margin-top: 20px;
-}
-
-.inventario .item-input, .inventario .item-counter {
-  margin-bottom: 10px;
-  display: block;
-}
-
-.equipamiento h2 {
-  margin-top: 20px;
-}
-
-.equipamiento input[type="text"], .equipamiento input[type="number"] {
-  width: calc(100% - 50px);
-  margin-bottom: 10px;
-}
-
-.dados {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.dado {
-  width: 100px; /* Ajusta el tamaño según sea necesario */
-  height: 100px; /* Mismo tamaño que el ancho para hacerlo cuadrado */
-  background-color: #ddd;
-  padding: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  text-align: center;
+.dados-container {
+  width: 50%; /* Ancho del contenedor */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
