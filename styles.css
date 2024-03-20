@@ -1,29 +1,36 @@
-/* Estilo general */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  margin: 0;
-  padding: 0;
+.container {
   display: flex;
 }
 
-.container, .dados-container {
-  height: 100vh; /* Ocupa toda la altura de la ventana */
+.info {
+  flex: 1;
+  padding: 20px;
+  border-right: 1px solid #ccc;
 }
 
-.container {
-  width: 50%; /* Ancho del contenedor */
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.inventario,
+.equipamiento {
+  margin-top: 20px;
 }
 
 .dados-container {
-  width: 50%; /* Ancho del contenedor */
-  background-color: #fff;
+  flex: 1;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dados {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dado {
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
 }
 
