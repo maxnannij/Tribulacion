@@ -1,62 +1,57 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Elemento select para la clase
+  // Elementos de la interfaz de usuario
   var claseSelect = document.getElementById('clase');
-  
+  var nivelInput = document.getElementById('nivel');
+  var vidaInput = document.getElementById('vida');
+  var fuerzaInput = document.getElementById('fuerza');
+  var inteligenciaInput = document.getElementById('inteligencia');
+  var agilidadInput = document.getElementById('agilidad');
+  var puntosDisponiblesSpan = document.getElementById('puntos-disponibles');
+
   // Función para actualizar las estadísticas según la clase seleccionada
   function actualizarEstadisticas() {
     var claseSeleccionada = claseSelect.value;
-    var vidaInput = document.getElementById('vida');
-    var fuerzaInput = document.getElementById('fuerza');
-    var inteligenciaInput = document.getElementById('inteligencia');
-    var agilidadInput = document.getElementById('agilidad');
+    var puntosDisponibles = parseInt(nivelInput.value) * 6;
 
     switch (claseSeleccionada) {
       case 'Arquero':
-        vidaInput.value = 120;
-        fuerzaInput.value = 12;
-        inteligenciaInput.value = 16;
-        agilidadInput.value = 18;
+        asignarEstadisticas(120, 12, 16, 18);
         break;
       case 'Cruzado':
-        vidaInput.value = 180;
-        fuerzaInput.value = 18;
-        inteligenciaInput.value = 14;
-        agilidadInput.value = 16;
+        asignarEstadisticas(180, 18, 14, 16);
         break;
       case 'Paladin':
-        vidaInput.value = 160;
-        fuerzaInput.value = 18;
-        inteligenciaInput.value = 14;
-        agilidadInput.value = 12;
+        asignarEstadisticas(160, 18, 14, 12);
         break;
       case 'Picaro':
-        vidaInput.value = 110;
-        fuerzaInput.value = 14;
-        inteligenciaInput.value = 12;
-        agilidadInput.value = 18;
+        asignarEstadisticas(110, 14, 12, 18);
         break;
       case 'Sacerdote':
-        vidaInput.value = 100;
-        fuerzaInput.value = 10;
-        inteligenciaInput.value = 18;
-        agilidadInput.value = 10;
+        asignarEstadisticas(100, 10, 18, 10);
         break;
       case 'Salmista':
-        vidaInput.value = 100;
-        fuerzaInput.value = 12;
-        inteligenciaInput.value = 16;
-        agilidadInput.value = 12;
+        asignarEstadisticas(100, 12, 16, 12);
         break;
       default:
         // Si no se selecciona ninguna clase, se pueden restablecer los valores a cero o dejarlos como están
-        vidaInput.value = '';
-        fuerzaInput.value = '';
-        inteligenciaInput.value = '';
-        agilidadInput.value = '';
+        asignarEstadisticas(0, 0, 0, 0);
         break;
     }
+
+    puntosDisponiblesSpan.innerText = puntosDisponibles;
   }
-  
-  // Agregar evento de cambio al elemento select para detectar cambios en la clase seleccionada
+
+  // Función para asignar estadísticas y actualizar campos de entrada
+  function asignarEstadisticas(vida, fuerza, inteligencia, agilidad) {
+    vidaInput.value = vida;
+    fuerzaInput.value = fuerza;
+    inteligenciaInput.value = inteligencia;
+    agilidadInput.value = agilidad;
+  }
+
+  // Evento de cambio para la selección de clase
   claseSelect.addEventListener('change', actualizarEstadisticas);
+
+  // Evento de cambio para el nivel
+  nivelInput.addEventListener('change', actualizarEstadisticas);
 });
