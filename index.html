@@ -1,22 +1,56 @@
-<div class="info">
-  <label for="clase">Clase:</label>
-  <select id="clase" name="clase" required>
-    <option value="">Selecciona una clase</option>
-    <option value="Arquero">Arquero</option>
-    <option value="Cruzado">Cruzado</option>
-    <option value="Paladin">Paladín</option>
-    <option value="Picaro">Pícaro</option>
-    <option value="Sacerdote">Sacerdote</option>
-    <option value="Salmista">Salmista</option>
-  </select>
-  <label for="nivel">Nivel:</label>
-  <input type="number" id="nivel" name="nivel" required>
-  <label for="vida">Vida:</label>
-  <input type="number" id="vida" name="vida" required>
-  <label for="fuerza">Fuerza:</label>
-  <input type="number" id="fuerza" name="fuerza" required>
-  <label for="inteligencia">Inteligencia:</label>
-  <input type="number" id="inteligencia" name="inteligencia" required>
-  <label for="agilidad">Agilidad:</label>
-  <input type="number" id="agilidad" name="agilidad" required>
-</div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoja de Personaje</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1 contenteditable="true" id="nombre-personaje">Nombre del Personaje</h1>
+    <div class="info">
+      <label for="clase">Clase:</label>
+      <select id="clase" name="clase" required>
+        <option value="">Selecciona una clase</option>
+        <option value="Arquero">Arquero</option>
+        <option value="Cruzado">Cruzado</option>
+        <option value="Paladin">Paladín</option>
+        <option value="Picaro">Pícaro</option>
+        <option value="Sacerdote">Sacerdote</option>
+        <option value="Salmista">Salmista</option>
+      </select>
+      <label for="nivel">Nivel:</label>
+      <input type="number" id="nivel" name="nivel" required>
+      <label for="vida">Vida:</label>
+      <input type="number" id="vida" name="vida" required>
+      <label for="fuerza">Fuerza:</label>
+      <input type="number" id="fuerza" name="fuerza" required>
+      <label for="inteligencia">Inteligencia:</label>
+      <input type="number" id="inteligencia" name="inteligencia" required>
+      <label for="agilidad">Agilidad:</label>
+      <input type="number" id="agilidad" name="agilidad" required>
+    </div>
+    <div class="inventario">
+      <h2>Inventario</h2>
+      <ul id="inventario-list">
+        <!-- Aquí se mostrarán los items del inventario -->
+        <li>
+          <input type="text" class="item-input" placeholder="Nombre del Item">
+          <input type="number" class="item-counter" min="0" value="0">
+        </li>
+      </ul>
+      <a href="#" id="add-item">Agregar Item</a>
+    </div>
+    <div class="equipamiento">
+      <h2>Equipamiento</h2>
+      <ul id="equipamiento-list">
+        <!-- Aquí se mostrarán los items equipados -->
+      </ul>
+    </div>
+    <button id="guardar">Guardar</button>
+  </div>
+  
+  <script src="app.js"></script>
+</body>
+</html>
