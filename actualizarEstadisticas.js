@@ -10,14 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Evento de cambio para la selección de clase
   claseSelect.addEventListener('change', function() {
-    actualizarPuntosDisponibles();
     actualizarEstadisticas();
+    actualizarPuntosDisponibles();
   });
 
   // Evento de cambio para el nivel
   nivelInput.addEventListener('change', function() {
-    actualizarPuntosDisponibles();
     actualizarEstadisticas();
+    actualizarPuntosDisponibles();
   });
 
   // Eventos de cambio para las estadísticas
@@ -98,6 +98,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var puntosAsignados = calcularPuntosAsignados();
 
     var puntosRestantes = puntosDisponibles - puntosAsignados;
-    puntosDisponiblesSpan.innerText = puntosRestantes;
+    puntosDisponiblesSpan.innerText = Math.max(puntosRestantes, 0); // Asegurar que los puntos disponibles no sean negativos
   }
+
+  // Al cargar la página, actualizamos las estadísticas y los puntos disponibles
+  actualizarEstadisticas();
+  actualizarPuntosDisponibles();
 });
