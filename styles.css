@@ -1,44 +1,14 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+/* Estilos para la hoja de personaje */
+.hoja-personaje {
+  float: left; /* Hace que la hoja de personaje se posicione a la izquierda */
+  width: 50%; /* 50% del ancho total de la página */
+  padding: 20px; /* Ajusta el espaciado según sea necesario */
 }
 
-.container {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  border: 2px solid #ccc;
-  border-radius: 5px;
+/* Estilos para los dados */
+.dados {
+  float: right; /* Hace que los dados se posicione a la derecha */
+  width: 50%; /* 50% del ancho total de la página */
+  padding: 20px; /* Ajusta el espaciado según sea necesario */
 }
 
-.info label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.info input[type="text"],
-.info input[type="number"] {
-  width: calc(100% - 10px);
-  padding: 5px;
-  margin-bottom: 10px;
-}
-
-.inventario,
-.equipamiento {
-  margin-top: 20px;
-}
-
-.inventario h2,
-.equipamiento h2 {
-  margin-top: 0;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  margin-bottom: 5px;
-}
