@@ -8,6 +8,25 @@ document.addEventListener('DOMContentLoaded', function() {
   var agilidadInput = document.getElementById('agilidad');
   var puntosDisponiblesSpan = document.getElementById('puntos-disponibles');
 
+  // Evento de cambio para la selección de clase
+  claseSelect.addEventListener('change', function() {
+    actualizarPuntosDisponibles();
+    actualizarEstadisticas();
+  });
+
+  // Evento de cambio para el nivel
+  nivelInput.addEventListener('change', function() {
+    actualizarPuntosDisponibles();
+    actualizarEstadisticas();
+  });
+
+  // Eventos de cambio para las estadísticas
+  [vidaInput, fuerzaInput, inteligenciaInput, agilidadInput].forEach(function(input) {
+    input.addEventListener('change', function() {
+      asignarPuntos(input);
+    });
+  });
+
   // Función para actualizar las estadísticas según la clase seleccionada
   function actualizarEstadisticas() {
     var claseSeleccionada = claseSelect.value;
@@ -36,8 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
         asignarEstadisticas(0, 0, 0, 0);
         break;
     }
-
-    actualizarPuntosDisponibles(); // Actualizar puntos disponibles al cambiar de clase
   }
 
   // Función para asignar estadísticas y actualizar campos de entrada
@@ -48,67 +65,37 @@ document.addEventListener('DOMContentLoaded', function() {
     agilidadInput.value = agilidad;
   }
 
-  // Evento de cambio para la selección de clase
-  claseSelect.addEventListener('change', actualizarEstadisticas);
+  // Función para calcular los puntos asignados
+  function calcularPuntosAsignados() {
+    var puntosAsignados = 0;
 
-  // Evento de cambio para el nivel
-  nivelInput.addEventListener('change', function() {
-    actualizarEstadisticas();
-    actualizarPuntosDisponibles();
-  });
-
-  // Eventos de cambio para las estadísticas
-  [vidaInput, fuerzaInput, inteligenciaInput, agilidadInput].forEach(function(input) {
-    input.addEventListener('change', function() {
-      actualizarPuntosDisponibles();
+    [vidaInput, fuerzaInput, inteligenciaInput, agilidadInput].forEach(function(input) {
+      puntosAsignados += parseInt(input.value) || 0;
     });
-  });
+
+    return puntosAsignados;
+  }
+
+  // Función para asignar puntos a una estadística
+  function asignarPuntos(input) {
+    var puntosDisponibles = parseInt(nivelInput.value) * 6;
+    var puntosAsignados = calcularPuntosAsignados();
+
+    var valorInput = parseInt(input.value) || 0;
+
+    // Verificar si se han asignado demasiados puntos en total
+    if (puntosAsignados > puntosDisponibles) {
+      input.value = puntosDisponibles - (puntosAsignados - valorInput);
+    }
+
+    // Actualizar puntos disponibles
+    actualizarPuntosDisponibles();
+  }
 
   // Función para actualizar puntos disponibles
   function actualizarPuntosDisponibles() {
     var puntosDisponibles = parseInt(nivelInput.value) * 6;
-    var puntosAsignados = 0;
-
-    [vidaInput, fuerzaInput, inteligenciaInput, agilidadInput].forEach(function(input) {
-      puntosAsignados += parseInt(input.value);
-    });
-
-    var puntosRestantes = puntosDisponibles - puntosAsignados;
-    puntosDisponiblesSpan.innerText = puntosRestantes;
-  }
-});
-  // Función para asignar estadísticas y actualizar campos de entrada
-  function asignarEstadisticas(vida, fuerza, inteligencia, agilidad) {
-    vidaInput.value = vida;
-    fuerzaInput.value = fuerza;
-    inteligenciaInput.value = inteligencia;
-    agilidadInput.value = agilidad;
-  }
-
-  // Evento de cambio para la selección de clase
-  claseSelect.addEventListener('change', actualizarEstadisticas);
-
-  // Evento de cambio para el nivel
-  nivelInput.addEventListener('change', function() {
-    actualizarEstadisticas();
-    actualizarPuntosDisponibles();
-  });
-
-  // Eventos de cambio para las estadísticas
-  [vidaInput, fuerzaInput, inteligenciaInput, agilidadInput].forEach(function(input) {
-    input.addEventListener('change', function() {
-      actualizarPuntosDisponibles();
-    });
-  });
-
-  // Función para actualizar puntos disponibles
-  function actualizarPuntosDisponibles() {
-    var puntosDisponibles = parseInt(nivelInput.value) * 6;
-    var puntosAsignados = 0;
-
-    [vidaInput, fuerzaInput, inteligenciaInput, agilidadInput].forEach(function(input) {
-      puntosAsignados += parseInt(input.value);
-    });
+    var puntosAsignados = calcularPuntosAsignados();
 
     var puntosRestantes = puntosDisponibles - puntosAsignados;
     puntosDisponiblesSpan.innerText = puntosRestantes;
