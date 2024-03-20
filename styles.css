@@ -7,14 +7,6 @@ body {
   display: flex;
 }
 
-.container {
-  width: 45%; /* Ajusta el ancho según sea necesario */
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
 .container, .dados-container {
   flex: 1; /* Divide el espacio disponible en partes iguales */
   background-color: #fff;
@@ -26,6 +18,40 @@ body {
 .container {
   margin-right: 10px; /* Añade un espacio entre los contenedores */
 }
+
+/* Estilos para la hoja de personaje */
+.container {
+  width: 50%; /* Ancho del contenedor */
+}
+
+.info label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.info select, .info input[type="number"], .info span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.inventario h2 {
+  margin-top: 20px;
+}
+
+.inventario .item-input, .inventario .item-counter {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.equipamiento h2 {
+  margin-top: 20px;
+}
+
+.equipamiento input[type="text"], .equipamiento input[type="number"] {
+  width: calc(100% - 50px);
+  margin-bottom: 10px;
+}
+
 .dados {
   display: flex;
   flex-wrap: wrap;
@@ -40,6 +66,4 @@ body {
   margin-bottom: 10px;
   text-align: center;
 }
-
-/* Otros estilos... */
 
