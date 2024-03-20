@@ -8,10 +8,8 @@
 </head>
 <body>
   <div class="container">
-    <h1>Hoja de Personaje</h1>
+    <h1 contenteditable="true" id="nombre-personaje">Nombre del Personaje</h1>
     <div class="info">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required>
       <label for="clase">Clase:</label>
       <input type="text" id="clase" name="clase" required>
       <label for="nivel">Nivel:</label>
@@ -29,7 +27,12 @@
       <h2>Inventario</h2>
       <ul id="inventario-list">
         <!-- Aquí se mostrarán los items del inventario -->
+        <li>
+          <input type="text" class="item-input" placeholder="Nombre del Item">
+          <input type="number" class="item-counter" min="0" value="0">
+        </li>
       </ul>
+      <a href="#" id="add-item">Agregar Item</a>
     </div>
     <div class="equipamiento">
       <h2>Equipamiento</h2>
@@ -37,6 +40,9 @@
         <!-- Aquí se mostrarán los items equipados -->
       </ul>
     </div>
+    <button id="guardar">Guardar</button>
   </div>
+  
+  <script src="app.js"></script>
 </body>
 </html>
