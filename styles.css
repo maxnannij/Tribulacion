@@ -16,12 +16,27 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.dados {
+.dados-container {
   width: 45%; /* Ajusta el ancho según sea necesario */
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dados {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dado {
+  width: 100px; /* Ajusta el tamaño según sea necesario */
+  height: 100px; /* Mismo tamaño que el ancho para hacerlo cuadrado */
+  background-color: #ddd;
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 /* Otros estilos... */
