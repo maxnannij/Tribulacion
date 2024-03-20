@@ -8,11 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
   var agilidadInput = document.getElementById('agilidad');
   var puntosDisponiblesSpan = document.getElementById('puntos-disponibles');
 
-  // Función para actualizar las estadísticas y los puntos disponibles
+  // Función para actualizar las estadísticas según la clase seleccionada
   function actualizarEstadisticas() {
     var claseSeleccionada = claseSelect.value;
-    var nivel = parseInt(nivelInput.value);
-    var puntosDisponibles = nivel * 6;
+    var puntosDisponibles = parseInt(nivelInput.value) * 6;
 
     switch (claseSeleccionada) {
       case 'Arquero':
@@ -34,15 +33,12 @@ document.addEventListener('DOMContentLoaded', function() {
         asignarEstadisticas(100, 12, 16, 12);
         break;
       default:
+        // Si no se selecciona ninguna clase, se pueden restablecer los valores a cero o dejarlos como están
         asignarEstadisticas(0, 0, 0, 0);
         break;
     }
 
-    // Actualizar puntos disponibles
     puntosDisponiblesSpan.innerText = puntosDisponibles;
-
-    // Desactivar campos de estadísticas si no hay puntos disponibles
-    desactivarCamposSiNoHayPuntos(puntosDisponibles);
   }
 
   // Función para asignar estadísticas y actualizar campos de entrada
@@ -53,18 +49,25 @@ document.addEventListener('DOMContentLoaded', function() {
     agilidadInput.value = agilidad;
   }
 
-  // Función para desactivar campos de estadísticas si no hay puntos disponibles
-  function desactivarCamposSiNoHayPuntos(puntosDisponibles) {
-    var inputsEstadisticas = [vidaInput, fuerzaInput, inteligenciaInput, agilidadInput];
-    inputsEstadisticas.forEach(function(input) {
-      input.disabled = puntosDisponibles <= 0;
-    });
-  }
-
-  // Eventos de cambio para la selección de clase y el nivel
+  // Evento de cambio para la selección de clase
   claseSelect.addEventListener('change', actualizarEstadisticas);
-  nivelInput.addEventListener('change', actualizarEstadisticas);
 
-  // Actualizar estadísticas al cargar la página
-  actualizarEstadisticas();
+  // Evento de cambio para el nivel
+  nivelInput.addEventListener('change', function() {
+    actualizarEstadisticas();
+    actualizarPuntosDisponibles();
+  });
+
+  // Función para actualizar puntos disponibles
+  function actualizarPuntosDisponibles() {
+    var puntosDisponibles = parseInt(nivelInput.value) * 6;
+    var puntosAsignados = 0;
+
+    [vidaInput, fuerzaInput, inteligenciaInput, agilidadInput].forEach(function(input) {
+      puntosAsignados += parseInt(input.value);
+    });
+
+    var puntosRestantes = puntosDisponibles - puntosAsignados;
+    puntosDisponiblesSpan.innerText = puntosRestantes;
+  }
 });
