@@ -58,6 +58,13 @@ document.addEventListener('DOMContentLoaded', function() {
     actualizarPuntosDisponibles();
   });
 
+  // Eventos de cambio para las estadísticas
+  [vidaInput, fuerzaInput, inteligenciaInput, agilidadInput].forEach(function(input) {
+    input.addEventListener('change', function() {
+      actualizarPuntosDisponibles();
+    });
+  });
+
   // Función para actualizar puntos disponibles
   function actualizarPuntosDisponibles() {
     var puntosDisponibles = parseInt(nivelInput.value) * 6;
