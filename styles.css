@@ -7,6 +7,15 @@ body {
   display: flex;
 }
 
+.container, .Hoja de Personaje-container{
+  flex: 1; /* Divide el espacio disponible en partes iguales */
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .container, .dados-container {
   flex: 1; /* Divide el espacio disponible en partes iguales */
   height: 100vh; /* Ocupa toda la altura de la ventana */
