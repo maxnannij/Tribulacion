@@ -1,18 +1,36 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Función para agregar un nuevo item al inventario
-  document.getElementById('add-item').addEventListener('click', function(event) {
-    event.preventDefault();
-    var newItem = document.createElement('li');
-    newItem.innerHTML = `
-      <input type="text" class="item-input" placeholder="Nombre del Item">
-      <input type="number" class="item-counter" min="0" value="0">
-    `;
-    document.getElementById('inventario-list').appendChild(newItem);
-  });
+  // Cargar datos guardados al inicio
+  cargarDatos();
 
-  // Función para guardar los datos del personaje
-  document.getElementById('guardar').addEventListener('click', function(event) {
-    event.preventDefault();
+  // Función para cargar los datos guardados
+  function cargarDatos() {
+    var datosGuardados = localStorage.getItem('hojaPersonaje');
+    if (datosGuardados) {
+      var datos = JSON.parse(datosGuardados);
+      document.getElementById('nombre-personaje').innerText = datos.nombre || '';
+      document.getElementById('clase').value = datos.clase || '';
+      document.getElementById('nivel').value = datos.nivel || '';
+      document.getElementById('vida').value = datos.vida || '';
+      document.getElementById('fuerza').value = datos.fuerza || '';
+      document.getElementById('inteligencia').value = datos.inteligencia || '';
+      document.getElementById('agilidad').value = datos.agilidad || '';
+      // Cargar items del inventario
+      var inventario = datos.inventario || [];
+      var inventarioList = document.getElementById('inventario-list');
+      inventarioList.innerHTML = '';
+      inventario.forEach(function(item) {
+        var newItem = document.createElement('li');
+        newItem.innerHTML = `
+          <input type="text" class="item-input" placeholder="Nombre del Item" value="${item.nombre}">
+          <input type="number" class="item-counter" min="0" value="${item.cantidad}">
+        `;
+        inventarioList.appendChild(newItem);
+      });
+    }
+  }
+
+  // Función para guardar los datos
+  function guardarDatos() {
     var nombrePersonaje = document.getElementById('nombre-personaje').innerText;
     var clase = document.getElementById('clase').value;
     var nivel = document.getElementById('nivel').value;
@@ -30,15 +48,29 @@ document.addEventListener('DOMContentLoaded', function() {
         cantidad: cantidades[index].value
       });
     });
-    
-    // Aquí puedes enviar los datos a un servidor o hacer lo que necesites con ellos
-    console.log('Nombre del personaje:', nombrePersonaje);
-    console.log('Clase:', clase);
-    console.log('Nivel:', nivel);
-    console.log('Vida:', vida);
-    console.log('Fuerza:', fuerza);
-    console.log('Inteligencia:', inteligencia);
-    console.log('Agilidad:', agilidad);
-    console.log('Inventario:', inventario);
+
+    var datos = {
+      nombre: nombrePersonaje,
+      clase: clase,
+      nivel: nivel,
+      vida: vida,
+      fuerza: fuerza,
+      inteligencia: inteligencia,
+      agilidad: agilidad,
+      inventario: inventario
+    };
+
+    localStorage.setItem('hojaPersonaje', JSON.stringify(datos));
+  }
+
+  // Cargar datos al inicio
+  cargarDatos();
+
+  // Guardar datos al hacer clic en el botón
+  document.getElementById('guardar').addEventListener('click', function(event) {
+    event.preventDefault();
+    guardarDatos();
+    alert('Los datos han sido guardados.');
   });
 });
+
