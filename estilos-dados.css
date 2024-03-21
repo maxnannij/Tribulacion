@@ -1,25 +1,44 @@
+.dado {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: #8b4513;
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin: 10px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 50px;
+  cursor: pointer;
+  color: #000000; /* Color de la fuente (números) */
+}
+
+.dado:hover {
+  background-color: #7d6363;
+}
+
+/* Estilos para los dados de 6 caras */
 .dado-6 {
-  /* Estilos para el dado de 6 caras */
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
+/* Estilos para los dados de 8 caras */
 .dado-8 {
-  /* Estilos para el dado de 8 caras */
   clip-path: polygon(50% 0%, 100% 20%, 80% 50%, 100% 80%, 50% 100%, 20% 80%, 0% 50%, 20% 20%);
 }
 
+/* Estilos para los dados de 10 caras */
 .dado-10 {
-  /* Estilos para el dado de 10 caras */
   clip-path: polygon(50% 0%, 100% 10%, 90% 35%, 100% 60%, 50% 100%, 0% 60%, 10% 35%, 0% 10%);
 }
 
+/* Estilos para los dados de 12 caras */
 .dado-12 {
-  /* Estilos para el dado de 12 caras */
   clip-path: polygon(50% 0%, 85% 15%, 100% 50%, 85% 85%, 50% 100%, 15% 85%, 0% 50%, 15% 15%);
 }
 
+/* Estilos para los dados de 20 caras */
 .dado-20 {
-  /* Estilos para los dados de 20 caras */
   clip-path: polygon(
     50% 0%, 76% 10%, 92% 29%, 100% 50%, 92% 71%, 76% 90%,
     50% 100%, 24% 90%, 8% 71%, 0% 50%, 8% 29%, 24% 10%
