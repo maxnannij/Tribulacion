@@ -1,6 +1,6 @@
 body {
   font-family: 'Garamond', serif;
-  background-color: #f5e1cc;
+  background-color: #571e4b;
   margin: 0;
   padding: 0;
 }
@@ -10,7 +10,7 @@ body {
   margin: 20px auto;
   background-color: #fff;
   padding: 20px;
-  border: 5px solid #8b4513;
+  border: 3px solid #000000;
   border-radius: 10px;
 }
 
@@ -90,11 +90,13 @@ th {
 
 .dados-container {
   max-width: 800px;
-  margin: 20px auto;
   background-color: #fff;
-  padding: 20px;
-  border: 5px solid #8b4513;
+  border: 2px solid #8b4513;
   border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
 }
 
 .dado {
@@ -113,4 +115,85 @@ th {
 
 .dado:hover {
   background: radial-gradient(circle, #a75b04, #7d6363);
+}
+-------------------------------------
+.dado {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 10px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 50px;
+  cursor: pointer;
+  color: #ffffff; /* Color de la fuente (números) */
+  background: radial-gradient(circle, #c79b69, #a75b04); /* Fondo de gradiente */
+}
+
+.dado:hover {
+  background: radial-gradient(circle, #a75b04, #7d6363)
+}
+
+/* Estilos para los dados de 6 caras (cuadrado) */
+.dado-4 {
+  clip-path: polygon(50% 0%, 100% 90%, 0% 90%)
+}
+.dado-6 {
+  background-color: #8b4513; /* Fondo cuadrado */
+}
+
+/* Estilos para los dados de 8 caras (rombo) */
+.dado-8 {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+/* Estilos para los dados de 10 caras (rombo) */
+.dado-10 {
+  clip-path:  polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+/* Estilos para los dados de 12 caras (heptágono) */
+.dado-12 {
+  clip-path: polygon(29% 0, 71% 0, 100% 29%, 100% 71%, 71% 100%, 29% 100%, 0 71%, 0 29%);
+}
+
+/* Estilos para los dados de 20 caras (octágono) */
+.dado-20 {
+  clip-path: polygon(50% 0, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+  }
+
+
+
+
+@keyframes rotacion {
+  0% {
+    transform: rotateY(00deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.dado {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin: 10px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 50px;
+  cursor: pointer;
+  color: white;
+}
+
+.dado:hover {
+  background-color: #7d6363;
+}
+
+.rotar {
+  animation: rotacion 1s forwards;
 }
