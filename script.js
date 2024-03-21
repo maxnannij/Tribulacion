@@ -27,3 +27,16 @@ document.addEventListener("DOMContentLoaded", function() {
     dado.textContent = resultado;
   }
 });
+// Función para borrar los datos guardados
+function borrarDatos() {
+    localStorage.removeItem('hojaPersonaje');
+    // También puedes limpiar los campos del formulario o realizar cualquier otro trabajo relacionado con el borrado de datos.
+}
+
+// Asignar la función borrarDatos() a un botón en tu HTML
+document.getElementById('borrar').addEventListener('click', function(event) {
+    event.preventDefault();
+    borrarDatos();
+    alert('Los datos han sido eliminados.');
+});
+
