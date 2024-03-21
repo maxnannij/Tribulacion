@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function() {
   const dados = document.querySelectorAll('.dado');
   dados.forEach(dado => {
     dado.addEventListener("click", function() {
-      const index = Array.from(dados).indexOf(dado);
-      const resultado = tirarDado(index + 1); // Ajustar el índice para que coincida con el número de caras
+      const caras = dado.dataset.caras; // Obtener el número de caras del atributo data-caras
+      const resultado = tirarDado(parseInt(caras)); // Parsear el número de caras a entero
       girarDado(dado); // Girar el dado al hacer clic
       setTimeout(() => {
         mostrarResultado(dado, resultado); // Mostrar el resultado después de un tiempo
