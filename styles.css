@@ -43,18 +43,18 @@ select {
   background-position-y: center;
 }
 
-.inventario h2, .equipamiento h2 {
-  font-family: 'Uncial Antiqua', cursive;
-  margin-top: 20px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
 .inventario li {
   margin-bottom: 10px;
+}
+
+.inventario input[type="text"],
+.inventario input[type="number"] {
+  width: calc(50% - 10px); /* Usamos calc para calcular el 50% del ancho con un margen entre los elementos */
+  margin-right: 10px; /* Margen derecho para separar los elementos */
+}
+
+.inventario .item-counter {
+  width: calc(50% - 10px); /* Misma anchura para el contador */
 }
 
 #add-item {
