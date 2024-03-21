@@ -45,33 +45,32 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function tirarDados() {
-    const resultados = [];
-
-    // Tirar los dados y guardar los resultados
-    resultados.push(tirarDado(6)); // Dado de 6 caras
-    resultados.push(tirarDado(8)); // Dado de 8 caras
-    resultados.push(tirarDado(10)); // Dado de 10 caras
-    resultados.push(tirarDado(12)); // Dado de 12 caras
-    resultados.push(tirarDado(20)); // Dado de 20 caras
-    resultados.push(tirarDado(20)); // Segundo dado de 20 caras
-
-    // Mostrar los resultados en la interfaz
-    mostrarResultados(resultados);
+    // Tirar cada dado cuando se hace clic en él
+    const dados = document.querySelectorAll('.dado');
+    dados.forEach((dado, index) => {
+      dado.addEventListener('click', function() {
+        const resultado = tirarDado(index); // Index se usa para determinar el número de caras del dado
+        girarDado(dado); // Girar el dado
+        setTimeout(() => {
+          mostrarResultado(dado, resultado); // Mostrar el resultado después de un tiempo
+        }, 1000); // Esperar 1 segundo (corresponde a la duración de la animación en CSS)
+      });
+    });
   }
 
   function tirarDado(caras) {
     return Math.floor(Math.random() * caras) + 1;
   }
 
-  function mostrarResultados(resultados) {
-    const dadosContainer = document.querySelector(".dados");
-    dadosContainer.innerHTML = "<h2>Dados</h2>";
+  function girarDado(dado) {
+    dado.classList.add("rotar");
+    setTimeout(() => {
+      dado.classList.remove("rotar");
+    }, 1000); // Esperar 1 segundo (corresponde a la duración de la animación en CSS)
+  }
 
-    resultados.forEach((resultado, index) => {
-      const dadoDiv = document.createElement("div");
-      dadoDiv.textContent = "Dado " + (index + 1) + ": " + resultado;
-      dadosContainer.appendChild(dadoDiv);
-    });
+  function mostrarResultado(dado, resultado) {
+    dado.textContent = resultado;
   }
 });
 
