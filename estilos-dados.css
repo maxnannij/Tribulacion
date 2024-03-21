@@ -17,31 +17,27 @@
   background-color: #7d6363;
 }
 
-/* Estilos para los dados de 6 caras */
+/* Estilos para los dados de 6 caras (cuadrado) */
 .dado-6 {
-  background-image: url('https://w7.pngwing.com/pngs/811/800/png-transparent-dice-game-dice-s-free-game-rectangle-presentation.png');
-  background-size: cover;
+  background-color: #8b4513; /* Fondo cuadrado */
 }
 
-/* Estilos para los dados de 8 caras */
+/* Estilos para los dados de 8 caras (rombo) */
 .dado-8 {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+/* Estilos para los dados de 10 caras (rombo) */
+.dado-10 {
   clip-path: polygon(50% 0%, 100% 20%, 80% 50%, 100% 80%, 50% 100%, 20% 80%, 0% 50%, 20% 20%);
 }
 
-/* Estilos para los dados de 10 caras */
-.dado-10 {
-  clip-path: polygon(50% 0%, 100% 10%, 90% 35%, 100% 60%, 50% 100%, 0% 60%, 10% 35%, 0% 10%);
-}
-
-/* Estilos para los dados de 12 caras */
+/* Estilos para los dados de 12 caras (heptágono) */
 .dado-12 {
-  clip-path: polygon(50% 0%, 85% 15%, 100% 50%, 85% 85%, 50% 100%, 15% 85%, 0% 50%, 15% 15%);
+  clip-path: polygon(50% 0%, 85% 15%, 100% 50%, 85% 85%, 50% 100%, 15% 85%, 0% 50%);
 }
 
-/* Estilos para los dados de 20 caras */
+/* Estilos para los dados de 20 caras (octágono) */
 .dado-20 {
-  clip-path: polygon(
-    50% 0%, 76% 10%, 92% 29%, 100% 50%, 92% 71%, 76% 90%,
-    50% 100%, 24% 90%, 8% 71%, 0% 50%, 8% 29%, 24% 10%
-  );
+  clip-path: polygon(50% 0%, 85% 7%, 100% 32%, 93% 64%, 68% 85%, 32% 85%, 7% 64%, 0% 32%);
 }
