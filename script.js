@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
   const guardarCookieButton = document.getElementById("guardar-cookie");
   const tirarDadosButton = document.getElementById("tirar-dados");
+  
+  // Obtener todos los dados
+  const dados = document.querySelectorAll('.dado');
 
   guardarCookieButton.addEventListener("click", function() {
     const hojaPersonaje = obtenerInformacionHojaPersonaje();
@@ -12,12 +15,12 @@ document.addEventListener("DOMContentLoaded", function() {
     tirarDados();
   });
 
-  // Agrega un event listener a cada dado para tirarlo cuando se hace clic en él
-  const dados = document.querySelectorAll('.dado');
-  dados.forEach((dado, index) => {
-    dado.addEventListener('click', function() {
-      const resultado = tirarDado(index); // Index se usa para determinar el número de caras del dado
-      girarDado(dado); // Girar el dado
+  // Iterar sobre cada dado y agregar evento de clic
+  dados.forEach(dado => {
+    dado.addEventListener("click", function() {
+      const index = Array.from(dados).indexOf(dado);
+      const resultado = tirarDado(index + 1); // Ajustar el índice para que coincida con el número de caras
+      girarDado(dado); // Girar el dado al hacer clic
       setTimeout(() => {
         mostrarResultado(dado, resultado); // Mostrar el resultado después de un tiempo
       }, 1000); // Esperar 1 segundo (corresponde a la duración de la animación en CSS)
@@ -59,11 +62,10 @@ document.addEventListener("DOMContentLoaded", function() {
   function tirarDados() {
     const resultados = [];
 
-    // Tirar cada dado y guardar los resultados
+    // Tirar cada dado cuando se hace clic en él
     dados.forEach((dado, index) => {
-      const resultado = tirarDado(index);
-      resultados.push(resultado);
-      girarDado(dado); // Girar el dado
+      const resultado = tirarDado(index + 1); // Ajustar el índice para que coincida con el número de caras
+      girarDado(dado); // Girar el dado al hacer clic
       setTimeout(() => {
         mostrarResultado(dado, resultado); // Mostrar el resultado después de un tiempo
       }, 1000); // Esperar 1 segundo (corresponde a la duración de la animación en CSS)
@@ -82,6 +84,6 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function mostrarResultado(dado, resultado) {
-    dado.textContent = "Dado: " + resultado;
+    dado.textContent = resultado;
   }
 });
