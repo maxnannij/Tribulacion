@@ -19,7 +19,7 @@
 
 /* Estilos para los dados de 6 caras (cuadrado) */
 .dado-4 {
-  clip-path: polygon(50% 0%, 100% 100%, 0% 100%)
+  clip-path: polygon(50% 0%, 100% 90%, 0% 90%)
 }
 .dado-6 {
   background-color: #8b4513; /* Fondo cuadrado */
