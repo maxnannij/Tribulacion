@@ -1,80 +1,82 @@
-/* Estilo general */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
   margin: 0;
   padding: 0;
+}
+
+.container {
   display: flex;
 }
 
-.container, .HojadePersonaje-container{
-  flex: 1; /* Divide el espacio disponible en partes iguales */
-  height: 100vh; /* Ocupa toda la altura de la ventana */
-  background-color: #fff;
+.info {
+  flex: 1;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.container, .dados-container {
-  flex: 1; /* Divide el espacio disponible en partes iguales */
-  height: 100vh; /* Ocupa toda la altura de la ventana */
   background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-right: 2px solid #333;
 }
 
-.container {
-  margin-right: 10px; /* Añade un espacio entre los contenedores */
+h1, h2 {
+  margin-top: 0;
 }
 
-/* Estilos para la hoja de personaje */
-.container {
-  width: 50%; /* Ancho del contenedor */
-}
-
-.info label {
+label {
   display: block;
   margin-bottom: 5px;
 }
 
-.info select, .info input[type="number"], .info span {
-  display: block;
+input[type="number"],
+select {
+  width: 100px;
+  padding: 5px;
   margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
-.inventario h2 {
+input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.inventario,
+.equipamiento {
   margin-top: 20px;
 }
 
-.inventario .item-input, .inventario .item-counter {
-  margin-bottom: 10px;
-  display: block;
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.equipamiento h2 {
-  margin-top: 20px;
+table, th, td {
+  border: 1px solid #ccc;
 }
 
-.equipamiento input[type="text"], .equipamiento input[type="number"] {
-  width: calc(100% - 50px);
-  margin-bottom: 10px;
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+.dados-container {
+  flex: 1;
+  padding: 20px;
 }
 
 .dados {
-  display: flex;
-  flex-wrap: wrap;
+  padding-top: 20px;
 }
 
 .dado {
-  width: 100px; /* Ajusta el tamaño según sea necesario */
-  height: 100px; /* Mismo tamaño que el ancho para hacerlo cuadrado */
-  background-color: #ddd;
-  padding: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  text-align: center;
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
 }
-
-
