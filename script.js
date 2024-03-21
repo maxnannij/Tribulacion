@@ -26,7 +26,16 @@ document.addEventListener("DOMContentLoaded", function() {
     newItem.innerHTML = `
       <input type="text" class="item-input" placeholder="Nombre del Item">
       <input type="number" class="item-counter" min="0" value="0">
+      <button class="delete-item">Borrar</button>
     `;
     inventarioList.appendChild(newItem);
+
+    // Agregar evento de clic al botón de borrar
+    const deleteButton = newItem.querySelector(".delete-item");
+    deleteButton.addEventListener("click", function() {
+      if (confirm("¿Estás seguro de que deseas borrar este ítem?")) {
+        newItem.remove();
+      }
+    });
   }
 });
