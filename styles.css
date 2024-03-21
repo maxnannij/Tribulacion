@@ -89,10 +89,12 @@ th {
 }
 
 .dados-container {
-  position: fixed;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border: 5px solid #8b4513;
+  border-radius: 10px;
 }
 
 .dado {
