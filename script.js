@@ -1,6 +1,18 @@
 document.addEventListener("DOMContentLoaded", function() {
   const guardarCookieButton = document.getElementById("guardar-cookie");
-  const agregarItemButton = document.getElementById("add-item");
+  const nivelInput = document.getElementById("nivel");
+  const puntosDisponiblesSpan = document.getElementById("puntos-disponibles");
+
+  // Inicializar puntos disponibles
+  let puntosDisponibles = 200;
+  puntosDisponiblesSpan.textContent = puntosDisponibles;
+
+  nivelInput.addEventListener("change", function() {
+    // Cada nivel adicional suma 6 puntos más
+    const nivel = parseInt(nivelInput.value);
+    puntosDisponibles = 200 + ((nivel - 1) * 6);
+    puntosDisponiblesSpan.textContent = puntosDisponibles;
+  });
 
   guardarCookieButton.addEventListener("click", function() {
     const hojaPersonaje = obtenerInformacionHojaPersonaje();
@@ -8,15 +20,24 @@ document.addEventListener("DOMContentLoaded", function() {
     alert("La información se ha guardado como cookie.");
   });
 
-  agregarItemButton.addEventListener("click", function() {
-    agregarItemInventario();
-  });
-
   function obtenerInformacionHojaPersonaje() {
     const nombre = document.getElementById("nombre-personaje").innerText;
+    const clase = document.getElementById("clase").value;
+    const nivel = document.getElementById("nivel").value;
+    const vida = document.getElementById("vida").value;
+    const fuerza = document.getElementById("fuerza").value;
+    const inteligencia = document.getElementById("inteligencia").value;
+    const agilidad = document.getElementById("agilidad").value;
+
     return {
       nombre: nombre,
-      // Otros campos de la hoja de personaje...
+      clase: clase,
+      nivel: nivel,
+      vida: vida,
+      fuerza: fuerza,
+      inteligencia: inteligencia,
+      agilidad: agilidad,
+      puntosDisponibles: puntosDisponibles
     };
   }
 
@@ -31,15 +52,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.cookie = cookieString;
   }
-
-  function agregarItemInventario() {
-    const inventarioList = document.getElementById("inventario-list");
-    const newItem = document.createElement("li");
-    newItem.innerHTML = `
-      <input type="text" class="item-input" placeholder="Nombre del Item">
-      <input type="number" class="item-counter" min="0" value="0">
-    `;
-    inventarioList.appendChild(newItem);
-  }
 });
-
