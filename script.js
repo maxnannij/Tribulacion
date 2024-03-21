@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   function tirarDado(caras) {
-    return Math.floor(Math.random() * caras) + 1;
+    return Math.floor(Math.random() * caras) + 1; // Generar número aleatorio dentro del rango correcto
   }
 
   function girarDado(dado) {
@@ -27,4 +27,3 @@ document.addEventListener("DOMContentLoaded", function() {
     dado.textContent = resultado;
   }
 });
-
