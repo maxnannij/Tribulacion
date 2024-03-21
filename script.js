@@ -4,23 +4,15 @@ document.addEventListener("DOMContentLoaded", function() {
   const cargarInput = document.getElementById("cargar");
 
   guardarLocalButton.addEventListener("click", function() {
-    // Obtener la información de la hoja de personaje
     const hojaPersonaje = obtenerInformacionHojaPersonaje();
-
-    // Guardar la información localmente
     localStorage.setItem("hojaPersonaje", JSON.stringify(hojaPersonaje));
     alert("La información se ha guardado localmente.");
   });
 
   descargarButton.addEventListener("click", function() {
-    // Obtener la información de la hoja de personaje
     const hojaPersonaje = obtenerInformacionHojaPersonaje();
-
-    // Crear un objeto Blob con la información
     const blob = new Blob([JSON.stringify(hojaPersonaje)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
-
-    // Crear un enlace de descarga y hacer clic en él
     const a = document.createElement("a");
     a.href = url;
     a.download = "hoja_personaje.json";
@@ -44,20 +36,20 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   function obtenerInformacionHojaPersonaje() {
-    // Aquí obtienes la información de la hoja de personaje, por ejemplo:
     const nombre = document.getElementById("nombre-personaje").innerText;
-    // Obtener el resto de la información necesaria...
-
     return {
       nombre: nombre,
-      // Otros campos de la hoja de personaje...
     };
   }
 
   function cargarInformacionHojaPersonaje(hojaPersonaje) {
-    // Aquí cargas la información en la hoja de personaje
-    // Por ejemplo:
     document.getElementById("nombre-personaje").innerText = hojaPersonaje.nombre;
-    // Cargar el resto de la información necesaria...
+    // Aquí puedes cargar el resto de los datos
+    // Por ejemplo, si tienes otros campos en la hoja de personaje:
+    document.getElementById("clase").value = hojaPersonaje.clase;
+    document.getElementById("nivel").value = hojaPersonaje.nivel;
+    document.getElementById("vida").value = hojaPersonaje.vida;
+    // Y así sucesivamente para los demás campos
   }
 });
+
