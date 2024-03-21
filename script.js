@@ -59,12 +59,13 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function obtenerInformacionHojaPersonajeDesdeJSON() {
-    // Aquí puedes simular la obtención de los datos del JSON
-    // por ejemplo, podrías crear un objeto con los datos
+    // Simulando la obtención de datos desde un JSON
+    // Puedes reemplazar este código con la lógica adecuada para obtener los datos del JSON
     return {
-      nombre: "Personaje cargado desde JSON",
+      nombre: "Personaje desde JSON",
       // Otros campos de la hoja de personaje...
     };
   }
 });
+
 
