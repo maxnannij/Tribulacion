@@ -27,3 +27,4 @@ document.addEventListener("DOMContentLoaded", function() {
     dado.textContent = resultado;
   }
 });
+
