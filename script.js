@@ -1,23 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
   const guardarCookieButton = document.getElementById("guardar-cookie");
-  const nivelInput = document.getElementById("nivel");
-  const puntosDisponiblesSpan = document.getElementById("puntos-disponibles");
-
-  // Inicializar puntos disponibles
-  let puntosDisponibles = 200;
-  puntosDisponiblesSpan.textContent = puntosDisponibles;
-
-  nivelInput.addEventListener("change", function() {
-    // Cada nivel adicional suma 6 puntos más
-    const nivel = parseInt(nivelInput.value);
-    puntosDisponibles = 200 + ((nivel - 1) * 6);
-    puntosDisponiblesSpan.textContent = puntosDisponibles;
-  });
+  const tirarDadosButton = document.getElementById("tirar-dados");
 
   guardarCookieButton.addEventListener("click", function() {
     const hojaPersonaje = obtenerInformacionHojaPersonaje();
     guardarComoCookie("hojaPersonaje", JSON.stringify(hojaPersonaje));
     alert("La información se ha guardado como cookie.");
+  });
+
+  tirarDadosButton.addEventListener("click", function() {
+    tirarDados();
   });
 
   function obtenerInformacionHojaPersonaje() {
@@ -36,8 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
       vida: vida,
       fuerza: fuerza,
       inteligencia: inteligencia,
-      agilidad: agilidad,
-      puntosDisponibles: puntosDisponibles
+      agilidad: agilidad
     };
   }
 
@@ -52,4 +43,35 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.cookie = cookieString;
   }
+
+  function tirarDados() {
+    const resultados = [];
+
+    // Tirar los dados y guardar los resultados
+    resultados.push(tirarDado(6)); // Dado de 6 caras
+    resultados.push(tirarDado(8)); // Dado de 8 caras
+    resultados.push(tirarDado(10)); // Dado de 10 caras
+    resultados.push(tirarDado(12)); // Dado de 12 caras
+    resultados.push(tirarDado(20)); // Dado de 20 caras
+    resultados.push(tirarDado(20)); // Segundo dado de 20 caras
+
+    // Mostrar los resultados en la interfaz
+    mostrarResultados(resultados);
+  }
+
+  function tirarDado(caras) {
+    return Math.floor(Math.random() * caras) + 1;
+  }
+
+  function mostrarResultados(resultados) {
+    const dadosContainer = document.querySelector(".dados");
+    dadosContainer.innerHTML = "<h2>Dados</h2>";
+
+    resultados.forEach((resultado, index) => {
+      const dadoDiv = document.createElement("div");
+      dadoDiv.textContent = "Dado " + (index + 1) + ": " + resultado;
+      dadosContainer.appendChild(dadoDiv);
+    });
+  }
 });
+
