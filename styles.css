@@ -43,18 +43,20 @@ select {
   background-position-y: center;
 }
 
+.inventario {
+  display: flex; /* Para colocar los bloques de inventario uno al lado del otro */
+  flex-wrap: wrap; /* Para permitir que los bloques de inventario se envuelvan a la siguiente línea si no hay suficiente espacio horizontal */
+}
+
 .inventario li {
+  margin-right: 10px; /* Espacio entre los bloques de inventario */
   margin-bottom: 10px;
+  flex: 0 0 calc(50% - 10px); /* Calculamos la mitad del ancho con el margen entre los elementos */
 }
 
 .inventario input[type="text"],
 .inventario input[type="number"] {
-  width: calc(50% - 10px); /* Usamos calc para calcular el 50% del ancho con un margen entre los elementos */
-  margin-right: 10px; /* Margen derecho para separar los elementos */
-}
-
-.inventario .item-counter {
-  width: calc(50% - 10px); /* Misma anchura para el contador */
+  width: 100%; /* Los elementos dentro de cada bloque de inventario ocupan todo el ancho disponible */
 }
 
 #add-item {
