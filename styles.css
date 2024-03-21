@@ -90,8 +90,8 @@ th {
 
 .dados-container {
   max-width: 800px;
-  background-color: #fff;
-  border: 2px solid #8b4513;
+  background-color: #000000;
+  border: 2px solid #ffffff;
   border-radius: 10px;
   position: fixed;
   top: 50%;
