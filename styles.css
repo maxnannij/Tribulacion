@@ -1,50 +1,73 @@
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f5f5f5;
+  font-family: 'Garamond', serif;
+  background-color: #f5e1cc;
   margin: 0;
   padding: 0;
 }
 
 .container {
-  display: flex;
-}
-
-.info {
-  flex: 1;
-  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
   background-color: #fff;
-  border-right: 2px solid #333;
+  padding: 20px;
+  border: 5px solid #8b4513;
+  border-radius: 10px;
 }
 
 h1, h2 {
-  margin-top: 0;
+  font-family: 'Uncial Antiqua', cursive;
+  text-align: center;
 }
 
-label {
+.info label {
   display: block;
-  margin-bottom: 5px;
+  font-weight: bold;
 }
 
-input[type="number"],
-select {
-  width: 100px;
-  padding: 5px;
+select, input[type="number"], input[type="text"] {
   margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-input[type="text"] {
   width: 100%;
-  padding: 5px;
-  margin-bottom: 10px;
+  padding: 8px;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
-.inventario,
-.equipamiento {
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238b4513"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: center;
+}
+
+.inventario h2, .equipamiento h2 {
+  font-family: 'Uncial Antiqua', cursive;
   margin-top: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.inventario li {
+  margin-bottom: 10px;
+}
+
+#add-item {
+  display: block;
+  text-align: center;
+  font-family: 'Uncial Antiqua', cursive;
+  color: #8b4513;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+#add-item:hover {
+  text-decoration: underline;
 }
 
 table {
@@ -52,31 +75,29 @@ table {
   border-collapse: collapse;
 }
 
-table, th, td {
-  border: 1px solid #ccc;
-}
-
 th, td {
   padding: 8px;
   text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #8b4513;
+  color: #fff;
 }
 
 .dados-container {
-  flex: 1;
-  padding: 20px;
+  margin-top: 20px;
 }
 
 .dados {
-  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .dado {
-  width: 100px;
-  height: 100px;
-  background-color: #ccc;
-  margin: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #8b4513;
+  color: #fff;
+  padding: 10px;
   border-radius: 5px;
 }
