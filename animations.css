@@ -19,7 +19,7 @@
   font-weight: bold;
   line-height: 50px;
   cursor: pointer;
-  color: black; /* Color del número en el dado */
+  color: black; !important;
 }
 
 .dado:hover {
