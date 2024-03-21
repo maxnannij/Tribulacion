@@ -19,7 +19,8 @@
 
 /* Estilos para los dados de 6 caras */
 .dado-6 {
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background-image: url('https://w7.pngwing.com/pngs/811/800/png-transparent-dice-game-dice-s-free-game-rectangle-presentation.png');
+  background-size: cover;
 }
 
 /* Estilos para los dados de 8 caras */
