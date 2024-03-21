@@ -24,8 +24,10 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function mostrarResultado(dado, resultado) {
-    dado.textContent = resultado;
-  }
+    const caras = dado.dataset.caras;
+    if (caras) {
+        dado.textContent = resultado;
+    }
 });
 document.addEventListener("DOMContentLoaded", function() {
     const nivelInput = document.getElementById("nivel");
