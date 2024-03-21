@@ -12,6 +12,18 @@ document.addEventListener("DOMContentLoaded", function() {
     tirarDados();
   });
 
+  // Agrega un event listener a cada dado para tirarlo cuando se hace clic en él
+  const dados = document.querySelectorAll('.dado');
+  dados.forEach((dado, index) => {
+    dado.addEventListener('click', function() {
+      const resultado = tirarDado(index); // Index se usa para determinar el número de caras del dado
+      girarDado(dado); // Girar el dado
+      setTimeout(() => {
+        mostrarResultado(dado, resultado); // Mostrar el resultado después de un tiempo
+      }, 1000); // Esperar 1 segundo (corresponde a la duración de la animación en CSS)
+    });
+  });
+
   function obtenerInformacionHojaPersonaje() {
     const nombre = document.getElementById("nombre-personaje").innerText;
     const clase = document.getElementById("clase").value;
@@ -45,16 +57,16 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function tirarDados() {
-    // Tirar cada dado cuando se hace clic en él
-    const dados = document.querySelectorAll('.dado');
+    const resultados = [];
+
+    // Tirar cada dado y guardar los resultados
     dados.forEach((dado, index) => {
-      dado.addEventListener('click', function() {
-        const resultado = tirarDado(index); // Index se usa para determinar el número de caras del dado
-        girarDado(dado); // Girar el dado
-        setTimeout(() => {
-          mostrarResultado(dado, resultado); // Mostrar el resultado después de un tiempo
-        }, 1000); // Esperar 1 segundo (corresponde a la duración de la animación en CSS)
-      });
+      const resultado = tirarDado(index);
+      resultados.push(resultado);
+      girarDado(dado); // Girar el dado
+      setTimeout(() => {
+        mostrarResultado(dado, resultado); // Mostrar el resultado después de un tiempo
+      }, 1000); // Esperar 1 segundo (corresponde a la duración de la animación en CSS)
     });
   }
 
@@ -70,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function mostrarResultado(dado, resultado) {
-    dado.textContent = resultado;
+    dado.textContent = "Dado: " + resultado;
   }
 });
-
