@@ -1,14 +1,33 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hoja de Personaje</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+  <script src="script.js" defer></script> <!-- Asegúrate de especificar la ruta correcta al archivo script.js -->
+  <style>
+    .container {
+      text-align: center; /* Centrar contenido */
+    }
+
+    button#guardar {
+      padding: 10px 20px; /* Aumentar padding para hacer el botón más grande */
+      font-size: 18px; /* Aumentar tamaño de fuente */
+      background-color: #8b4513; /* Color de fondo */
+      color: #fff; /* Color del texto */
+      border: none; /* Eliminar borde */
+      border-radius: 5px; /* Borde redondeado */
+      cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+    }
+
+    button#guardar:hover {
+      background-color: #7d6363; /* Cambiar color de fondo al pasar el ratón */
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-       <h1 contenteditable="true" id="nombre-personaje">Nombre del Personaje</h1>
+    <h1 contenteditable="true" id="nombre-personaje">Nombre del Personaje</h1>
     <div class="info">
       <label for="clase">Clase:</label>
       <select id="clase" name="clase" required>
@@ -30,8 +49,6 @@
       <input type="number" id="inteligencia" name="inteligencia" required>
       <label for="agilidad">Agilidad:</label>
       <input type="number" id="agilidad" name="agilidad" required>
-      <label for="puntos-disponibles">Puntos Disponibles:</label>
-      <span id="puntos-disponibles">200</span>
     </div>
     <div class="inventario">
       <h2>Inventario</h2>
@@ -43,8 +60,7 @@
         </li>
       </ul>
       <a href="#" id="add-item">Agregar Item</a>
-    </div>
-<div class="equipamiento">
+    <div class="equipamiento">
   <h2>Equipamiento</h2>
   <table>
     <thead>
@@ -109,12 +125,11 @@
       <!-- Repite este patrón para el resto de piezas de equipo -->
     </tbody>
   </table>
-  </div>
+    </div>
     <button id="guardar">Guardar</button>
   </div>
 </div>
-
-<iv class="dados-container">
+  <iv class="dados-container">
 <iv class="dados-container">
     <div class="dados">
         <div class="dado dado-4">4</div>
