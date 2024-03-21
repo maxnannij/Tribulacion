@@ -10,7 +10,7 @@
   font-weight: bold;
   line-height: 50px;
   cursor: pointer;
-  color: #000000; /* Color de la fuente (números) */
+  color: #ffffff; /* Color de la fuente (números) */
 }
 
 .dado:hover {
