@@ -58,6 +58,9 @@
     transform: rotateY(360deg);
   }
 }
+.rotar {
+  animation: rotacion 1s forwards;
+}
 .dados-container {
   max-width: 800px;
   background-color: #000;
