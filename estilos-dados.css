@@ -16,20 +16,21 @@
   background: radial-gradient(circle, #a75b04, #7d6363)
 }
 
-/* Estilos para los dados de 6 caras (cuadrado) */
+/* triangular */
 .dado-4 {
   clip-path: polygon(50% 0%, 100% 90%, 0% 90%)
 }
+/* cuadrado */
 .dado-6 {
   background-color: #8b4513; /* Fondo cuadrado */
 }
 
-/* Estilos para los dados de 8 caras (rombo) */
+/* romboide */
 .dado-8 {
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
-/* Estilos para los dados de 10 caras (rombo) */
+/* romboide */
 .dado-10 {
   clip-path:  polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
