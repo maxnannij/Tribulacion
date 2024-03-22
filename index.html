@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="nombre-clase-nivel.css">                              <!-- referencias-->
        <div class="containertodo">                                                   <!-- nombre-->
       <div class="containernombre">
-    <h1 contenteditable="true" id="nombre-personaje">Nombre del Personaje</h1>
+    <h1 contenteditable="true" id="nombre-personaje">Nombre </h1>
     <div class="info">
       <label2 for="clase">Clase:</label2>                                              <!-- clase-->
       <select id="clase" name="clase" required>
@@ -27,12 +27,13 @@
       <input type="number" id="nivel" name="nivel" min="1"value="1" required>
       </div>
         </div>
-       <div class="columna">
-      <h2>Habilidades</h2>
-      <label for="vida">Vida:</label>
-      <label for="fuerza">Fuerza:</label>
-      <label for="inteligencia">Inteligencia:</label>
-      <label for="agilidad">Agilidad:</label>
+       <iv class="containerhabilidades">                                              <!-- habilidades-->
+    <div class="columna">
+      <h2>Capacidades</h2>
+      <labelc for="vida">Vida:</labelc>
+      <labelc for="fuerza">Fuerza:</labelc>
+      <labelc for="inteligencia">Inteligencia:</labelc>
+      <labelc for="agilidad">Agilidad:</labelc>
       <label Puntos Disponibles</label>
    <p>Puntos disponibles: <span id="puntos-disponibles">200</span></p>
     </div><div class="columna">
@@ -57,7 +58,7 @@
     <div class="equipamiento">
   <h2>Equipamiento</h2>
   <table>
-    <thead>
+    <thead> 
       <tr>
         <th></th>
         <th>Nombre</th>
@@ -136,8 +137,6 @@
     <script src="script.js"></script>
   <script src="app.js" defer></script>
   <script src="tirardados.js" defer></script>
-  <script src="itemsagregareliminar.js" defer></script> 
   <script src="niveles.js" defer></script><!-- Asegúrate de especificar la ruta correcta al archivo script.js -->
 </body>
 </html>
-
