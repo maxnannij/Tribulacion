@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="habilidades-e-inventario.css">
   <link rel="stylesheet" href="equipamiento.css">
   <link rel="stylesheet" href="estilos-dados.css">  
-    <div class="container">
+       <div class="containertodo">
+      <div class="containernombre">
     <h1 contenteditable="true" id="nombre-personaje">Nombre del Personaje</h1>
     <div class="info">
       <label for="clase">Clase:</label>
@@ -23,30 +24,33 @@
       </select>
       <label for="nivel">Nivel:</label>
       <input type="number" id="nivel" name="nivel" min="1"value="1" required>
+      </div>
+        </div>
+       <div class="containerhabilidades">
+    <div class="columna">
+      <h2>Habilidades</h2>
       <label for="vida">Vida:</label>
-      <input type="number" id="vida" name="vida" 
-min="0"    value="0"         required>
       <label for="fuerza">Fuerza:</label>
-      <input type="number" id="fuerza" name="fuerza"
-             min="0" value="0"  required>
       <label for="inteligencia">Inteligencia:</label>
-      <input type="number" id="inteligencia" name="inteligencia" 
-             min="0" value="0"  required>
       <label for="agilidad">Agilidad:</label>
-      <input type="number" id="agilidad" name="agilidad" 
-             min="0" value="0"  required>
-      <div id="puntos-disponibles">Puntos disponibles: 200</div>
+    </div><div class="columna">
+      <h2>Puntos</h2>
+      <input type="number" id="vida" name="vida" min="0" value="0" required>
+      <input type="number" id="fuerza" name="fuerza" min="0" value="0" required>
+      <input type="number" id="inteligencia" name="inteligencia" min="0" value="0" required>
+      <input type="number" id="agilidad" name="agilidad" min="0" value="0" required>
     </div>
-    <div class="inventario">
+     <div class="columna">
       <h2>Inventario</h2>
       <ul id="inventario-list">
-        <!-- Aquí se mostrarán los items del inventario -->
         <li>
           <input type="text" class="item-input" placeholder="Nombre del Item">
           <input type="number" class="item-counter" min="0" value="0">
         </li>
       </ul>
-      <a href="#" id="add-item">Agregar Item</a>
+        <a href="#" id="add-item">Agregar Item</a>
+        </div>
+         </div>
     <div class="equipamiento">
   <h2>Equipamiento</h2>
   <table>
@@ -113,7 +117,6 @@ min="0"    value="0"         required>
     </tbody>
   </table>
       </div>
-       </div>
     <button id="guardar">Guardar</button>
   </div>
 </div>
@@ -133,3 +136,4 @@ min="0"    value="0"         required>
   <script src="niveles.js" defer></script><!-- Asegúrate de especificar la ruta correcta al archivo script.js -->
 </body>
 </html>
+
