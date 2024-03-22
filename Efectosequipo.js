@@ -54,7 +54,6 @@ document.addEventListener("DOMContentLoaded", function() {
         input.addEventListener('input', actualizarEfectoFuerza);
     });
 });
-/*************/
 document.addEventListener("DOMContentLoaded", function() {
     // Obtener todos los campos de inteligencia de los equipamientos
     const camposInteligencia = document.querySelectorAll('.inteligencia-input');
@@ -83,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function() {
         input.addEventListener('input', actualizarEfectoInteligencia);
     });
 });
-/*************/
 document.addEventListener("DOMContentLoaded", function() {
     // Obtener todos los campos de agilidad de los equipamientos
     const camposAgilidad = document.querySelectorAll('.agilidad-input');
