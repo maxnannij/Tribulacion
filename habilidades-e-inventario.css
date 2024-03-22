@@ -10,16 +10,16 @@
 
 .columna {
   flex: 1;
-  padding: 0 30px;
+  padding: 0 10px;
 }
 
 labelc {
   display: block;
-  text-align: right;
+  text-align: center;
   font-size: 25px;
   width: 100%;
-  margin-bottom: 1px;
-  padding: 8px;
+  margin-bottom: 15px;
+  padding: 1px;
   border-radius: 5px;
   box-sizing: border-box;
 }
