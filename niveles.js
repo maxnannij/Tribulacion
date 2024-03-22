@@ -1,4 +1,4 @@
-  document.addEventListener("DOMContentLoaded", function() {
+   document.addEventListener("DOMContentLoaded", function() {
     const nivelInput = document.getElementById("nivel");
     const puntosDisponiblesSpan = document.getElementById("puntos-disponibles");
     let puntosDisponibles = 200; // Cada persona comienza con 200 puntos disponibles
