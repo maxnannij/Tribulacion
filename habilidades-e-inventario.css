@@ -56,7 +56,31 @@ input[type="text"] {
 #add-item:hover {
   text-decoration: underline;
 }
+#remove-item {
+  display: block;
+  text-align: center;
+  font-family: 'Uncial Antiqua', cursive;
+  color: #8b4513;
+  text-decoration: none;
+  margin-top: 10px;
+}
 
+#remove-item:hover {
+  text-decoration: underline;
+}
+
+.remove-item {
+  display: block;
+  text-align: center;
+  font-family: 'Uncial Antiqua', cursive;
+  color: #8b4513;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.remove-item:hover {
+  text-decoration: underline;
+}
 table {
   width: 100%;
   border-collapse: collapse;
