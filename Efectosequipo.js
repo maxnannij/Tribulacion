@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
         input.addEventListener('input', actualizarEfectoVida);
     });
 });
-/*************/
 document.addEventListener("DOMContentLoaded", function() {
     // Obtener todos los campos de fuerza de los equipamientos
     const camposFuerza = document.querySelectorAll('.ataque-input');
