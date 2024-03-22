@@ -88,34 +88,6 @@ th {
   color: #fff;
 }
 
-.dados-container {
-  max-width: 800px;
-  background-color: #000;
-  border: 2px solid #fff;
-  border-radius: 10px;
-  position: fixed;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-}
-
-.dado {
-  display: block;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin: 10px;
-  text-align: center;
-  font-weight: bold;
-  line-height: 50px;
-  cursor: pointer;
-  color: #ffffff;
-  background: radial-gradient(circle, #a75b04, #c79b69);
-}
-
-.dado:hover {
-  background: radial-gradient(circle, #a75b04, #7d6363);
-}
 button#guardar {
   padding: 15px 30px; /* Aumentar padding para hacer el botón más grande */
   font-size: 18px; /* Aumentar tamaño de fuente */
