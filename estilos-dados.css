@@ -2,7 +2,6 @@
   display: inline-block;
   width: 50px;
   height: 50px;
-  border-radius: 50%;
   margin: 10px;
   text-align: center;
   font-weight: bold;
@@ -11,14 +10,21 @@
   color: #ffffff; /* Color de la fuente (números) */
   background: radial-gradient(circle, #c79b69, #a75b04); /* Fondo de gradiente */
 }
-
 .dado:hover {
   background: radial-gradient(circle, #a75b04, #7d6363)
 }
 
 /* triangular */
 .dado-4 {
-  clip-path: polygon(50% 0%, 100% 90%, 0% 90%)
+  left: 70%;
+    top: 70%;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.trapezoid{
+    left: 70%;
+    top: 70%;
+    background: var(--orange);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)
 }
 /* cuadrado */
 .dado-6 {
@@ -62,4 +68,3 @@
   right: 10px;
   transform: translateY(-50%);
 }
-
