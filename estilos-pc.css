@@ -202,6 +202,7 @@ th {
   background: radial-gradient(circle, #c79b69, #a75b04); /* Fondo de gradiente */
 }
 .dado:hover {
+  color: #ff0000;
   background: radial-gradient(circle, #a75b04, #7d6363)
 }
 
