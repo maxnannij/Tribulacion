@@ -33,6 +33,7 @@ body {
   font-size: 25px;
 }
 #nombre-personaje{
+font-family: 'Garamond', serif;
   text-align: right;
   }
 h1, h2 {
@@ -189,7 +190,8 @@ th {
 }
 
 .equipamiento th {
-  background-color: #f2f2f2; /* Color de fondo para las celdas de encabezado */
+  color: #000000;
+font-family: 'Garamond', serif;
 }
 /*************************************************************************************************************/
 .dado {
