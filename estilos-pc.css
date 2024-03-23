@@ -185,7 +185,7 @@ th {
 .equipamiento th, 
 .equipamiento td {
   padding: 8px; /* Espaciado interno de celdas */
-  border: 0px solid #000000; /* Borde de las celdas */
+  border: none; /* Borde de las celdas */
 }
 
 .equipamiento th {
