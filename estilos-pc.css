@@ -1,0 +1,280 @@
+body {
+  font-family: 'Garamond', serif;
+  background-color: #571e4b;
+  margin: 0;
+  padding: 0;
+}
+.containertodo {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border: 3px solid #000000;
+  border-radius: 10px;
+}
+/*************************************************************************************************************/
+.containernombre {
+  display: flex;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border: 3px solid #000000;
+  border-radius: 10px;
+  justify-content: space-between; /* Alinea los elementos al final del contenedor */
+  align-items: center;
+}
+
+.info label2 {
+  font-family: 'Uncial Antiqua', cursive;
+  display: block;
+  font-weight: bold;
+  margin-left: 25px;
+  font-size: 25px;
+}
+#nombre-personaje{
+  text-align: right;
+  }
+h1, h2 {
+  font-family: 'Uncial Antiqua', cursive;
+  text-align: center;
+}
+
+#clase, #nivel {
+  display: block;
+  align-items: right;
+  font-family: 'comic sans', cursive;
+  width: 50%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center; /* Alinea el texto a la derecha */
+  font-size: 20px;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238b4513"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: center;
+}
+/*************************************************************************************************************/
+.containerhabilidades {
+  display: flex;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border: 3px solid #000000;
+  border-radius: 10px;
+}
+
+.columna {
+  flex: 1;
+  padding: 0 10px;
+}
+
+labelc {
+  display: block;
+  text-align: center;
+  font-size: 25px;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 1px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+select {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input[type="number"],
+input[type="text"] {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#add-item {
+  display: block;
+  text-align: center;
+  font-family: 'Uncial Antiqua', cursive;
+  color: #8b4513;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+#add-item:hover {
+  text-decoration: underline;
+}
+#remove-item {
+  display: block;
+  text-align: center;
+  font-family: 'Uncial Antiqua', cursive;
+  color: #8b4513;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+#remove-item:hover {
+  text-decoration: underline;
+}
+
+.remove-item {
+  display: block;
+  text-align: center;
+  font-family: 'Uncial Antiqua', cursive;
+  color: #8b4513;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.remove-item:hover {
+  text-decoration: underline;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #8b4513;
+  color: #fff;
+}
+/*************************************************************************************************************/
+.equipamiento {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border: 3px solid #000000;
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #8b4513;
+  color: #fff;
+}
+/*************************************************************************************************************/
+.dado {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 50px;
+  cursor: pointer;
+  color: #ffffff; /* Color de la fuente (números) */
+  background: radial-gradient(circle, #c79b69, #a75b04); /* Fondo de gradiente */
+}
+.dado:hover {
+  background: radial-gradient(circle, #a75b04, #7d6363)
+}
+
+/* triangular */
+.dado-4 {
+  left: 70%;
+    top: 70%;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.trapezoid{
+    left: 70%;
+    top: 70%;
+    background: var(--orange);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)
+}
+/* cuadrado */
+.dado-6 {
+  background-color: #8b4513; /* Fondo cuadrado */
+}
+
+/* romboide */
+.dado-8 {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+/* romboide */
+.dado-10 {
+  clip-path:  polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+/* Estilos para los dados de 12 caras (heptágono) */
+.dado-12 {
+  clip-path: polygon(29% 0, 71% 0, 100% 29%, 100% 71%, 71% 100%, 29% 100%, 0 71%, 0 29%);
+}
+
+/* Estilos para los dados de 20 caras (octágono) */
+.dado-20 {
+  clip-path: polygon(50% 0, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+  }
+@keyframes rotacion {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+.rotar {
+  animation: rotacion 1s forwards;
+}
+.dados-container {
+  max-width: 800px;
+  background-color: #000;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+/*************************************************************************************************************************/
+button#guardar {
+  padding: 15px 30px; /* Aumentar padding para hacer el botón más grande */
+  font-size: 18px; /* Aumentar tamaño de fuente */
+  background-color: #8b4513; /* Color de fondo */
+  color: #fff; /* Color del texto */
+  border: none; /* Eliminar borde */
+  border-radius: 5px; /* Borde redondeado */
+  cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+  display: block; /* Convertir a bloque para centrar */
+  margin-left: 600px; /* poner a la izquieda */
+}
+
+button#guardar:hover {
+  background-color: #7d6363; /* Cambiar color de fondo al pasar el ratón */
+}
