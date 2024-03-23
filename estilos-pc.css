@@ -1,6 +1,6 @@
 body {
   font-family: 'Garamond', serif;
-  background-color: #571e4b;
+background: radial-gradient(circle, #571e4b, #000000);
   margin: 0;
   padding: 0;
 }
