@@ -165,6 +165,7 @@ th {
 }
 /*************************************************************************************************************/
 .equipamiento {
+    display: flex;
   max-width: 800px;
   margin: 20px auto;
   background-color: #fff;
