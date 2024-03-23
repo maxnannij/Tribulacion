@@ -165,7 +165,6 @@ th {
 }
 /*************************************************************************************************************/
 .equipamiento {
-    display: flex;
   max-width: 800px;
   margin: 20px auto;
   background-color: #fff;
@@ -174,20 +173,23 @@ th {
   border-radius: 10px;
 }
 
-table {
-  width: 70%;
-  border-collapse: collapse;
+.equipamiento h2 {
+  text-align: center; /* Centrar el título */
 }
 
-th, td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+.equipamiento table {
+  width: 100%; /* Ajustar la tabla al ancho del contenedor */
+  border-collapse: collapse; /* Colapsar los bordes de la tabla */
 }
 
-th {
-  background-color: #8b4513;
-  color: #fff;
+.equipamiento th, 
+.equipamiento td {
+  padding: 8px; /* Espaciado interno de celdas */
+  border: 1px solid #000000; /* Borde de las celdas */
+}
+
+.equipamiento th {
+  background-color: #f2f2f2; /* Color de fondo para las celdas de encabezado */
 }
 /*************************************************************************************************************/
 .dado {
