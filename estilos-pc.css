@@ -255,7 +255,7 @@ th {
 }
 .dados-container {
   max-width: 800px;
-  background-color: #000;
+  background: radial-gradient(70% 80%, #ffffff, #000000);
   border: 2px solid #fff;
   border-radius: 10px;
   position: fixed;
