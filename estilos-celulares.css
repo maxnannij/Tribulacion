@@ -14,26 +14,24 @@ background: radial-gradient(95% 1000%, #ca40ac, #000000);
   }
 .containernombre {
   font-family: 'Uncial Antiqua', cursive;
-  font-size: 80%;
+  font-size: 100%;
   display: flex;
-  margin: 2% auto; /* Ajusta el margen al 5% del ancho del contenedor padre */
+  margin: 2% auto; 
   background-color: #fff;
-  padding: 2%; /* Ajusta el padding al 2% del ancho del contenedor */
-  border: 2px solid #000000; /* Ajusta el grosor del borde al 0.3% del ancho del contenedor */
-  border-radius: 22px; /* Ajusta el radio de borde al 1% del ancho del contenedor */
+  padding: 2%;
+  border: 2px solid #000000; 
+  border-radius: 22px; 
   justify-content: space-between;
   align-items: center;
   position: relative;
-   top: 19px; /* Lo colocamos en la parte superior de la ventana */
+  top: 19px; /* Lo colocamos en la parte superior de la ventana */
  transform: translateX(-50%); /* Corregimos su posición para centrarlo correctamente */
   width: 25%; /* Establece el ancho del contenedor al 30% del ancho del contenedor padre */
-  height: 10px; /* Establece la altura del contenedor al 2% del alto del contenedor padre */
+  height: 40px; /* Establece la altura del contenedor al 2% del alto del contenedor padre */
 }
 
 .containerclase, .containernivel {
-  font-family: 'Uncial Antiqua', cursive;
-  font-size: 100%;
-  display: flex;
+    display: flex;
   margin: auto; /* Ajusta el margen al 5% del ancho del contenedor padre */
   background-color: #fff;
   padding: 2%; /* Ajusta el padding al 2% del ancho del contenedor */
@@ -48,14 +46,18 @@ background: radial-gradient(95% 1000%, #ca40ac, #000000);
   height: 25px; /* Establece la altura del contenedor al 2% del alto del contenedor padre */
 }
 .info labelclase,labelnivel {
+  font-family: 'Uncial Antiqua', cursive;
+  font-size: 25px;
   position: absolute;
   right:35%;
   top:2%;
 }
-#clase, #nivelimput {position: absolute;
+#clase, #nivelimput {
+  font-family: 'Uncial Antiqua', cursive;
+  font-size: 100%;
+  position: absolute;
   right:25%;
   bottom:5%;
   width: 50%;
   height: 40%;
   text-align: center;}
-
