@@ -1,161 +1,62 @@
 @media screen and (max-width: 767px) {
 body {
   font-family: 'Garamond', serif;
-  background-color: #571e4b;
-  margin: 0;
-  padding: 0;
-}
-
-.containertodo {
-  max-width: 90%; /* Cambiado para ocupar el 90% del ancho de la pantalla */
-  margin: 20px auto;
-  background-color: #fff;
-  padding: 20px;
-  border: 3px solid #000000;
-  border-radius: 10px;
-}
-
+background: radial-gradient(95% 1000%, #ca40ac, #000000);
+ }
+.container {
+  width:100%;
+  height:100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999; /* Asegura que el contenedor esté en la parte superior */
+  /* Otros estilos según tus necesidades */
+  }
 .containernombre {
+  font-family: 'Uncial Antiqua', cursive;
+  font-size: 80%;
   display: flex;
-  flex-direction: column; /* Cambiado a columna para dispositivos móviles */
-  max-width: 90%; /* Cambiado para ocupar el 90% del ancho de la pantalla */
-  margin: 20px auto;
+  margin: 2% auto; /* Ajusta el margen al 5% del ancho del contenedor padre */
   background-color: #fff;
-  padding: 20px;
-  border: 3px solid #000000;
-  border-radius: 10px;
+  padding: 2%; /* Ajusta el padding al 2% del ancho del contenedor */
+  border: 2px solid #000000; /* Ajusta el grosor del borde al 0.3% del ancho del contenedor */
+  border-radius: 22px; /* Ajusta el radio de borde al 1% del ancho del contenedor */
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+   top: 19px; /* Lo colocamos en la parte superior de la ventana */
+ transform: translateX(-50%); /* Corregimos su posición para centrarlo correctamente */
+  width: 25%; /* Establece el ancho del contenedor al 30% del ancho del contenedor padre */
+  height: 10px; /* Establece la altura del contenedor al 2% del alto del contenedor padre */
 }
 
-.info label2 {
+.containerclase, .containernivel {
   font-family: 'Uncial Antiqua', cursive;
-  display: block;
-  font-weight: bold;
-  margin-left: 0; /* Eliminado margen izquierdo */
-  margin-bottom: 10px; /* Añadido margen inferior */
-  font-size: 25px;
-  text-align: center; /* Centrado de etiquetas */
-}
-
-#nombre-personaje {
-  text-align: center; /* Centrado de texto */
-}
-
-h1,
-h2 {
-  font-family: 'Uncial Antiqua', cursive;
-  text-align: center;
-}
-
-#clase,
-#nivel {
-  display: block;
-  font-family: 'comic sans', cursive;
-  width: 90%; /* Cambiado para ocupar el 90% del ancho de la pantalla */
-  margin-bottom: 10px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  text-align: center;
-  font-size: 20px;
-}
-
-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238b4513"><path d="M7 10l5 5 5-5z"/></svg>');
-  background-repeat: no-repeat;
-  background-position-x: 100%;
-  background-position-y: center;
-  width: 100%; /* Cambiado para ocupar el 100% del ancho del contenedor */
-}
-
-.containerhabilidades {
-  max-width: 90%; /* Cambiado para ocupar el 90% del ancho de la pantalla */
-  margin: 20px auto;
+  font-size: 100%;
+  display: flex;
+  margin: auto; /* Ajusta el margen al 5% del ancho del contenedor padre */
   background-color: #fff;
-  padding: 20px;
-  border: 3px solid #000000;
-  border-radius: 10px;
+  padding: 2%; /* Ajusta el padding al 2% del ancho del contenedor */
+  border: 2px solid #000000; /* Ajusta el grosor del borde al 0.3% del ancho del contenedor */
+  border-radius: 22px; /* Ajusta el radio de borde al 1% del ancho del contenedor */
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+   top: 50px; /* Lo colocamos en la parte superior de la ventana */
+ transform: translateX(50%) translateY(-200%); /* Corregimos su posición para centrarlo correctamente */
+  width: 15%; /* Establece el ancho del contenedor al 30% del ancho del contenedor padre */
+  height: 25px; /* Establece la altura del contenedor al 2% del alto del contenedor padre */
 }
+.info labelclase,labelnivel {
+  position: absolute;
+  right:35%;
+  top:2%;
+}
+#clase, #nivelimput {position: absolute;
+  right:25%;
+  bottom:5%;
+  width: 50%;
+  height: 40%;
+  text-align: center;}
 
-.columna {
-  padding: 0 10px;
-}
-
-labelc {
-  font-size: 25px;
-  margin-bottom: 10px; /* Añadido margen inferior */
-  text-align: center;
-}
-
-input[type="number"],
-input[type="text"] {
-  width: 100%; /* Cambiado para ocupar el 100% del ancho del contenedor */
-  margin-bottom: 10px;
-}
-
-#add-item,
-#remove-item,
-.remove-item {
-  text-align: center;
-  font-family: 'Uncial Antiqua', cursive;
-  color: #8b4513;
-  text-decoration: none;
-  margin-top: 10px;
-  display: block; /* Convertido a bloque para centrar */
-}
-
-#add-item:hover,
-#remove-item:hover,
-.remove-item:hover {
-  text-decoration: underline;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-th {
-  background-color: #8b4513;
-  color: #fff;
-}
-
-.equipamiento {
-  max-width: 90%; /* Cambiado para ocupar el 90% del ancho de la pantalla */
-  margin: 20px auto;
-  background-color: #fff;
-  padding: 20px;
-  border: 3px solid #000000;
-  border-radius: 10px;
-}
-.dado {
-  display: inline-block;
-  width: 30px; /* Reducir el tamaño del dado para dispositivos móviles */
-  height: 30px; /* Reducir el tamaño del dado para dispositivos móviles */
-  margin: 5px; /* Reducir el espacio entre los dados para dispositivos móviles */
-  text-align: center;
-  font-weight: bold;
-  line-height: 30px; /* Reducir el tamaño del dado para dispositivos móviles */
-  cursor: pointer;
-  color: #ffffff; /* Color de la fuente (números) */
-  background: radial-gradient(circle, #c79b69, #a75b04); /* Fondo de gradiente */
-}
-
-/* Cambios específicos para el botón de guardar en dispositivos móviles */
-button#guardar {
-  padding: 10px 20px; /* Ajustar el padding para hacer el botón más compacto en dispositivos móviles */
-  font-size: 14px; /* Reducir el tamaño de la fuente para dispositivos móviles */
-  margin: 10px auto; /* Centrar el botón en dispositivos móviles */
-  display: block;
-}
-}
