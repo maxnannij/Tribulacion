@@ -4,11 +4,14 @@
   <title>Hoja de Personaje</title>                                                   <!-- titulo-->
  <link rel="stylesheet" media="screen and (max-width: 767px)" href="estilos-celulares.css"><!-- referencias-->
 <link rel="stylesheet" href="estilos-pc.css"  media="screen and (min-width: 730px)">
-         <div class="containertodo">                                                   <!-- nombre-->
-      <div class="containernombre">
-    <h1 contenteditable="true" id="nombre-personaje">Nombre </h1>
+         <div class="container">
+           <div class="containernombre">
+    <h1 contenteditable="true" id="nombre-personaje">Nombrex </h1>
+    </div> 
+    <div class="containerclase">
     <div class="info">
-      <label2 for="clase">Clase:</label2>                                              <!-- clase-->
+      <labelclase for="clase">Clase:</labelclase> 
+      <!-- clase-->
       <select id="clase" name="clase" required>
         <option value="">Elije</option>
         <option value="Arquero">Arquero</option>
@@ -18,10 +21,12 @@
         <option value="Sacerdote">Sacerdote</option>
         <option value="Salmista">Salmista</option>
       </select>
-      <label2 for="nivel">Nivel:</label2>                                              <!-- Nivel-->
-      <input type="number" id="nivel" name="nivel" min="1"value="1" required>
-      
       </div>
+      </div> 
+ <div class="containernivel">
+ <labelnivel for="nivel">Nivel:</labelnivel>
+ <input type="number" id="nivelimput" name="nivel" min="1"value="1" required>
+            </div>
         </div>
        <iv class="containerhabilidades">                                              <!-- habilidades-->
     <div class="columna">
