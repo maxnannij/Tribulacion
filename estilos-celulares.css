@@ -1,99 +1,101 @@
 body {
   font-family: 'Garamond', serif;
-background: radial-gradient(95% 1000%, #ca40ac, #000000);
- }
+  background: radial-gradient(95% 1000%, #ca40ac, #000000);
+}
+
 .container {
-  width:100%;
-  height:100%;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 9999; /* Asegura que el contenedor esté en la parte superior */
-  /* Otros estilos según tus necesidades */
-  }
+  z-index: 9999;
+}
+
 .containernombre {
   font-family: 'Uncial Antiqua', cursive;
-  font-size: 100%;
-  display: box;
-  position: absolute;
-  right:50%;
-  top: 50px;
-  background-color: #fff;
-  padding: 2%;
-  border: 2px solid #000000; 
-  border-radius: 22px; 
-  text-align: center;
+  font-size: 2vw;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  width: 150px;
-  height: 15px; 
+  position: absolute;
+  right: 50vw;
+  top: 5vh;
+  background-color: #fff;
+  padding: 2vw;
+  border: 0.2vw solid #000000;
+  border-radius: 2.2vw;
+  width: 25vw;
+  height: 4.5vh;
+  text-align: center;
 }
-#nombre-personaje{
-  text-align: center; /* Para centrar horizontalmente */
-  line-height: 5px;
+
+#nombre-personaje {
+  text-align: center;
+  line-height: ;
 }
+
+.containerclase, .containernivel {
+  display: block;
+  position: absolute;
+  left: 50vw;
+  background-color: #fff;
+  padding: 2vw;
+  border: 0.2vw solid #000000;
+  border-radius: 2.2vw;
+  width: 25vw;
+  height: 5vh;
+}
+
 .containerclase {
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 3%;
-  background-color: #fff;
-  padding: 2%; /* Ajusta el padding al 2% del ancho del contenedor */
-  border: 2px solid #000000; 
-  border-radius: 22px; 
-  width: 15%; 
-  height: 25px; 
+  top: 3vh;
 }
+
 .containernivel {
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 10%;
-  background-color: #fff;
-  padding: 2%; /* Ajusta el padding al 2% del ancho del contenedor */
-  border: 2px solid #000000; 
-  border-radius: 22px; 
-  width: 15%; 
-  height: 25px; 
+  top: 11vh;
 }
-.info labelclase,labelnivel {
+
+.info labelclase, .info labelnivel {
   font-family: 'Uncial Antiqua', cursive;
-  font-size: 25px;
+  font-size: 2.5vw;
   position: absolute;
-  right:35%;
-  top:2%;
+  right: 35vw;
+  top: 2vh;
 }
+
 #clase, #nivelimput {
-  display:none;
+  display: none;
   font-family: 'Uncial Antiqua', cursive;
-  font-size: 100%;
+  font-size: 5vw;
   position: absolute;
-  right:25%;
-  bottom:1%;
-  width: 50%;
-  height: 40%;
-  text-align: center;}
-.containervidabarra{
-  display: block;
-  background: linear-gradient(90deg, #ff0000 90%, #000000 10%);
-  padding: 0%; 
-  border: 4px solid #000000; /* Ajusta el grosor del borde  */
-  border-radius: 22px; /* borde redondeado */
-  position: static;
-  top: 5%;
-  left: 20%;
-  width: 50%; 
-  height: 25px;
-  
+  right: 25vw;
+  bottom: 1vh;
+  width: 50vw;
+  height: 4vh;
+  text-align: center;
 }
+
+.containervidabarra {
+  background: linear-gradient(90deg, #ff0000 90%, #000000 10%);
+  padding: 0;
+  border: 0.4vw solid #000000;
+  border-radius: 2.2vw;
+  position: absolute;
+  top: 20vh;
+  left: 20vw;
+  width: 50vw;
+  height: 2.5vh;
+}
+
 .vidatotal {
-  display: box;
   background-color: #fff;
-  padding: 2%; /* Ajusta el padding al 2% del ancho del contenedor */
-  border: 2px solid #000000; 
-  border-radius: 22px; /* Ajusta el radio de borde al 1% del ancho del contenedor */
+  padding: 2vw;
+  border: 0.2vw solid #000000;
+  border-radius: 2.2vw;
   position: relative;
-  top: 50px; /* Lo colocamos en la parte superior de la ventana */
-  width: 15%; /* Establece el ancho del contenedor al 30% del ancho del contenedor padre */
-  height: 25px; /* Establece la altura del contenedor al 2% del alto del contenedor padre */
+  top: 5vh;
+  width: 15vw;
+  height: 2.5vh;
 }
