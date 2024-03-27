@@ -104,6 +104,20 @@ background: radial-gradient(95% 90%, #ca40ac, #000000);
   top: 92px;
   width: 114px;
 }
+.frame-1 .x1-x3apY8 {
+  background-color: transparent;
+  color: var(--black);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 12px;
+  line-height: 24px;
+  position: absolute;
+  text-align: left;
+  top: 2px;
+  white-space: nowrap;
+  width: auto;
+}
 .frame-1 .nnivel {
   align-items: center;
   background-color: var(--white-color);
@@ -131,7 +145,7 @@ background: radial-gradient(95% 90%, #ca40ac, #000000);
   width: 263px;
 }
 .frame-1 .barradevida {
-  background: linear-gradient(90deg, rgb(254.73437905311584, 0, 0) 0%, rgb(255, 255, 255) 100%);
+  background: linear-gradient(90deg, rgb(254.73437905311584, 0, 0) 100%, rgb(255, 255, 255) 100%);
   background-color: transparent;
   border: 2px solid;
   border-color: var(--black);
@@ -341,28 +355,126 @@ text-align: center;
   top: 9px;
   width: 45px;
 }
-.containerhabilidades {
+.containerinventario {
+  background-color: #ffff;
+  border: 2px solid;
+  border-color: var(--black);
+  border-radius: 8px;
+  box-shadow: 0px 1px 2px #0000000d;
   position: absolute;
-  display: box;
-  background-color: #fff;
-  height: 600px;
-  width: 400px;
-  margin: 0 auto;
-  top: 60px;
-  border: 3px solid #000000;
-  border-radius: 10px;
+  height: 280px;
+  left: 110px;
+  top: 360px;
+  width: 500px;
 }
-input[type="number"],
-input[type="text"] {
+h2{
+  text-align: center;
+}
+input[type="number"], input[type="text"], input[type="text2."],
+input[type="text2"], input[type="text22"], input[type="number2"],
+input[type="text3"], input[type="text23"], input[type="number3"],
+input[type="text4"], input[type="text24"], input[type="number4"],
+input[type="text4"], input[type="text24"], input[type="number5"],
+input[type="text5"], input[type="text25"] {
   display: block;
-  width: 40px;
   margin-bottom: 10px;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
 }
-/*************************************************************************************************************************/
+input[type="number"]{
+  width: 60px;
+  position: absolute;
+  left: 200px;
+  top: 60px;
+ }
+input[type="text"]{
+  width: 120px;
+  position: absolute;
+  left: 10px;
+  top: 60px;
+ }
+input[type="text2."]{
+  width: 160px;
+  position: absolute;
+  left: 280px;
+  top: 60px;
+ }
+#item-counter2{
+  width: 60px;
+  position: absolute;
+  left: 200px;
+  top: 100px;
+ }
+input[type="text2"]{
+  width: 120px;
+  position: absolute;
+  left: 10px;
+  top: 100px;
+ }
+input[type="text22"]{
+  width: 160px;
+  position: absolute;
+  left: 280px;
+  top: 100px;
+ }
+#item-counter3{
+  width: 60px;
+  position: absolute;
+  left: 200px;
+  top: 140px;
+ }
+input[type="text3"]{
+  width: 120px;
+  position: absolute;
+  left: 10px;
+  top: 140px;
+ }
+input[type="text23"]{
+  width: 160px;
+  position: absolute;
+  left: 280px;
+  top: 140px;
+ }
+#item-counter4{
+  width: 60px;
+  position: absolute;
+  left: 200px;
+  top: 180px;
+ }
+input[type="text4"]{
+  width: 120px;
+  position: absolute;
+  left: 10px;
+  top: 180px;
+ }
+input[type="text24"]{
+  width: 160px;
+  position: absolute;
+  left: 280px;
+  top: 180px;
+ }
+#item-counter5{
+  width: 60px;
+  position: absolute;
+  left: 200px;
+  top: 220px;
+ }
+input[type="text5"]{
+  width: 120px;
+  position: absolute;
+  left: 10px;
+  top: 220px;
+ }
+input[type="text25"]{
+  width: 160px;
+  position: absolute;
+  left: 280px;
+  top: 220px;
+ }
+
+/**********************************************************************************************************************
 .dado {
   display: inline-block;
   width: 50px;
@@ -372,15 +484,14 @@ input[type="text"] {
   font-weight: bold;
   line-height: 50px;
   cursor: pointer;
-  color: #ffffff; /* Color de la fuente (números) */
-  background: radial-gradient(circle, #c79b69, #a75b04); /* Fondo de gradiente */
+  color: #ffffff;
+  background: radial-gradient(circle, #c79b69, #a75b04); 
 }
 .dado:hover {
   color: #ff0000;
   background: radial-gradient(circle, #a75b04, #7d6363)
 }
 
-/* triangular */
 .dado-4 {
   left: 70%;
     top: 70%;
@@ -392,27 +503,27 @@ input[type="text"] {
     background: var(--orange);
     clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)
 }
-/* cuadrado */
+
 .dado-6 {
-  background-color: #8b4513; /* Fondo cuadrado */
+  background-color: #8b4513;
 }
 
-/* romboide */
+
 .dado-8 {
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
-/* romboide */
+
 .dado-10 {
   clip-path:  polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
-/* Estilos para los dados de 12 caras (heptágono) */
+
 .dado-12 {
   clip-path: polygon(29% 0, 71% 0, 100% 29%, 100% 71%, 71% 100%, 29% 100%, 0 71%, 0 29%);
 }
 
-/* Estilos para los dados de 20 caras (octágono) */
+
 .dado-20 {
   clip-path: polygon(50% 0, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
   }
@@ -439,13 +550,13 @@ input[type="text"] {
 }
 
 button#guardar {
-  padding: 15px 30px; /* Aumentar padding para hacer el botón más grande */
-  font-size: 18px; /* Aumentar tamaño de fuente */
-  background-color: #8b4513; /* Color de fondo */
-  color: #fff; /* Color del texto */
-  border: none; /* Eliminar borde */
-  border-radius: 5px; /* Borde redondeado */
-  cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+  padding: 15px 30px; 
+  font-size: 18px; 
+  background-color: #8b4513; 
+  color: #fff; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
   position: absolute;
   bottom: 22px;
   right: 40px;
@@ -453,5 +564,6 @@ button#guardar {
 }
 
 button#guardar:hover {
-  background-color: #7d6363; /* Cambiar color de fondo al pasar el ratón */
+  background-color: #7d6363; 
 }
+***
