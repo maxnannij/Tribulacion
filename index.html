@@ -3,7 +3,7 @@
   <meta charset="UTF-8">
   <title>Hoja de Personaje</title> 
         <link rel="stylesheet"  href="estilos-celulares.css">
-   <div class="container-center-horizontal">
+  <div class="container-center-horizontal">
       <div class="frame-1  " data-id="2601:316">
          <div class="contenedorclase input" data-id="clase">
         <div class="x04-dropdown-WxtALn">
@@ -64,7 +64,17 @@
 </div>
 <div class="modagilidad input" data-id="2601:497">
   <div class="labelmodagilidad label small-text" data-id="2601:498">Mod</div>
-          </div>
+  <div class="containerhabilidades">
+        <h2>Inventario</h2>
+      <ul id="inventario-list">
+        <li>
+          <input type="text" class="item-input" placeholder="Nombre del Item">
+          <input type="number" class="item-counter" min="0" value="0">
+          <a href="#" id="remove-item"class="remove-item add-item">Eliminar</a>
+        </li>
+      </ul>
+        <a href="#" id="add-item">Agregar Item</a>
+                 </div></div>
     <button id="guardar">Guardar</button>
   </div>
 </div>
