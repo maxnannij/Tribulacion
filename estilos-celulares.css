@@ -341,6 +341,27 @@ text-align: center;
   top: 9px;
   width: 45px;
 }
+.containerhabilidades {
+  position: absolute;
+  display: box;
+  background-color: #fff;
+  height: 600px;
+  width: 400px;
+  margin: 0 auto;
+  top: 60px;
+  border: 3px solid #000000;
+  border-radius: 10px;
+}
+input[type="number"],
+input[type="text"] {
+  display: block;
+  width: 40px;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
 /*************************************************************************************************************************/
 .dado {
   display: inline-block;
