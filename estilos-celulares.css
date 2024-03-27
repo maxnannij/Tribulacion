@@ -4,93 +4,340 @@ background: radial-gradient(95% 90%, #ca40ac, #000000);
   margin: 0;
   padding: 0;
 }
-.containertodo {
-  display:grid;
-  grid-template-columns: auto 1fr;
-  grid-gap: 10px;
-  width: 800px;
-  margin: 20px auto;
-  background-color: #fff;
-  padding: 20px;
-  border: 3px solid #000000;
-  border-radius: 10px;
-}
-.containernombre {
-  display: flex;
-    justify-content: space-between; /* Alinea los elementos al inicio y al final del contenedor */
-  width: 500px;
-  height:20px;
-  margin-right: 20px;
-  margin-top: 60px;
-  background-color: #fff;
-  padding: 20px;
-  border: 3px solid #000000;
-  border-radius: 10px;
-  justify-content: center; /* Alinea horizontalmente los elementos al centro */
-  align-items: center; /* Alinea verticalmente los elementos al centro */
-  text-align: left; /* Justifica el texto al centro */
-  grid-column: 1 / span 2;
-}
-.info {
-  display: flex;
-    flex-direction: column; /* Coloca los elementos uno encima del otro */  grid-column: 3 / span 2;
-    width: 140px;
-    height: 140px;
-    background-color: #fff;
-    padding: 20px;
-    border: 3px solid #000000;
-    border-radius: 10px;
-    justify-content: center; /* Alinea horizontalmente los elementos al centro */
-    align-items: center; /* Alinea verticalmente los elementos al centro */
-    text-align: center; /* Justifica el texto al centro */
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-.nombre {
-  text-align: left;
-  margin-bottom: 10px; /* Añade un espacio entre el nombre y las otras informaciones */
-}
-.clase-nivel {
-  text-align: right;
-  }
-#clase, #nivel {
-  display: block;
-  align-items: right;
-  font-family: 'comic sans', cursive;
-  width: 140px;
-  margin-bottom: 10px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+* {
   box-sizing: border-box;
-  text-align: center; /* Alinea el texto a la derecha */
-  font-size: 20px;
+} .small-text {
+    font-family: 'Uncial Antiqua', cursive;
+
 }
-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238b4513"><path d="M7 10l5 5 5-5z"/></svg>');
-  background-repeat: no-repeat;
-  background-position-x: 100%;
-  background-position-y: center;
-}
-.barradevida{
-  display:box;
-  width:800px;
-  height: 10px;
-  border: 3px solid #000000;
-  grid-column: 1 / span 2;
-  
+.container-center-vertical {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  pointer-events: none;
 }
 
-.vidatotal {
-  background-color: #fff;
-  padding: 2vw;
-  border: 0.2vw solid #000000;
-  border-radius: 2.2vw;
+.container-center-vertical > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+.frame-1 {
+  background: radial-gradient(95% 90%, #ca40ac, #000000);
+  height: 1600px;
+  overflow: hidden;
+  overflow-x: hidden;
   position: relative;
-  top: 5vh;
-  width: 15vw;
-  height: 2.5vh;
+  width: 720px;
+  border: 2px solid #000000;
+  border-radius: 20px;
+}
+.input{
+  background-color: #ffff;
+  border: 2px solid;
+  border-color: var(--black);
+  border-radius: 8px;
+  box-shadow: 0px 1px 2px #0000000d;
+  position: absolute;
+}
+.frame-1 .contenedorclase {
+  height: 60px;
+  left: 429px;
+  top: 32px;
+  width: 114px;
+}
+.frame-1 .labelclase {
+  font-weight: 500;
+  font-family: 'Uncial Antiqua', cursive;
+  height: auto;
+  left: 31px;
+  line-height: 24px;
+  position: absolute;
+  text-align: right;
+  top: 1px;
+  width: 46px;
+}
+.frame-1 .x04-dropdown-WxtALn {
+    border-radius: 8px;
+  height: 20px;
+  left: 16px;
+  position: absolute;
+  top: 33px;
+  width: 81px;
+}
+.frame-1 .contenedornombre {
+  align-items: flex-start;
+  display: flex;
+  gap: 8px;
+  left: 177px;
+  padding: 12px 16px;
+  top: 68px;
+  width: 252px;
+}
+.frame-1 .labelnombre {
+  font-family: 'Uncial Antiqua', cursive;
+  font-weight: 500;
+  line-height: 24px;
+  margin-right: -43.00px;
+  margin-top: -2.00px;
+  position: relative;
+  text-align: left;
+  width: 200px;
+}
+
+.frame-1 .contenedornivel {
+  height: 60px;
+  left: 429px;
+  top: 92px;
+  width: 114px;
+}
+.frame-1 .nnivel {
+  align-items: center;
+  background-color: var(--white-color);
+  border: 1px solid;
+  border-color: var(--black);
+  border-radius: 8px;
+  display: flex;
+  gap: 16px;
+  height: 30px;
+  left: 41px;
+  padding: 8px 16px;
+  position: absolute;
+  top: 29px;
+  width: 30px;
+}
+.frame-1 .labelnivel {
+  font-family: 'Uncial Antiqua', cursive;
+  font-weight: 500;
+  height: auto;
+  left: 37px;
+  line-height: 24px;
+  position: absolute;
+  text-align: left;
+  top: 1px;
+  width: 263px;
+}
+.frame-1 .barradevida {
+  background: linear-gradient(90deg, rgb(254.73437905311584, 0, 0) 0%, rgb(255, 255, 255) 100%);
+  background-color: transparent;
+  border: 2px solid;
+  border-color: var(--black);
+  border-radius: 18px;
+  height: 18px;
+  left: 108px;
+  position: absolute;
+  top: 168px;
+  width: 503px;
+}
+.frame-1 .vida{
+  height: 90px;
+  left: 148px;
+  top: 211px;
+  width: 90px;
+}
+.frame-1 .labelvida {
+  font-weight: 500;
+  height: auto;
+  left: 22px;
+  line-height: 24px;
+  position: absolute;
+  text-align: center;
+  top: 29px;
+  width: 45px;
+}
+.frame-1 .labelbasevida {
+  font-weight: 500;
+  height: auto;
+  left: 1px;
+  line-height: 24px;
+  position: absolute;
+  text-align: center;
+  top: 9px;
+  width: 45px;
+}
+.frame-1 .basevida {
+  height: 45px;
+  left: 147px;
+  top: 291px;
+  width: 45px;
+}
+.frame-1 .labelmodvida {
+  font-weight: 500;
+  height: auto;
+  left: 1px;
+  line-height: 24px;
+  position: absolute;
+text-align: center;
+  top: 9px;
+  width: 45px;
+}
+
+.frame-1 .modvida {
+  height: 45px;
+  left: 192px;
+  top: 291px;
+  width: 45px;
+}
+.frame-1 .fuerza {
+  height: 90px;
+  left: 259px;
+  top: 211px;
+  width: 90px;
+}
+.frame-1 .labelfuerza {
+  font-weight: 500;
+  height: auto;
+  left: 12px;
+  line-height: 24px;
+  position: absolute;
+text-align: center;
+  top: 29px;
+  width: 66px;
+}
+.frame-1 .basefuerza {
+  height: 45px;
+  left: 259px;
+  top: 291px;
+  width: 45px;
+}
+.frame-1 .labelbasefuerza {
+  font-weight: 500;
+  height: auto;
+  left: 1px;
+  line-height: 24px;
+  position: absolute;
+text-align: center;
+  top: 9px;
+  width: 45px;
+}
+.frame-1 .modfuerza {
+  height: 45px;
+  left: 304px;
+  top: 291px;
+  width: 45px;
+}
+.frame-1 .labelmodfuerza {
+  font-weight: 500;
+  height: auto;
+  left: 1px;
+  line-height: 24px;
+  position: absolute;
+ text-align: center;
+  top: 9px;
+  width: 45px;
+}
+.frame-1 .inteligencia {
+  height: 90px;
+  left: 370px;
+  top: 211px;
+  width: 90px;
+}
+.frame-1 .labelinteligencia {
+  font-weight: 400;
+  font-size: 15px;
+  height: auto;
+  left: -2px;
+  line-height: 24px;
+  position: absolute;
+  text-align: center;
+  top: 29px;
+  width: 92px;
+}
+.frame-1 .baseinteligencia {
+  height: 45px;
+  left: 370px;
+  top: 291px;
+  width: 45px;
+}
+.frame-1 .labelbaseinteligencia {
+  font-weight: 500;
+  height: auto;
+  left: 1px;
+  line-height: 24px;
+  position: absolute;
+  text-align: center;
+  top: 9px;
+  width: 45px;
+}
+.frame-1 .modinteligencia {
+  height: 45px;
+  left: 415px;
+  top: 291px;
+  width: 45px;
+}
+
+.frame-1 .labelmodinteligencia {
+  font-weight: 500;
+  height: auto;
+  left: 1px;
+  line-height: 24px;
+  position: absolute;
+  text-align: center;
+  top: 9px;
+  width: 45px;
+}
+.frame-1 .x01-input-field-ByQNtS {
+  height: 90px;
+  left: 481px;
+  top: 211px;
+  width: 90px;
+}
+
+.frame-1 .label-mwQ7ey {
+  font-weight: 500;
+  height: auto;
+  left: 14px;
+  line-height: 24px;
+  position: absolute;
+  text-align: left;
+  top: 29px;
+  width: 83px;
+}
+.frame-1 .baseagilidad {
+  height: 45px;
+  left: 482px;
+  top: 291px;
+  width: 45px;
+}
+
+.frame-1 .labelbaseagilidad {
+  font-weight: 500;
+  height: auto;
+  left: 3px;
+  line-height: 24px;
+  position: absolute;
+  text-align: left;
+  top: 9px;
+  width: 45px;
+}
+
+.frame-1 .modagilidad {
+  height: 45px;
+  left: 527px;
+  top: 291px;
+  width: 45px;
+}
+
+.frame-1 .labelmodagilidad {
+  font-weight: 500;
+  height: auto;
+  left: 5px;
+  line-height: 24px;
+  position: absolute;
+  text-align: left;
+  top: 9px;
+  width: 45px;
 }
