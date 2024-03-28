@@ -3,20 +3,20 @@
   <meta charset="UTF-8">
   <title>Hoja de Personaje</title> 
         <link rel="stylesheet"  href="estilos-celulares.css">
-   <div class="container-center-horizontal">
-      <div class="frame-1  " data-id="2601:316">
-         <div class="contenedorclase input" data-id="clase">
+  <div class="container-center-horizontal">
+    <div class="frame-1  " data-id="2601:316">
+      <div class="contenedorclase input" data-id="clase">
         <div class="x04-dropdown-WxtALn">
-    <select id="clase" name="clase" required>
-      <option value="">Elije</option>
-      <option value="Arquero">Arquero</option>
-      <option value="Cruzado">Cruzado</option>
-      <option value="Paladin">Paladín</option>
-      <option value="Picaro">Pícaro</option>
-      <option value="Sacerdote">Sacerdote</option>
-      <option value="Salmista">Salmista</option>
-    </select>    
-          </div>
+          <select id="clase" name="clase" required>
+            <option value="">Elije</option>
+            <option value="Arquero">Arquero</option>
+            <option value="Cruzado">Cruzado</option>
+            <option value="Paladin">Paladín</option>
+            <option value="Picaro">Pícaro</option>
+            <option value="Sacerdote">Sacerdote</option>
+            <option value="Salmista">Salmista</option>
+          </select>
+        </div>
         <div class="labelclase label small-text" data-id="2601:326">Clase</div>
       </div>
       <div class="contenedornombre input" data-id="2601:323">
@@ -24,7 +24,7 @@
       </div>
       <div class="contenedornivel input" data-id="2601:327">
         <div class="nnivel" data-id="2601:363">
-        <div class="x1-x3apY8 presetsbody2" contenteditable="true" data-id="2601:365">1</div>
+          <div class="x1-x3apY8 presetsbody2" contenteditable="true" data-id="2601:365">1</div>
         </div>
         <div class="labelnivel label small-text" data-id="2601:328">Nivel</div>
       </div>
@@ -39,37 +39,37 @@
         <div class="labelmodvida label small-text" contenteditable="true" data-id="2601:485">Mod</div>
       </div>
       <div class="fuerza input" data-id="2601:475">
-  <div class="labelfuerza label small-text" contenteditable="true" data-id="2601:476">Fuerza</div>
-</div>
-<div class="inteligencia input" data-id="2601:477">
-  <div class="labelinteligencia label small-text" contenteditable="true" data-id="2601:478">Inteligencia</div>
-</div> 
-<div class="Agilidad input" data-id="2601:479">
-  <div class="labelAgilidad label small-text" contenteditable="true" data-id="2601:480">Agilidad</div>
-</div>
-<div class="basefuerza input" data-id="2601:487">
-  <div class="labelbasefuerza label small-text" contenteditable="true" data-id="2601:488">Base</div>
-</div> 
-<div class="modfuerza input" data-id="2601:489">
-  <div class="labelmodfuerza label small-text" contenteditable="true" data-id="2601:490">Mod</div>
-</div>
-<div class="baseinteligencia input" data-id="2601:491">
-  <div class="labelbaseinteligencia label small-text" data-id="2601:492">Base</div>
-</div>
-<div class="modinteligencia input" data-id="2601:493">
-  <div class="labelmodinteligencia label small-text" data-id="2601:494">Mod</div>
-</div>
-<div class="baseagilidad input" data-id="2601:495">
-  <div class="labelbaseagilidad label small-text" data-id="2601:496">Base</div>
-</div>
-<div class="modagilidad input" data-id="2601:497">
-  <div class="labelmodagilidad label small-text" data-id="2601:498">Mod</div></div>
-  <div class="containerinventario">
+        <div class="labelfuerza label small-text" contenteditable="true" data-id="2601:476">Fuerza</div>
+      </div>
+      <div class="inteligencia input" data-id="2601:477">
+        <div class="labelinteligencia label small-text" contenteditable="true" data-id="2601:478">Inteligencia</div>
+      </div>
+      <div class="Agilidad input" data-id="2601:479">
+        <div class="labelAgilidad label small-text" contenteditable="true" data-id="2601:480">Agilidad</div>
+      </div>
+      <div class="basefuerza input" data-id="2601:487">
+        <div class="labelbasefuerza label small-text" contenteditable="true" data-id="2601:488">Base</div>
+      </div>
+      <div class="modfuerza input" data-id="2601:489">
+        <div class="labelmodfuerza label small-text" contenteditable="true" data-id="2601:490">Mod</div>
+      </div>
+      <div class="baseinteligencia input" data-id="2601:491">
+        <div class="labelbaseinteligencia label small-text" data-id="2601:492">Base</div>
+      </div>
+      <div class="modinteligencia input" data-id="2601:493">
+        <div class="labelmodinteligencia label small-text" data-id="2601:494">Mod</div>
+      </div>
+      <div class="baseagilidad input" data-id="2601:495">
+        <div class="labelbaseagilidad label small-text" data-id="2601:496">Base</div>
+      </div>
+      <div class="modagilidad input" data-id="2601:497">
+        <div class="labelmodagilidad label small-text" data-id="2601:498">Mod</div>
+      </div>
+      <div class="containerinventario">
         <h2>Inventario</h2>
-      <ul id="inventario-list">
-        <li>
+        <ul id="inventario-list">
           <input type="text" class="item-input" placeholder="Nombre del Item">
-          <input type="number" class="item-counter" min="0" value="0">
+          <input type="number" id="numberinv" class="item-counter" min="0" value="0">
           <input type="text2." class="item-input" placeholder="funcion">
           <input type="text2" class="item-input" placeholder="Nombre del Item">
           <input type="number" class="item-counter2" id="item-counter2" min="0" value="0">
@@ -83,27 +83,89 @@
           <input type="text5" class="item-input" placeholder="Nombre del Item">
           <input type="number" class="item-counter5" id="item-counter5" min="0" value="0">
           <input type="text25" class="item-input" placeholder="funcion">
-           </div></div>
-    <button id="guardar">Guardar</button> 
-  </div>
-</div>
-  <iv class="dados-container">
-<iv class="dados-container">
-    <div class="dados">
-        <div class="dado dado-4" data-caras="4">D4</div>
-        <div class="dado dado-6" data-caras="6">D6</div>
-        <div class="dado dado-8" data-caras="8">D8</div>
-        <div class="dado dado-10" data-caras="10">D10</div>
-        <div class="dado dado-12" data-caras="12">D12</div>
-        <div class="dado dado-20" data-caras="20">D20</div>
- </div>
-    <script src="script.js"></script>
-  <script src="Ejecuciones.js" defer></script>
-  <!-- Asegúrate de especificar la ruta correcta al archivo script.js -->
-</body>
-</html>
-    <script src="script.js"></script>
-  <script src="Ejecuciones.js" defer></script>
-  <!-- Asegúrate de especificar la ruta correcta al archivo script.js -->
-</body>
+      </div>
+      <div class="equipamiento">
+        <h2>Equipo</h2>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Nombre</th>
+              <th>Vida</th>
+              <th>Fuerza</th>
+              <th>Inteligencia</th>
+              <th>Agilidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Casco</td>
+              <td><input type="text" id="casco-nombre" class="nombre-input" placeholder="Nombre"></td>
+              <td><input type="number" id="casco-vida" class="vida-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="casco-fuerza" class="ataque-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="casco-inteligencia" class="inteligencia-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="casco-agilidad" class="agilidad-input" placeholder="0" style="width: 40px;"></td>
+            </tr>
+            <tr>
+              <td>Pecho</td>
+              <td><input type="text" id="pecho-nombre" class="nombre-input" placeholder="Nombre"></td>
+              <td><input type="number" id="pecho-vida" class="vida-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="pecho-fuerza" class="ataque-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="pecho-inteligencia" class="inteligencia-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="pecho-agilidad" class="agilidad-input" placeholder="0" style="width: 40px;"></td>
+            </tr>
+            <tr>
+              <td>Piernas</td>
+              <td><input type="text" id="piernas-nombre" class="nombre-input" placeholder="Nombre"></td>
+              <td><input type="number" id="piernas-vida" class="vida-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="piernas-fuerza" class="ataque-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="piernas-inteligencia" class="inteligencia-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="piernas-agilidad" class="agilidad-input" placeholder="0" style="width: 40px;"></td>
+            </tr>
+            <tr>
+              <td>Brazos</td>
+              <td><input type="text" id="brazos-nombre" class="nombre-input" placeholder="Nombre"></td>
+              <td><input type="number" id="brazos-vida" class="vida-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="brazos-fuerza" class="ataque-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="brazos-inteligencia" class="inteligencia-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="brazos-agilidad" class="agilidad-input" placeholder="0" style="width: 40px;"></td>
+            </tr>
+            <tr>
+              <td>Mano izquierda</td>
+              <td><input type="text" id="mano-izquierda-nombre" class="nombre-input" placeholder="Nombre"></td>
+              <td><input type="number" id="mano-izquierda-vida" class="vida-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="mano-izquierda-fuerza" class="ataque-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="mano-izquierda-inteligencia" class="inteligencia-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="mano-izquierda-agilidad" class="agilidad-input" placeholder="0" style="width: 40px;"></td>
+            </tr>
+            <tr>
+              <td>Mano derecha</td>
+              <td><input type="text" id="mano-derecha-nombre" class="nombre-input" placeholder="Nombre"></td>
+              <td><input type="number" id="mano-derecha-vida" class="vida-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="mano-derecha-fuerza" class="ataque-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="mano-derecha-inteligencia" class="inteligencia-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="mano-derecha-agilidad" class="agilidad-input" placeholder="0" style="width: 40px;"></td>
+            </tr>
+            <!-- Repite este patrón para el resto de piezas de equipo -->
+          </tbody>
+        </table>
+      </div>
+      <button id="guardar">Guardar</button>
+    </div>
+    <iv class="dados-container">
+      <iv class="dados-container">
+        <div class="dados">
+          <div class="dado dado-4" data-caras="4">D4</div>
+          <div class="dado dado-6" data-caras="6">D6</div>
+          <div class="dado dado-8" data-caras="8">D8</div>
+          <div class="dado dado-10" data-caras="10">D10</div>
+          <div class="dado dado-12" data-caras="12">D12</div>
+          <div class="dado dado-20" data-caras="20">D20</div>
+        </div>
+
+        <script src="script.js"></script>
+        <script src="Ejecuciones.js" defer></script>
+        <!-- Asegúrate de especificar la ruta correcta al archivo script.js -->
+        </body>
+
 </html>
