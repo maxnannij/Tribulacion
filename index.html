@@ -4,7 +4,7 @@
   <title>Hoja de Personaje</title> 
         <link rel="stylesheet"  href="estilos-celulares.css">
   <div class="container-center-horizontal">
-    <div class="frame-1  " data-id="2601:316">
+   <div class="frame-1" >
       <div class="contenedorclase input" data-id="clase">
         <div class="x04-dropdown-WxtALn">
           <select id="clase" name="clase" required>
@@ -17,58 +17,78 @@
             <option value="Salmista">Salmista</option>
           </select>
         </div>
-        <div class="labelclase label small-text" data-id="2601:326">Clase</div>
+        <div class="labelclase label small-text" >Clase</div>
       </div>
-      <div class="contenedornombre input" data-id="2601:323">
-        <div class="labelnombre label small-text" contenteditable="true" data-id="2601:324">Nombre</div>
-      </div>
-      <div class="contenedornivel input" data-id="2601:327">
-        <div class="nnivel" data-id="2601:363">
+     <div class="contenedornombre input" >
+        <div class="labelnombre label small-text" contenteditable="true" >Nombre</div>
+</div>
+    <div class="contenedornivel input" >
+      <div class="nnivel" >
           <div class="x1-x3apY8 presetsbody2" contenteditable="true" data-id="2601:365">1</div>
         </div>
-        <div class="labelnivel label small-text" data-id="2601:328">Nivel</div>
+      <div class="labelnivel label small-text" >Nivel</div>
       </div>
-      <div class="barradevida" data-id="2601:468"></div>
-      <div class="vida input" data-id="2601:471">
-        <div class="labelvida label small-text" contenteditable="true" data-id="2601:472">Vida</div>
+      <div class="barradevida"></div>
+      <div class="vida input">
+        <div class="labelvida label small-text">Vida
+          <div class="numbervida" >0</div>
+        </div>
       </div>
-      <div class="basevida input" data-id="2601:481">
-        <div class="labelbasevida label small-text" contenteditable="true" data-id="2601:482">Base</div>
+      <div class="basevida input">
+        <div  class="labelbasevida label small-text"  id="base-vida" >Base</div>
+        <div class="numberbasevida numbervida" contenteditable="true">0</div>
       </div>
-      <div class="modvida input" data-id="2601:484">
-        <div class="labelmodvida label small-text" contenteditable="true" data-id="2601:485">Mod</div>
+      <div class="modvida input">
+        <div class="labelmodvida label small-text" >Mod</div>
+        <div class="vida-modificada numbervida">0</div>
       </div>
-      <div class="fuerza input" data-id="2601:475">
-        <div class="labelfuerza label small-text" contenteditable="true" data-id="2601:476">Fuerza</div>
+      <div class="fuerza input">
+        <div class="labelfuerza label small-text" >Fuerza
+        <div class="numberfuerza" >0</div>
       </div>
-      <div class="inteligencia input" data-id="2601:477">
-        <div class="labelinteligencia label small-text" contenteditable="true" data-id="2601:478">Inteligencia</div>
+        </div>
+      <div class="basefuerza input">
+      <div class="labelbasefuerza label small-text" id="base-fuerza"  >Base</div>
+      <div class="numberbasefuerza numberstat" contenteditable="true">0</div>
       </div>
-      <div class="Agilidad input" data-id="2601:479">
-        <div class="labelAgilidad label small-text" contenteditable="true" data-id="2601:480">Agilidad</div>
+      <div class="modfuerza input">
+      <div class="labelmodfuerza label small-text"  >Mod</div>
+      <div class="fuerza-modificada numberstat">0</div>
       </div>
-      <div class="basefuerza input" data-id="2601:487">
-        <div class="labelbasefuerza label small-text" contenteditable="true" data-id="2601:488">Base</div>
+      <div class="inteligencia input">
+        <div class="labelinteligencia label small-text">Inteligencia
+          <div class="numberinteligencia"></div>
       </div>
-      <div class="modfuerza input" data-id="2601:489">
-        <div class="labelmodfuerza label small-text" contenteditable="true" data-id="2601:490">Mod</div>
       </div>
-      <div class="baseinteligencia input" data-id="2601:491">
-        <div class="labelbaseinteligencia label small-text" data-id="2601:492">Base</div>
+      <div class="baseinteligencia input">
+        <div class="labelbaseinteligencia label small-text" id="base-inteligencia"  >Base</div>
+        <div class="numberbaseinteligencia numberstat" contenteditable="true">0</div>
       </div>
-      <div class="modinteligencia input" data-id="2601:493">
-        <div class="labelmodinteligencia label small-text" data-id="2601:494">Mod</div>
+      <div class="modinteligencia input">
+        <div class="labelmodinteligencia label small-text"  >Mod</div>
+        <div class="inteligencia-modificada numberstat">1</div>
       </div>
-      <div class="baseagilidad input" data-id="2601:495">
-        <div class="labelbaseagilidad label small-text" data-id="2601:496">Base</div>
+      <div class="Agilidad input">
+        <div class="labelAgilidad label small-text" >Agilidad
+          <div class="numberagilidad" >0</div>
       </div>
-      <div class="modagilidad input" data-id="2601:497">
-        <div class="labelmodagilidad label small-text" data-id="2601:498">Mod</div>
       </div>
-      <div class="containerinventario">
+      <div class="baseagilidad input">
+        <div class="labelbaseagilidad label small-text" id="base-agilidad"  >Base</div>
+         <div class="numberbaseagilidad numberstat" contenteditable="true">0</div>
+      </div>
+      <div class="modagilidad input">
+        <div class="labelmodagilidad label small-text"  >Mod</div>
+        <div class="agilidad-modificada numberstat">1</div>
+      </div>
+      <div class="daño input">
+      <div class="labeldaño label small-text">Daño
+      <div class="numberdanio" contenteditable="true">0</div>
+      </div>
+          </div>
+            <div class="containerinventario">
         <h2>Inventario</h2>
-        <ul id="inventario-list">
-          <input type="text" class="item-input" placeholder="Nombre del Item">
+                 <input type="text" class="item-inputinv" placeholder="Nombre del Item">
           <input type="number" id="numberinv" class="item-counter" min="0" value="0">
           <input type="text2." class="item-input" placeholder="funcion">
           <input type="text2" class="item-input" placeholder="Nombre del Item">
@@ -102,7 +122,7 @@
               <td>Casco</td>
               <td><input type="text" id="casco-nombre" class="nombre-input" placeholder="Nombre"></td>
               <td><input type="number" id="casco-vida" class="vida-input" placeholder="0" style="width: 40px;"></td>
-              <td><input type="number" id="casco-fuerza" class="ataque-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="casco-fuerza" class="fuerza-input" placeholder="0" style="width: 40px;"></td>
               <td><input type="number" id="casco-inteligencia" class="inteligencia-input" placeholder="0" style="width: 40px;"></td>
               <td><input type="number" id="casco-agilidad" class="agilidad-input" placeholder="0" style="width: 40px;"></td>
             </tr>
@@ -110,7 +130,7 @@
               <td>Pecho</td>
               <td><input type="text" id="pecho-nombre" class="nombre-input" placeholder="Nombre"></td>
               <td><input type="number" id="pecho-vida" class="vida-input" placeholder="0" style="width: 40px;"></td>
-              <td><input type="number" id="pecho-fuerza" class="ataque-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="pecho-fuerza" class="fuerza-input" placeholder="0" style="width: 40px;"></td>
               <td><input type="number" id="pecho-inteligencia" class="inteligencia-input" placeholder="0" style="width: 40px;"></td>
               <td><input type="number" id="pecho-agilidad" class="agilidad-input" placeholder="0" style="width: 40px;"></td>
             </tr>
@@ -118,7 +138,7 @@
               <td>Piernas</td>
               <td><input type="text" id="piernas-nombre" class="nombre-input" placeholder="Nombre"></td>
               <td><input type="number" id="piernas-vida" class="vida-input" placeholder="0" style="width: 40px;"></td>
-              <td><input type="number" id="piernas-fuerza" class="ataque-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="piernas-fuerza" class="fuerza-input" placeholder="0" style="width: 40px;"></td>
               <td><input type="number" id="piernas-inteligencia" class="inteligencia-input" placeholder="0" style="width: 40px;"></td>
               <td><input type="number" id="piernas-agilidad" class="agilidad-input" placeholder="0" style="width: 40px;"></td>
             </tr>
@@ -126,7 +146,7 @@
               <td>Brazos</td>
               <td><input type="text" id="brazos-nombre" class="nombre-input" placeholder="Nombre"></td>
               <td><input type="number" id="brazos-vida" class="vida-input" placeholder="0" style="width: 40px;"></td>
-              <td><input type="number" id="brazos-fuerza" class="ataque-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="brazos-fuerza" class="fuerza-input" placeholder="0" style="width: 40px;"></td>
               <td><input type="number" id="brazos-inteligencia" class="inteligencia-input" placeholder="0" style="width: 40px;"></td>
               <td><input type="number" id="brazos-agilidad" class="agilidad-input" placeholder="0" style="width: 40px;"></td>
             </tr>
@@ -134,7 +154,7 @@
               <td>Mano izquierda</td>
               <td><input type="text" id="mano-izquierda-nombre" class="nombre-input" placeholder="Nombre"></td>
               <td><input type="number" id="mano-izquierda-vida" class="vida-input" placeholder="0" style="width: 40px;"></td>
-              <td><input type="number" id="mano-izquierda-fuerza" class="ataque-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="mano-izquierda-fuerza" class="fuerza-input" placeholder="0" style="width: 40px;"></td>
               <td><input type="number" id="mano-izquierda-inteligencia" class="inteligencia-input" placeholder="0" style="width: 40px;"></td>
               <td><input type="number" id="mano-izquierda-agilidad" class="agilidad-input" placeholder="0" style="width: 40px;"></td>
             </tr>
@@ -142,7 +162,7 @@
               <td>Mano derecha</td>
               <td><input type="text" id="mano-derecha-nombre" class="nombre-input" placeholder="Nombre"></td>
               <td><input type="number" id="mano-derecha-vida" class="vida-input" placeholder="0" style="width: 40px;"></td>
-              <td><input type="number" id="mano-derecha-fuerza" class="ataque-input" placeholder="0" style="width: 40px;"></td>
+              <td><input type="number" id="mano-derecha-fuerza" class="fuerza-input" placeholder="0" style="width: 40px;"></td>
               <td><input type="number" id="mano-derecha-inteligencia" class="inteligencia-input" placeholder="0" style="width: 40px;"></td>
               <td><input type="number" id="mano-derecha-agilidad" class="agilidad-input" placeholder="0" style="width: 40px;"></td>
             </tr>
