@@ -97,7 +97,6 @@ background: radial-gradient(95% 90%, #ca40ac, #000000);
   text-align: left;
   width: 200px;
 }
-
 .frame-1 .contenedornivel {
   height: 60px;
   left: 429px;
@@ -145,7 +144,7 @@ background: radial-gradient(95% 90%, #ca40ac, #000000);
   width: 263px;
 }
 .frame-1 .barradevida {
-  background: linear-gradient(90deg, rgb(254.73437905311584, 0, 0) 100%, rgb(255, 255, 255) 100%);
+  
   background-color: transparent;
   border: 2px solid;
   border-color: var(--black);
@@ -155,6 +154,30 @@ background: radial-gradient(95% 90%, #ca40ac, #000000);
   position: absolute;
   top: 168px;
   width: 503px;
+}
+.frame-1 .labeldaño, .labelvida, .labelfuerza, .labelinteligencia, .labelAgilidad {
+  top: 10px;
+}
+.frame-1 .daño{
+  background-color: #ff0000;
+  border: 2px solid;
+  border-color: var(--black);
+  border-radius: 8px;
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  left: 40px;
+  top: 211px;
+  
+}
+.frame-1 .labeldaño {
+  font-weight: 500;
+  height: auto;
+  left: 22px;
+  line-height: 24px;
+  position: absolute;
+  text-align: center;
+  width: 45px;
 }
 .frame-1 .vida{
   height: 90px;
@@ -169,7 +192,6 @@ background: radial-gradient(95% 90%, #ca40ac, #000000);
   line-height: 24px;
   position: absolute;
   text-align: center;
-  top: 29px;
   width: 45px;
 }
 .frame-1 .labelbasevida {
@@ -198,7 +220,6 @@ text-align: center;
   top: 9px;
   width: 45px;
 }
-
 .frame-1 .modvida {
   height: 45px;
   left: 192px;
@@ -218,8 +239,7 @@ text-align: center;
   line-height: 24px;
   position: absolute;
 text-align: center;
-  top: 29px;
-  width: 66px;
+   width: 66px;
 }
 .frame-1 .basefuerza {
   height: 45px;
@@ -267,7 +287,6 @@ text-align: center;
   line-height: 24px;
   position: absolute;
   text-align: center;
-  top: 29px;
   width: 92px;
 }
 .frame-1 .baseinteligencia {
@@ -292,7 +311,6 @@ text-align: center;
   top: 291px;
   width: 45px;
 }
-
 .frame-1 .labelmodinteligencia {
   font-weight: 500;
   height: auto;
@@ -309,16 +327,14 @@ text-align: center;
   top: 211px;
   width: 90px;
 }
-
 .frame-1 .labelAgilidad {
-  font-weight: 500;
+ font-weight: 500;
   height: auto;
-  left: 14px;
+  left: 12px;
   line-height: 24px;
   position: absolute;
-  text-align: left;
-  top: 29px;
-  width: 83px;
+text-align: center;
+   width: 66px;
 }
 .frame-1 .baseagilidad {
   height: 45px;
@@ -326,7 +342,6 @@ text-align: center;
   top: 291px;
   width: 45px;
 }
-
 .frame-1 .labelbaseagilidad {
   font-weight: 500;
   height: auto;
@@ -337,14 +352,12 @@ text-align: center;
   top: 9px;
   width: 45px;
 }
-
 .frame-1 .modagilidad {
   height: 45px;
   left: 527px;
   top: 291px;
   width: 45px;
 }
-
 .frame-1 .labelmodagilidad {
   font-weight: 500;
   height: auto;
@@ -355,6 +368,15 @@ text-align: center;
   top: 9px;
   width: 45px;
 }
+.frame-1 p{
+  font-weight: 500;
+  left: 280px;
+  line-height: 24px;
+  position: absolute;
+  width: 200px;
+  top: 325px;
+  
+}
 .containerinventario {
   background-color: #ffff;
   border: 2px solid;
@@ -363,7 +385,7 @@ text-align: center;
   position: absolute;
   height: 280px;
   left: 85px;
-  top: 370px;
+  top: 390px;
   width: 550px;
 }
 h2{
@@ -381,18 +403,18 @@ input[type="text5"], input[type="text25"] {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+.item-inputinv{width: 120px;
+  position: absolute;
+  left: 10px;
+  top: 60px;
+}
 #numberinv{
   width: 60px;
   position: absolute;
   left: 200px;
   top: 60px;
  }
-#id="casco-nombre"{
-  width: 120px;
-  position: absolute;
-  left: 10px;
-  top: 60px;
- }
+
 input[type="text2."]{
   width: 160px;
   position: absolute;
@@ -503,6 +525,7 @@ td {
 th {
   background-color: #8b4513;
   color: #fff;
+  postition: absolute;
 }
 
 .equipamiento {
@@ -510,10 +533,10 @@ th {
   border-color: #000000;
   border-radius: 8px;
   background-color: #fff;
-  width: 600px;
+  width: 650px;
   height: 450px;
   position: absolute;
-  left: 60px;
+  left: 30px;
   top: 670px;
 }
 
