@@ -1,331 +1,307 @@
-/*****************************++efecto equipo*****************************************/
 document.addEventListener("DOMContentLoaded", function() {
-    // Obtener todos los campos de vida de los equipamientos
-    const camposVida = document.querySelectorAll('.vida-input');
-    
-    // Función para sumar los puntos de vida de los equipamientos
-    function sumarPuntosVida() {
-        let totalVida = 0;
-        camposVida.forEach(function(input) {
-            totalVida += parseInt(input.value) || 0; // Asegurarse de manejar campos vacíos
+    const modVidaElement = document.querySelector('.vida-modificada');
+    const vidaEquipoElements = document.querySelectorAll('.vida-input');
+
+    // Función para calcular la vida modificada
+    function calcularVidaModificada() {
+        let vidaEquipo = 0;
+
+        // Suma la vida proporcionada por cada pieza de equipo
+        vidaEquipoElements.forEach(element => {
+            vidaEquipo += parseInt(element.value) || 0;
         });
-        return totalVida;
+
+        // Actualiza el valor de la vida modificada en el DOM
+        modVidaElement.textContent = vidaEquipo;
     }
-    
-    // Función para actualizar el campo de efecto de vida con el total calculado
-    function actualizarEfectoVida() {
-        const efectoVidaInput = document.getElementById('efecto-vida');
-        const totalVida = sumarPuntosVida();
-        efectoVidaInput.value = totalVida;
-    }
-    
-    // Llamar a la función para actualizar el campo de efecto de vida al cargar la página
-    actualizarEfectoVida();
-    
-    // Escuchar cambios en los campos de vida de los equipamientos y actualizar el campo de efecto de vida
-    camposVida.forEach(function(input) {
-        input.addEventListener('input', actualizarEfectoVida);
+
+    // Event listener para calcular la vida modificada cuando se modifique el equipo
+    vidaEquipoElements.forEach(element => {
+        element.addEventListener('input', calcularVidaModificada);
     });
+
+    // Calcula la vida modificada inicialmente al cargar la página
+    calcularVidaModificada();
 });
 document.addEventListener("DOMContentLoaded", function() {
-    // Obtener todos los campos de fuerza de los equipamientos
-    const camposFuerza = document.querySelectorAll('.ataque-input');
-    
-    // Función para sumar los puntos de fuerza de los equipamientos
-    function sumarPuntosFuerza() {
-        let totalFuerza = 0;
-        camposFuerza.forEach(function(input) {
-            totalFuerza += parseInt(input.value) || 0; // Asegurarse de manejar campos vacíos
+    const modFuerzaElement = document.querySelector('.fuerza-modificada');
+    const fuerzaEquipoElements = document.querySelectorAll('.fuerza-input');
+
+    // Función para calcular la fuerza modificada
+    function calcularFuerzaModificada() {
+        let fuerzaEquipo = 0;
+
+        // Suma la fuerza proporcionada por cada pieza de equipo
+        fuerzaEquipoElements.forEach(element => {
+            fuerzaEquipo += parseInt(element.value) || 0;
         });
-        return totalFuerza;
+
+        // Actualiza el valor de la fuerza modificada en el DOM
+        modFuerzaElement.textContent = fuerzaEquipo;
     }
-    
-    // Función para actualizar el campo de efecto de fuerza con el total calculado
-    function actualizarEfectoFuerza() {
-        const efectoFuerzaInput = document.getElementById('efecto-fuerza');
-        const totalFuerza = sumarPuntosFuerza();
-        efectoFuerzaInput.value = totalFuerza;
-    }
-    
-    // Llamar a la función para actualizar el campo de efecto de fuerza al cargar la página
-    actualizarEfectoFuerza();
-    
-    // Escuchar cambios en los campos de fuerza de los equipamientos y actualizar el campo de efecto de fuerza
-    camposFuerza.forEach(function(input) {
-        input.addEventListener('input', actualizarEfectoFuerza);
+
+    // Event listener para calcular la fuerza modificada cuando se modifique el equipo
+    fuerzaEquipoElements.forEach(element => {
+        element.addEventListener('input', calcularFuerzaModificada);
     });
+
+    // Calcula la fuerza modificada inicialmente al cargar la página
+    calcularFuerzaModificada();
 });
 document.addEventListener("DOMContentLoaded", function() {
-    // Obtener todos los campos de inteligencia de los equipamientos
-    const camposInteligencia = document.querySelectorAll('.inteligencia-input');
-    
-    // Función para sumar los puntos de inteligencia de los equipamientos
-    function sumarPuntosInteligencia() {
-        let totalInteligencia = 0;
-        camposInteligencia.forEach(function(input) {
-            totalInteligencia += parseInt(input.value) || 0; // Asegurarse de manejar campos vacíos
+    const modInteligenciaElement = document.querySelector('.inteligencia-modificada');
+    const inteligenciaEquipoElements = document.querySelectorAll('.inteligencia-input');
+
+    // Función para calcular la inteligencia modificada
+    function calcularInteligenciaModificada() {
+        let inteligenciaEquipo = 0;
+
+        // Suma la inteligencia proporcionada por cada pieza de equipo
+        inteligenciaEquipoElements.forEach(element => {
+            inteligenciaEquipo += parseInt(element.value) || 0;
         });
-        return totalInteligencia;
+
+        // Actualiza el valor de la inteligencia modificada en el DOM
+        modInteligenciaElement.textContent = inteligenciaEquipo;
     }
-    
-    // Función para actualizar el campo de efecto de inteligencia con el total calculado
-    function actualizarEfectoInteligencia() {
-        const efectoInteligenciaInput = document.getElementById('efecto-inteligencia');
-        const totalInteligencia = sumarPuntosInteligencia();
-        efectoInteligenciaInput.value = totalInteligencia;
-    }
-    
-    // Llamar a la función para actualizar el campo de efecto de inteligencia al cargar la página
-    actualizarEfectoInteligencia();
-    
-    // Escuchar cambios en los campos de inteligencia de los equipamientos y actualizar el campo de efecto de inteligencia
-    camposInteligencia.forEach(function(input) {
-        input.addEventListener('input', actualizarEfectoInteligencia);
+
+    // Event listener para calcular la inteligencia modificada cuando se modifique el equipo
+    inteligenciaEquipoElements.forEach(element => {
+        element.addEventListener('input', calcularInteligenciaModificada);
     });
+
+    // Calcula la inteligencia modificada inicialmente al cargar la página
+    calcularInteligenciaModificada();
 });
 document.addEventListener("DOMContentLoaded", function() {
-    // Obtener todos los campos de agilidad de los equipamientos
-    const camposAgilidad = document.querySelectorAll('.agilidad-input');
-    
-    // Función para sumar los puntos de agilidad de los equipamientos
-    function sumarPuntosAgilidad() {
-        let totalAgilidad = 0;
-        camposAgilidad.forEach(function(input) {
-            totalAgilidad += parseInt(input.value) || 0; // Asegurarse de manejar campos vacíos
+    const modAgilidadElement = document.querySelector('.agilidad-modificada');
+    const agilidadEquipoElements = document.querySelectorAll('.agilidad-input');
+
+    // Función para calcular la agilidad modificada
+    function calcularAgilidadModificada() {
+        let agilidadEquipo = 0;
+
+        // Suma la agilidad proporcionada por cada pieza de equipo
+        agilidadEquipoElements.forEach(element => {
+            agilidadEquipo += parseInt(element.value) || 0;
         });
-        return totalAgilidad;
-    }
-    
-    // Función para actualizar el campo de efecto de agilidad con el total calculado
-    function actualizarEfectoAgilidad() {
-        const efectoAgilidadInput = document.getElementById('efecto-agilidad');
-        const totalAgilidad = sumarPuntosAgilidad();
-        efectoAgilidadInput.value = totalAgilidad;
-    }
-    
-    // Llamar a la función para actualizar el campo de efecto de agilidad al cargar la página
-    actualizarEfectoAgilidad();
-    
-    // Escuchar cambios en los campos de agilidad de los equipamientos y actualizar el campo de efecto de agilidad
-    camposAgilidad.forEach(function(input) {
-        input.addEventListener('input', actualizarEfectoAgilidad);
-    });
-});
-/***************************************Guardar**************************************/
-document.addEventListener('DOMContentLoaded', function() {
-  // Cargar datos guardados al inicio
-  cargarDatos();
 
-  // Función para cargar los datos guardados
-  function cargarDatos() {
-    var datosGuardados = localStorage.getItem('hojaPersonaje');
-    if (datosGuardados) {
-      var datos = JSON.parse(datosGuardados);
-      document.getElementById('nombre-personaje').innerText = datos.nombre || '';
-      document.getElementById('clase').value = datos.clase || '';
-      document.getElementById('nivel').value = datos.nivel || '';
-      document.getElementById('vida').value = datos.vida || '';
-      document.getElementById('fuerza').value = datos.fuerza || '';
-      document.getElementById('inteligencia').value = datos.inteligencia || '';
-      document.getElementById('agilidad').value = datos.agilidad || '';
-      // Cargar items del inventario
-      var inventario = datos.inventario || [];
-      var inventarioList = document.getElementById('inventario-list');
-      inventarioList.innerHTML = '';
-      inventario.forEach(function(item) {
-        var newItem = document.createElement('li');
-        newItem.innerHTML = `
-          <input type="text" class="item-input" placeholder="Nombre del Item" value="${item.nombre}">
-          <input type="number" class="item-counter" min="0" value="${item.cantidad}">
-        `;
-        inventarioList.appendChild(newItem);
-      });
+        // Actualiza el valor de la agilidad modificada en el DOM
+        modAgilidadElement.textContent = agilidadEquipo;
     }
-  }
 
-  // Función para guardar los datos
-  function guardarDatos() {
-    var nombrePersonaje = document.getElementById('nombre-personaje').innerText;
-    var clase = document.getElementById('clase').value;
-    var nivel = document.getElementById('nivel').value;
-    var vida = document.getElementById('vida').value;
-    var fuerza = document.getElementById('fuerza').value;
-    var inteligencia = document.getElementById('inteligencia').value;
-    var agilidad = document.getElementById('agilidad').value;
-    
-    var inventario = [];
-    var items = document.querySelectorAll('.item-input');
-    var cantidades = document.querySelectorAll('.item-counter');
-    items.forEach(function(item, index) {
-      inventario.push({
-        nombre: item.value,
-        cantidad: cantidades[index].value
-      });
+    // Event listener para calcular la agilidad modificada cuando se modifique el equipo
+    agilidadEquipoElements.forEach(element => {
+        element.addEventListener('input', calcularAgilidadModificada);
     });
 
-    var datos = {
-      nombre: nombrePersonaje,
-      clase: clase,
-      nivel: nivel,
-      vida: vida,
-      fuerza: fuerza,
-      inteligencia: inteligencia,
-      agilidad: agilidad,
-      inventario: inventario
-    };
-
-    localStorage.setItem('hojaPersonaje', JSON.stringify(datos));
-  }
-
-  // Cargar datos al inicio
-  cargarDatos();
-
-  // Guardar datos al hacer clic en el botón
-  document.getElementById('guardar').addEventListener('click', function(event) {
-    event.preventDefault();
-    guardarDatos();
-    alert('Los datos han sido guardados.');
-  });
+    // Calcula la agilidad modificada inicialmente al cargar la página
+    calcularAgilidadModificada();
 });
-/*+++++++++++++++++++++++++++++++++++Calculo total de capacidades+++++++++++++++++++++++++++++++*/
+
 document.addEventListener("DOMContentLoaded", function() {
-    // Selecciona los elementos relevantes
-    const vidaInput = document.getElementById("vida");
-    const fuerzaInput = document.getElementById("fuerza");
-    const inteligenciaInput = document.getElementById("inteligencia");
-    const agilidadInput = document.getElementById("agilidad");
+    const numberBaseVida = document.querySelector(".numberbasevida");
+    const vidaModificada = document.querySelector(".vida-modificada");
+    const numberVida = document.querySelector(".numbervida");
+    const vidaEquipos = document.querySelectorAll(".vida-equipo");
+    const numberDanio = document.querySelector(".numberdanio");
 
-    const efectoVidaInput = document.getElementById("efecto-vida");
-    const efectoFuerzaInput = document.getElementById("efecto-fuerza");
-    const efectoInteligenciaInput = document.getElementById("efecto-inteligencia");
-    const efectoAgilidadInput = document.getElementById("efecto-agilidad");
+    // Función para actualizar el número de vida total
+    function actualizarNumeroVidaTotal() {
+        let vidaTotalEquipos = 0;
 
-    const totalVidaInput = document.getElementById("total-vida");
-    const totalFuerzaInput = document.getElementById("total-fuerza");
-    const totalInteligenciaInput = document.getElementById("total-inteligencia");
-    const totalAgilidadInput = document.getElementById("total-agilidad");
-
-    // Selecciona los elementos de equipamiento relevantes
-    const equipamientoInputs = document.querySelectorAll('.equipamiento');
-
-    // Calcula los totales
-    const calcularTotales = () => {
-        let vida = parseInt(vidaInput.value);
-        let fuerza = parseInt(fuerzaInput.value);
-        let inteligencia = parseInt(inteligenciaInput.value);
-        let agilidad = parseInt(agilidadInput.value);
-
-        let efectoVida = parseInt(efectoVidaInput.value);
-        let efectoFuerza = parseInt(efectoFuerzaInput.value);
-        let efectoInteligencia = parseInt(efectoInteligenciaInput.value);
-        let efectoAgilidad = parseInt(efectoAgilidadInput.value);
-
-        // Suma los valores de equipamiento
-        equipamientoInputs.forEach(input => {
-            if (input.value !== '') {
-                switch (input.id.split('-')[1]) {
-                    case 'vida':
-                        vida += parseInt(input.value);
-                        break;
-                    case 'fuerza':
-                        fuerza += parseInt(input.value);
-                        break;
-                    case 'inteligencia':
-                        inteligencia += parseInt(input.value);
-                        break;
-                    case 'agilidad':
-                        agilidad += parseInt(input.value);
-                        break;
-                }
+        // Sumar la vida de todos los equipos
+        vidaEquipos.forEach(function(vidaEquipo) {
+            const vidaEquipoValor = parseInt(vidaEquipo.value);
+            if (!isNaN(vidaEquipoValor)) {
+                vidaTotalEquipos += vidaEquipoValor;
             }
         });
 
-        // Calcula los totales
-        totalVidaInput.value = vida + efectoVida;
-        totalFuerzaInput.value = fuerza + efectoFuerza;
-        totalInteligenciaInput.value = inteligencia + efectoInteligencia;
-        totalAgilidadInput.value = agilidad + efectoAgilidad;
-    };
+        // Obtener la vida base y la vida modificada
+        const vidaBase = parseInt(numberBaseVida.textContent);
+        const vidaMod = parseInt(vidaModificada.textContent);
 
-    // Escucha eventos de cambio en los campos de entrada y llama a la función calcularTotales
-    [vidaInput, fuerzaInput, inteligenciaInput, agilidadInput,
-     efectoVidaInput, efectoFuerzaInput, efectoInteligenciaInput, efectoAgilidadInput].forEach(input => {
-        input.addEventListener("input", calcularTotales);
+        // Calcular la vida total sumando la vida base, la vida modificada y la vida de los equipos
+        let vidaTotal = vidaBase + vidaMod + vidaTotalEquipos;
+
+        // Restar el daño de la vida si el valor de daño es válido
+        const danio = parseInt(numberDanio.textContent);
+        if (!isNaN(danio)) {
+            vidaTotal -= danio;
+            if (vidaTotal < 0) {
+                vidaTotal = 0; // La vida no puede ser negativa
+            }
+        }
+
+        // Actualizar el número de vida en el HTML
+        numberVida.textContent = vidaTotal;
+    }
+
+    // Función para actualizar el número de vida total cada 2 segundos
+    setInterval(actualizarNumeroVidaTotal, 500);
+
+    // Evento input para la vida base y la vida modificada
+    numberBaseVida.addEventListener("input", actualizarNumeroVidaTotal);
+    vidaModificada.addEventListener("input", actualizarNumeroVidaTotal);
+
+    // Evento input para la vida de cada equipo
+    vidaEquipos.forEach(function(vidaEquipo) {
+        vidaEquipo.addEventListener("input", actualizarNumeroVidaTotal);
     });
 
-    // Escucha eventos de cambio en los campos de equipamiento y llama a la función calcularTotales
-    equipamientoInputs.forEach(input => {
-        input.addEventListener('input', calcularTotales);
-    });
-
-    // Calcula los totales al cargar la página
-    calcularTotales();
+    // Evento input para el daño
+    numberDanio.addEventListener("input", actualizarNumeroVidaTotal);
 });
-/**************agregar y quitar items***********************/
-document.addEventListener("DOMContentLoaded", function () {
-  var addItemButton = document.getElementById("add-item");
-  var itemList = document.getElementById("inventario-list");
+document.addEventListener("DOMContentLoaded", function() {
+    const numberBaseFuerza = document.querySelector(".numberbasefuerza");
+    const fuerzaModificada = document.querySelector(".fuerza-modificada");
+    const numberFuerza = document.querySelector(".numberfuerza");
+    const fuerzaEquipos = document.querySelectorAll(".fuerza-equipo");
 
-  addItemButton.addEventListener("click", function (e) {
-    e.preventDefault();
-    if (itemList.childElementCount < 5) {
-      var newItem = document.createElement("li");
-      newItem.innerHTML = `
-        <input type="text" class="item-input" placeholder="Nombre del Item">
-        <input type="number" class="item-counter" min="0" value="0">
-        <a href="#" class="remove-item">Eliminar</a>
-      `;
-      itemList.appendChild(newItem);
-    } else {
-      alert("Solo se pueden agregar hasta 5 ítems.");
-    }
-  });
+    // Función para actualizar el número de fuerza total
+    function actualizarNumeroFuerzaTotal() {
+        let fuerzaTotalEquipos = 0;
 
-  itemList.addEventListener("click", function (e) {
-    if (e.target.classList.contains("remove-item")) {
-      e.preventDefault();
-      if (itemList.childElementCount > 1) {
-        e.target.parentNode.remove();
-      } else {
-        alert("Debe haber al menos un ítem.");
-      }
-    }
-  });
-});
-/*******************************Niveles********************************/
-  document.addEventListener("DOMContentLoaded", function() {
-    const nivelInput = document.getElementById("nivel");
-    const puntosDisponiblesSpan = document.getElementById("puntos-disponibles");
-    let puntosDisponibles = 200; // Cada persona comienza con 200 puntos disponibles
-    let nivelAnterior = 1; // Nivel anterior inicializado en 1
+        // Sumar la fuerza de todos los equipos
+        fuerzaEquipos.forEach(function(fuerzaEquipo) {
+            const fuerzaEquipoValor = parseInt(fuerzaEquipo.value);
+            if (!isNaN(fuerzaEquipoValor)) {
+                fuerzaTotalEquipos += fuerzaEquipoValor;
+            }
+        });
 
-    // Función para actualizar los puntos disponibles
-    function actualizarPuntosDisponibles() {
-      const vida = parseInt(document.getElementById("vida").value);
-      const fuerza = parseInt(document.getElementById("fuerza").value);
-      const inteligencia = parseInt(document.getElementById("inteligencia").value);
-      const agilidad = parseInt(document.getElementById("agilidad").value);
+        // Obtener la fuerza base y la fuerza modificada
+        const fuerzaBase = parseInt(numberBaseFuerza.textContent);
+        const fuerzaMod = parseInt(fuerzaModificada.textContent);
 
-      const sumaCapacidades = vida + fuerza + inteligencia + agilidad;
-      const puntosPorCapacidad = sumaCapacidades * 1; // Se asignan 2 puntos por cada punto de capacidad
-      const puntosPorNivel = (parseInt(nivelInput.value) - 1) * 6; // Cada nivel por encima del primero otorga 6 puntos extras
-      puntosDisponibles = 200 + puntosPorNivel - puntosPorCapacidad;
+        // Calcular la fuerza total sumando la fuerza base, la fuerza modificada y la fuerza de los equipos
+        const fuerzaTotal = fuerzaBase + fuerzaMod + fuerzaTotalEquipos;
 
-      puntosDisponiblesSpan.textContent = puntosDisponibles;
+        // Actualizar el número de fuerza en el HTML
+        numberFuerza.textContent = fuerzaTotal;
     }
 
-    // Event listener para cambios en el nivel
-    nivelInput.addEventListener("input", actualizarPuntosDisponibles);
+    // Función para actualizar el número de fuerza total cada 2 segundos
+    setInterval(actualizarNumeroFuerzaTotal, 500);
 
-    // Agregar eventos de escucha a los campos de entrada de capacidades
-    const camposCapacidades = document.querySelectorAll("#vida, #fuerza, #inteligencia, #agilidad");
-    camposCapacidades.forEach(function(input) {
-      input.addEventListener("input", actualizarPuntosDisponibles);
+    // Evento input para la fuerza base y la fuerza modificada
+    numberBaseFuerza.addEventListener("input", actualizarNumeroFuerzaTotal);
+    fuerzaModificada.addEventListener("input", actualizarNumeroFuerzaTotal);
+
+    // Evento input para la fuerza de cada equipo
+    fuerzaEquipos.forEach(function(fuerzaEquipo) {
+        fuerzaEquipo.addEventListener("input", actualizarNumeroFuerzaTotal);
     });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const numberBaseInteligencia = document.querySelector(".numberbaseinteligencia");
+    const inteligenciaModificada = document.querySelector(".inteligencia-modificada");
+    const numberInteligencia = document.querySelector(".numberinteligencia");
+    const inteligenciaEquipos = document.querySelectorAll(".inteligencia-equipo");
 
-    // Inicialización de puntos disponibles
-    actualizarPuntosDisponibles();
-  });
+    // Función para actualizar el número de inteligencia total
+    function actualizarNumeroInteligenciaTotal() {
+        let inteligenciaTotalEquipos = 0;
+
+        // Sumar la inteligencia de todos los equipos
+        inteligenciaEquipos.forEach(function(inteligenciaEquipo) {
+            const inteligenciaEquipoValor = parseInt(inteligenciaEquipo.value);
+            if (!isNaN(inteligenciaEquipoValor)) {
+                inteligenciaTotalEquipos += inteligenciaEquipoValor;
+            }
+        });
+
+        // Obtener la inteligencia base y la inteligencia modificada
+        const inteligenciaBase = parseInt(numberBaseInteligencia.textContent);
+        const inteligenciaMod = parseInt(inteligenciaModificada.textContent);
+
+        // Calcular la inteligencia total sumando la inteligencia base, la inteligencia modificada y la inteligencia de los equipos
+        const inteligenciaTotal = inteligenciaBase + inteligenciaMod + inteligenciaTotalEquipos;
+
+        // Actualizar el número de inteligencia en el HTML
+        numberInteligencia.textContent = inteligenciaTotal;
+    }
+
+    // Función para actualizar el número de inteligencia total cada 2 segundos
+    setInterval(actualizarNumeroInteligenciaTotal, 500);
+
+    // Evento input para la inteligencia base y la inteligencia modificada
+    numberBaseInteligencia.addEventListener("input", actualizarNumeroInteligenciaTotal);
+    inteligenciaModificada.addEventListener("input", actualizarNumeroInteligenciaTotal);
+
+    // Evento input para la inteligencia de cada equipo
+    inteligenciaEquipos.forEach(function(inteligenciaEquipo) {
+        inteligenciaEquipo.addEventListener("input", actualizarNumeroInteligenciaTotal);
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const numberBaseAgilidad = document.querySelector(".numberbaseagilidad");
+    const agilidadModificada = document.querySelector(".agilidad-modificada");
+    const numberAgilidad = document.querySelector(".numberagilidad");
+    const agilidadEquipos = document.querySelectorAll(".agilidad-equipo");
+
+    // Función para actualizar el número de agilidad total
+    function actualizarNumeroAgilidadTotal() {
+        let agilidadTotalEquipos = 0;
+
+        // Sumar la agilidad de todos los equipos
+        agilidadEquipos.forEach(function(agilidadEquipo) {
+            const agilidadEquipoValor = parseInt(agilidadEquipo.value);
+            if (!isNaN(agilidadEquipoValor)) {
+                agilidadTotalEquipos += agilidadEquipoValor;
+            }
+        });
+
+        // Obtener la agilidad base y la agilidad modificada
+        const agilidadBase = parseInt(numberBaseAgilidad.textContent);
+        const agilidadMod = parseInt(agilidadModificada.textContent);
+
+        // Calcular la agilidad total sumando la agilidad base, la agilidad modificada y la agilidad de los equipos
+        const agilidadTotal = agilidadBase + agilidadMod + agilidadTotalEquipos;
+
+        // Actualizar el número de agilidad en el HTML
+        numberAgilidad.textContent = agilidadTotal;
+    }
+
+    // Función para actualizar el número de agilidad total cada 2 segundos
+    setInterval(actualizarNumeroAgilidadTotal, 500);
+
+    // Evento input para la agilidad base y la agilidad modificada
+    numberBaseAgilidad.addEventListener("input", actualizarNumeroAgilidadTotal);
+    agilidadModificada.addEventListener("input", actualizarNumeroAgilidadTotal);
+
+    // Evento input para la agilidad de cada equipo
+    agilidadEquipos.forEach(function(agilidadEquipo) {
+        agilidadEquipo.addEventListener("input", actualizarNumeroAgilidadTotal);
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    function actualizarBarraDeVida() {
+        // Obtener elementos de la barra de vida y la cantidad de vida base y modificada
+        const barraDeVida = document.querySelector('.barradevida');
+        const baseVida = parseInt(document.querySelector('.numberbasevida').textContent);
+        const modVida = parseInt(document.querySelector('.vida-modificada').textContent);
+        
+        // Calcular el total de vida sumando la base y la modificación
+        const vidaTotal = baseVida + modVida;
+        
+        // Calcular la vida actual restando el daño recibido
+        const vidaActual = Math.max(0, vidaTotal - parseInt(document.querySelector('.numberdanio').textContent));
+        
+        // Calcular el porcentaje de vida actual
+        const porcentajeVida = Math.min(100, (vidaActual / vidaTotal) * 100);
+
+        // Crear la cadena de gradiente lineal con los porcentajes de vida
+        const gradienteLineal = `linear-gradient(90deg, red ${porcentajeVida}%, rgba(0,0,0,0) ${porcentajeVida}%)`;
+
+               // Establecer el color de la barra de vida
+        barraDeVida.style.background = gradienteLineal;
+    }
+    actualizarBarraDeVida(); // Llamada inicial para actualizar la barra de vida inmediatamente
+    setInterval(actualizarBarraDeVida, 500); // Ejecutar la función cada medio segundo
+});
 /***********************************tirar dados*************************/
 document.addEventListener("DOMContentLoaded", function() {
     const dados = document.querySelectorAll('.dado');
