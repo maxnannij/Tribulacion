@@ -1,53 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const modVidaElement = document.querySelector('.vida-modificada');
-    const vidaEquipoElements = document.querySelectorAll('.vida-input');
-
-    // Función para calcular la vida modificada
-    function calcularVidaModificada() {
-        let vidaEquipo = 0;
-
-        // Suma la vida proporcionada por cada pieza de equipo
-        vidaEquipoElements.forEach(element => {
-            vidaEquipo += parseInt(element.value) || 0;
-        });
-
-        // Actualiza el valor de la vida modificada en el DOM
-        modVidaElement.textContent = vidaEquipo;
-    }
-
-    // Event listener para calcular la vida modificada cuando se modifique el equipo
-    vidaEquipoElements.forEach(element => {
-        element.addEventListener('input', calcularVidaModificada);
-    });
-
-    // Calcula la vida modificada inicialmente al cargar la página
-    calcularVidaModificada();
-});
-document.addEventListener("DOMContentLoaded", function() {
-    const modFuerzaElement = document.querySelector('.fuerza-modificada');
-    const fuerzaEquipoElements = document.querySelectorAll('.fuerza-input');
-
-    // Función para calcular la fuerza modificada
-    function calcularFuerzaModificada() {
-        let fuerzaEquipo = 0;
-
-        // Suma la fuerza proporcionada por cada pieza de equipo
-        fuerzaEquipoElements.forEach(element => {
-            fuerzaEquipo += parseInt(element.value) || 0;
-        });
-
-        // Actualiza el valor de la fuerza modificada en el DOM
-        modFuerzaElement.textContent = fuerzaEquipo;
-    }
-
-    // Event listener para calcular la fuerza modificada cuando se modifique el equipo
-    fuerzaEquipoElements.forEach(element => {
-        element.addEventListener('input', calcularFuerzaModificada);
-    });
-
-    // Calcula la fuerza modificada inicialmente al cargar la página
-    calcularFuerzaModificada();
-});
+//calculo de equipo inteligencia y agilidad//
 document.addEventListener("DOMContentLoaded", function() {
     const modInteligenciaElement = document.querySelector('.inteligencia-modificada');
     const inteligenciaEquipoElements = document.querySelectorAll('.inteligencia-input');
@@ -99,101 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
     calcularAgilidadModificada();
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const numberBaseVida = document.querySelector(".numberbasevida");
-    const vidaModificada = document.querySelector(".vida-modificada");
-    const numberVida = document.querySelector(".numbervida");
-    const vidaEquipos = document.querySelectorAll(".vida-equipo");
-    const numberDanio = document.querySelector(".numberdanio");
-
-    // Función para actualizar el número de vida total
-    function actualizarNumeroVidaTotal() {
-        let vidaTotalEquipos = 0;
-
-        // Sumar la vida de todos los equipos
-        vidaEquipos.forEach(function(vidaEquipo) {
-            const vidaEquipoValor = parseInt(vidaEquipo.value);
-            if (!isNaN(vidaEquipoValor)) {
-                vidaTotalEquipos += vidaEquipoValor;
-            }
-        });
-
-        // Obtener la vida base y la vida modificada
-        const vidaBase = parseInt(numberBaseVida.textContent);
-        const vidaMod = parseInt(vidaModificada.textContent);
-
-        // Calcular la vida total sumando la vida base, la vida modificada y la vida de los equipos
-        let vidaTotal = vidaBase + vidaMod + vidaTotalEquipos;
-
-        // Restar el daño de la vida si el valor de daño es válido
-        const danio = parseInt(numberDanio.textContent);
-        if (!isNaN(danio)) {
-            vidaTotal -= danio;
-            if (vidaTotal < 0) {
-                vidaTotal = 0; // La vida no puede ser negativa
-            }
-        }
-
-        // Actualizar el número de vida en el HTML
-        numberVida.textContent = vidaTotal;
-    }
-
-    // Función para actualizar el número de vida total cada 2 segundos
-    setInterval(actualizarNumeroVidaTotal, 500);
-
-    // Evento input para la vida base y la vida modificada
-    numberBaseVida.addEventListener("input", actualizarNumeroVidaTotal);
-    vidaModificada.addEventListener("input", actualizarNumeroVidaTotal);
-
-    // Evento input para la vida de cada equipo
-    vidaEquipos.forEach(function(vidaEquipo) {
-        vidaEquipo.addEventListener("input", actualizarNumeroVidaTotal);
-    });
-
-    // Evento input para el daño
-    numberDanio.addEventListener("input", actualizarNumeroVidaTotal);
-});
-document.addEventListener("DOMContentLoaded", function() {
-    const numberBaseFuerza = document.querySelector(".numberbasefuerza");
-    const fuerzaModificada = document.querySelector(".fuerza-modificada");
-    const numberFuerza = document.querySelector(".numberfuerza");
-    const fuerzaEquipos = document.querySelectorAll(".fuerza-equipo");
-
-    // Función para actualizar el número de fuerza total
-    function actualizarNumeroFuerzaTotal() {
-        let fuerzaTotalEquipos = 0;
-
-        // Sumar la fuerza de todos los equipos
-        fuerzaEquipos.forEach(function(fuerzaEquipo) {
-            const fuerzaEquipoValor = parseInt(fuerzaEquipo.value);
-            if (!isNaN(fuerzaEquipoValor)) {
-                fuerzaTotalEquipos += fuerzaEquipoValor;
-            }
-        });
-
-        // Obtener la fuerza base y la fuerza modificada
-        const fuerzaBase = parseInt(numberBaseFuerza.textContent);
-        const fuerzaMod = parseInt(fuerzaModificada.textContent);
-
-        // Calcular la fuerza total sumando la fuerza base, la fuerza modificada y la fuerza de los equipos
-        const fuerzaTotal = fuerzaBase + fuerzaMod + fuerzaTotalEquipos;
-
-        // Actualizar el número de fuerza en el HTML
-        numberFuerza.textContent = fuerzaTotal;
-    }
-
-    // Función para actualizar el número de fuerza total cada 2 segundos
-    setInterval(actualizarNumeroFuerzaTotal, 500);
-
-    // Evento input para la fuerza base y la fuerza modificada
-    numberBaseFuerza.addEventListener("input", actualizarNumeroFuerzaTotal);
-    fuerzaModificada.addEventListener("input", actualizarNumeroFuerzaTotal);
-
-    // Evento input para la fuerza de cada equipo
-    fuerzaEquipos.forEach(function(fuerzaEquipo) {
-        fuerzaEquipo.addEventListener("input", actualizarNumeroFuerzaTotal);
-    });
-});
+//calculo de fuerza,inteligencia y agilidad//
 document.addEventListener("DOMContentLoaded", function() {
     const numberBaseInteligencia = document.querySelector(".numberbaseinteligencia");
     const inteligenciaModificada = document.querySelector(".inteligencia-modificada");
@@ -277,15 +134,15 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+//barra de vida//
 document.addEventListener("DOMContentLoaded", function() {
     function actualizarBarraDeVida() {
         // Obtener elementos de la barra de vida y la cantidad de vida base y modificada
         const barraDeVida = document.querySelector('.barradevida');
         const baseVida = parseInt(document.querySelector('.numberbasevida').textContent);
-        const modVida = parseInt(document.querySelector('.vida-modificada').textContent);
-        
+               
         // Calcular el total de vida sumando la base y la modificación
-        const vidaTotal = baseVida + modVida;
+        const vidaTotal = baseVida;
         
         // Calcular la vida actual restando el daño recibido
         const vidaActual = Math.max(0, vidaTotal - parseInt(document.querySelector('.numberdanio').textContent));
@@ -294,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const porcentajeVida = Math.min(100, (vidaActual / vidaTotal) * 100);
 
         // Crear la cadena de gradiente lineal con los porcentajes de vida
-        const gradienteLineal = `linear-gradient(90deg, red ${porcentajeVida}%, rgba(0,0,0,0) ${porcentajeVida}%)`;
+        const gradienteLineal = `linear-gradient(90deg, red ${porcentajeVida}%, black ${porcentajeVida}%)`;
 
                // Establecer el color de la barra de vida
         barraDeVida.style.background = gradienteLineal;
@@ -302,6 +159,88 @@ document.addEventListener("DOMContentLoaded", function() {
     actualizarBarraDeVida(); // Llamada inicial para actualizar la barra de vida inmediatamente
     setInterval(actualizarBarraDeVida, 500); // Ejecutar la función cada medio segundo
 });
+
+//calculo de vida//
+document.addEventListener("DOMContentLoaded", function() {
+    function calcularVidaRestante() {
+        // Obtener el elemento de la vida total y el daño recibido
+        const baseVida = parseInt(document.querySelector('.numberbasevida').textContent);
+        const danioRecibido = parseInt(document.querySelector('.numberdanio').textContent);
+        
+        // Calcular la vida restante
+        const vidaRestante = Math.max(0, baseVida - danioRecibido);
+        
+        // Actualizar el elemento de la vida restante en el HTML
+        document.querySelector('.numbervida').textContent = vidaRestante;
+    }
+
+    calcularVidaRestante(); // Calcular la vida restante inicialmente
+    setInterval(calcularVidaRestante, 500); // Calcular la vida restante cada medio segundo
+});
+
+//calculo de atk//
+document.addEventListener("DOMContentLoaded", function() {
+    const numberAtkElement = document.getElementById('numberatk');
+    const numberFuerzaElement = document.getElementById('numberfuerza');
+    const fuerzaEquipoElements = document.querySelectorAll('.fuerza-input');
+
+    // Función para calcular el total de ataque del equipo
+    function calcularTotalAtaque() {
+        let totalAtaqueEquipo = 0;
+
+        // Suma el ataque proporcionado por cada pieza de equipo
+        fuerzaEquipoElements.forEach(element => {
+            totalAtaqueEquipo += parseInt(element.value) || 0;
+        });
+
+        // Calcula el total de ataque
+        const totalAtaque = totalAtaqueEquipo + Math.floor(parseInt(numberFuerzaElement.textContent) / 10);
+
+        // Actualiza el valor del total de ataque en el DOM
+        numberAtkElement.textContent = totalAtaque;
+    }
+
+    // Llama a la función para calcular el total de ataque cada medio segundo
+    setInterval(calcularTotalAtaque, 500);
+
+    // Llama a la función para calcular el total de ataque inicialmente
+    calcularTotalAtaque();
+
+    // Escucha cambios en el número de fuerza
+    numberFuerzaElement.addEventListener('input', function() {
+        calcularTotalAtaque();
+    });
+});
+
+//calculo de def//
+document.addEventListener("DOMContentLoaded", function() {
+    // Obtener todos los elementos de defensa del equipamiento
+    const elementosDefensa = document.querySelectorAll('.vida-input');
+
+    // Función para sumar la defensa del equipamiento
+    function sumarDefensa() {
+        let defensaTotal = 0;
+        elementosDefensa.forEach(elemento => {
+            defensaTotal += parseInt(elemento.value) || 0; // Parsear el valor a entero o asignar 0 si no se puede parsear
+        });
+        return defensaTotal;
+    }
+
+    // Función para actualizar el valor de la defensa en el elemento numberdef
+    function actualizarDefensa() {
+        const numberdefElemento = document.getElementById('numberdef');
+        numberdefElemento.textContent = sumarDefensa();
+    }
+    // Llamar a la función actualizarDefensa al cargar la página
+    actualizarDefensa();
+
+    // Escuchar cambios en los elementos de defensa del equipamiento y actualizar la defensa
+    elementosDefensa.forEach(elemento => {
+        elemento.addEventListener('input', actualizarDefensa);
+    });
+});
+
+
 /***********************************tirar dados*************************/
 document.addEventListener("DOMContentLoaded", function() {
     const dados = document.querySelectorAll('.dado');
