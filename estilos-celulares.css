@@ -110,3 +110,33 @@
             width: 100%;
   text-align: center;
         }
+  #fuerza, #agilidad, #inteligencia, #carisma {
+            width: 50%;
+            height: 40px;
+
+text-align: center;
+        }
+  #mod_fuerza, #mod_agilidad, #mod_inteligencia, #mod_carisma {
+            width: 50%;
+            height: 40px;
+
+text-align: center;
+        }
+  #lucha, #levantar_peso, #esquivar, #sigilo, #resolver_acertijos, #percepcion, #persuasion, #engano {
+            width: 80%;
+            height: 40px;
+
+text-align: center;
+        }
+#mod_lucha, #mod_levantar_peso, #mod_esquivar, #mod_sigilo, #mod_resolver_acertijos, #mod_percepcion, #mod_persuasion, #mod_engano {
+            width: 50%;
+            height: 40px;
+
+text-align: center;
+        }
+#total_lucha, #total_levantar_peso, #total_esquivar, #total_sigilo, #total_resolver_acertijos, #total_percepcion, #total_persuasion, #total_engano {
+            width: 80%;
+            height: 40px;
+
+text-align: center;
+        }
