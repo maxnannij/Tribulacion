@@ -1,168 +1,173 @@
       <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Hoja de Personaje</title> 
+ <title>Ficha de Personaje - Juego de Rol</title>
         <link rel="stylesheet"  href="estilos-celulares.css">
- <div class="container">
-        <header>
-            <h1>Ficha de Personaje</h1>
-        </header>
-        <div class="section">
-            <h2>Información del Personaje</h2>
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre">
-            </div>
-            <div class="inline-group">
-                <div class="form-group">
-                    <label for="clase">Clase:</label>
-                    <select id="clase" name="clase">
-                        <option value="arquero">Arquero</option>
-                        <option value="paladin">Paladín</option>
-                        <option value="cruzado">Cruzado</option>
-                        <option value="picaro">Pícaro</option>
-                        <option value="sacerdote">Sacerdote</option>
-                        <option value="salmista">Salmista</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="nivel">Nivel:</label>
-                    <input type="number" id="nivel" name="nivel">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="vida">Vida:</label>
-            </div>
-            <div class="vida-container">
-                <div class="vida-text">
-                    <div class="total">
-                        Total
-                        <input type="number" id="vida-base" name="vida-base" class="vida-input" value="100">
-                    </div>
-                    <div class="danio">
-                        Daño
-                        <input type="number" id="danio-recibido" name="danio-recibido" class="vida-input" value="0">
-                    </div>
-                </div>
-                <progress id="vida" name="vida" value="100" max="100"></progress>
-            </div>
-            <div class="form-group">
-                <label for="vida-resultante">Vida Resultante:</label>
-                <input type="number" id="vida-resultante" name="vida-resultante" value="100" readonly>
-            </div>
-            <div class="form-group">
-                <label for="danio-ataque">Daño de Ataque:</label>
-                <input type="number" id="danio-ataque" name="danio-ataque">
-            </div>
+       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+ </head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Ficha de Personaje</h1>
+    </header>
+    <div class="section">
+      <h2>Información del Personaje</h2>
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+      </div>
+      <div class="inline-group">
+        <div class="form-group">
+          <label for="clase">Clase:</label>
+          <select id="clase" name="clase">
+            <option value="arquero">Arquero</option>
+            <option value="paladin">Paladín</option>
+            <option value="cruzado">Cruzado</option>
+            <option value="picaro">Pícaro</option>
+            <option value="sacerdote">Sacerdote</option>
+            <option value="salmista">Salmista</option>
+          </select>
         </div>
-        <div class="section">
-            <h2>Atributos</h2>
-            <table>
-                <tr>
-                    <th>Atributo</th>
-                    <th>Valor</th>
-                    <th>Modificador</th>
-                </tr>
-                <tr>
-                    <td>Fuerza</td>
-                    <td><input type="number" id="fuerza" name="fuerza" value="0"></td>
-                    <td><input type="number" id="mod_fuerza" name="mod_fuerza" value="0" readonly></td>
-                </tr>
-                <tr>
-                    <td>Agilidad</td>
-                    <td><input type="number" id="agilidad" name="agilidad" value="0"></td>
-                    <td><input type="number" id="mod_agilidad" name="mod_agilidad" value="0" readonly></td>
-                </tr>
-                <tr>
-                    <td>Inteligencia</td>
-                    <td><input type="number" id="inteligencia" name="inteligencia" value="0"></td>
-                    <td><input type="number" id="mod_inteligencia" name="mod_inteligencia" value="0" readonly></td>
-                </tr>
-                <tr>
-                    <td>Carisma</td>
-                    <td><input type="number" id="carisma" name="carisma" value="0"></td>
-                    <td><input type="number" id="mod_carisma" name="mod_carisma" value="0" readonly></td>
-                </tr>
-            </table>
+        <div class="form-group">
+          <label for="nivel">Nivel:</label>
+          <input type="number" id="nivel" name="nivel">
         </div>
-        <div class="section">
-            <h2>Habilidades</h2>
-            <table>
-                <tr>
-                    <th>Habilidad</th>
-                    <th>Atributo</th>
-                    <th>Valor</th>
-                    <th>Modificador</th>
-                    <th>Total</th>
-                </tr>
-                <tr>
-                    <td>Lucha</td>
-                    <td>FUE</td>
-                    <td><input type="number" id="lucha" name="lucha" value="0"></td>
-                    <td><input type="number" id="mod_lucha" name="mod_lucha" value="0" readonly></td>
-                    <td><input type="number" id="total_lucha" name="total_lucha" value="0" readonly></td>
-                </tr>
-                <tr>
-                    <td>Levantar Peso</td>
-                    <td>FUE</td>
-                    <td><input type="number" id="levantar_peso" name="levantar_peso" value="0"></td>
-                    <td><input type="number" id="mod_levantar_peso" name="mod_levantar_peso" value="0" readonly></td>
-                    <td><input type="number" id="total_levantar_peso" name="total_levantar_peso" value="0" readonly></td>
-                </tr>
-                <tr>
-                  <td>Esquivar</td>
-                    <td>AGI</td>
-                    <td><input type="number" id="esquivar" name="esquivar" value="0"></td>
-                    <td><input type="number" id="mod_esquivar" name="mod_esquivar" value="0" readonly></td>
-                    <td><input type="number" id="total_esquivar" name="total_esquivar" value="0" readonly></td>
-                </tr>
-                <tr>
-                    <td>Sigilo</td>
-                    <td>AGI</td>
-                    <td><input type="number" id="sigilo" name="sigilo" value="0"></td>
-                    <td><input type="number" id="mod_sigilo" name="mod_sigilo" value="0" readonly></td>
-                    <td><input type="number" id="total_sigilo" name="total_sigilo" value="0" readonly></td>
-                </tr>
-                <tr>
-                    <td>Resolver Acertijos</td>
-                    <td>INT</td>
-                    <td><input type="number" id="resolver_acertijos" name="resolver_acertijos" value="0"></td>
-                    <td><input type="number" id="mod_resolver_acertijos" name="mod_resolver_acertijos" value="0" readonly></td>
-                    <td><input type="number" id="total_resolver_acertijos" name="total_resolver_acertijos" value="0" readonly></td>
-                </tr>
-                <tr>
-                    <td>Percepción</td>
-                    <td>INT</td>
-                    <td><input type="number" id="percepcion" name="percepcion" value="0"></td>
-                    <td><input type="number" id="mod_percepcion" name="mod_percepcion" value="0" readonly></td>
-                    <td><input type="number" id="total_percepcion" name="total_percepcion" value="0" readonly></td>
-                </tr>
-                <tr>
-                    <td>Persuasión</td>
-                    <td>CAR</td>
-                    <td><input type="number" id="persuasion" name="persuasion" value="0"></td>
-                    <td><input type="number" id="mod_persuasion" name="mod_persuasion" value="0" readonly></td>
-                    <td><input type="number" id="total_persuasion" name="total_persuasion" value="0" readonly></td>
-                </tr>
-                <tr>
-                    <td>Engaño</td>
-                    <td>CAR</td>
-                    <td><input type="number" id="engano" name="engano" value="0"></td>
-                    <td><input type="number" id="mod_engano" name="mod_engano" value="0" readonly></td>
-                    <td><input type="number" id="total_engano" name="total_engano" value="0" readonly></td>
-                </tr>
-            </table>
+      </div>
+      <div class="form-group">
+        <label for="vida">Vida:</label>
+      </div>
+      <div class="vida-container">
+        <div class="vida-text">
+          <div class="total">
+            Total
+            <input type="number" id="vida-base" name="vida-base" class="vida-input" value="100">
+          </div>
+          <div class="danio">
+            Daño
+            <input type="number" id="danio-recibido" name="danio-recibido" class="vida-input" value="0">
+          </div>
         </div>
-        <div class="section">
-            <h2>Equipo</h2>
-            <textarea id="equipo" name="equipo" rows="5"></textarea>
+        <progress id="vida" name="vida" value="100" max="100"></progress>
+        <div class="vida-resultante-container">
+          <span id="vida-resultante">100</span>
         </div>
-        <div class="section">
-            <h2>Inventario</h2>
-            <textarea id="inventario" name="inventario" rows="5"></textarea>
-        </div>
-        <div class="section">
-            <h2>Notas</h2>
-            <textarea id="notas" name="notas" rows="5"></textarea>
-        </div>
+      </div>
+      <div class="form-group">
+        <label for="danio-ataque">Daño de Ataque:</label>
+        <input type="number" id="danio-ataque" name="danio-ataque">
+      </div>
     </div>
+    <div class="section">
+      <h2>Atributos</h2>
+      <table>
+        <tr>
+          <th>Atributo</th>
+          <th>Valor</th>
+          <th>Modificador</th>
+        </tr>
+        <tr>
+          <td>Fuerza</td>
+          <td><input type="number" id="fuerza" name="fuerza" value="0"></td>
+          <td><input type="number" id="mod_fuerza" name="mod_fuerza" value="0" readonly></td>
+        </tr>
+        <tr>
+          <td>Agilidad</td>
+          <td><input type="number" id="agilidad" name="agilidad" value="0"></td>
+          <td><input type="number" id="mod_agilidad" name="mod_agilidad" value="0" readonly></td>
+        </tr>
+        <tr>
+          <td>Inteligencia</td>
+          <td><input type="number" id="inteligencia" name="inteligencia" value="0"></td>
+          <td><input type="number" id="mod_inteligencia" name="mod_inteligencia" value="0" readonly></td>
+        </tr>
+        <tr>
+          <td>Carisma</td>
+          <td><input type="number" id="carisma" name="carisma" value="0"></td>
+          <td><input type="number" id="mod_carisma" name="mod_carisma" value="0" readonly></td>
+        </tr>
+      </table>
+    </div>
+    <div class="section">
+      <h2>Habilidades</h2>
+      <table>
+        <tr>
+          <th>Habilidad</th>
+          <th>Atributo</th>
+          <th>Valor</th>
+          <th>Modificador</th>
+          <th>Total</th>
+        </tr>
+        <tr>
+          <td>Lucha</td>
+          <td>FUE</td>
+          <td><input type="number" id="lucha" name="lucha" value="0"></td>
+          <td><input type="number" id="mod_lucha" name="mod_lucha" value="0" readonly></td>
+          <td><input type="number" id="total_lucha" name="total_lucha" value="0" readonly></td>
+        </tr>
+        <tr>
+          <td>Levantar Peso</td>
+          <td>FUE</td>
+          <td><input type="number" id="levantar_peso" name="levantar_peso" value="0"></td>
+          <td><input type="number" id="mod_levantar_peso" name="mod_levantar_peso" value="0" readonly></td>
+          <td><input type="number" id="total_levantar_peso" name="total_levantar_peso" value="0" readonly></td>
+        </tr>
+        <tr>
+          <td>Esquivar</td>
+          <td>AGI</td>
+          <td>
+            <input<td><input type="number" id="esquivar" name="esquivar" value="0">
+          </td>
+          <td><input type="number" id="mod_esquivar" name="mod_esquivar" value="0" readonly></td>
+          <td><input type="number" id="total_esquivar" name="total_esquivar" value="0" readonly></td>
+        </tr>
+        <tr>
+          <td>Sigilo</td>
+          <td>AGI</td>
+          <td><input type="number" id="sigilo" name="sigilo" value="0"></td>
+          <td><input type="number" id="mod_sigilo" name="mod_sigilo" value="0" readonly></td>
+          <td><input type="number" id="total_sigilo" name="total_sigilo" value="0" readonly></td>
+        </tr>
+        <tr>
+          <td>Resolver Acertijos</td>
+          <td>INT</td>
+          <td><input type="number" id="resolver_acertijos" name="resolver_acertijos" value="0"></td>
+          <td><input type="number" id="mod_resolver_acertijos" name="mod_resolver_acertijos" value="0" readonly></td>
+          <td><input type="number" id="total_resolver_acertijos" name="total_resolver_acertijos" value="0" readonly></td>
+        </tr>
+        <tr>
+          <td>Percepción</td>
+          <td>INT</td>
+          <td><input type="number" id="percepcion" name="percepcion" value="0"></td>
+          <td><input type="number" id="mod_percepcion" name="mod_percepcion" value="0" readonly></td>
+          <td><input type="number" id="total_percepcion" name="total_percepcion" value="0" readonly></td>
+        </tr>
+        <tr>
+          <td>Persuasión</td>
+          <td>CAR</td>
+          <td><input type="number" id="persuasion" name="persuasion" value="0"></td>
+          <td><input type="number" id="mod_persuasion" name="mod_persuasion" value="0" readonly></td>
+          <td><input type="number" id="total_persuasion" name="total_persuasion" value="0" readonly></td>
+        </tr>
+        <tr>
+          <td>Engaño</td>
+          <td>CAR</td>
+          <td><input type="number" id="engano" name="engano" value="0"></td>
+          <td><input type="number" id="mod_engano" name="mod_engano" value="0" readonly></td>
+          <td><input type="number" id="total_engano" name="total_engano" value="0" readonly></td>
+        </tr>
+      </table>
+    </div>
+    <div class="section">
+      <h2>Equipo</h2>
+      <textarea id="equipo" name="equipo" rows="5"></textarea>
+    </div>
+    <div class="section">
+      <h2>Inventario</h2>
+      <textarea id="inventario" name="inventario" rows="5"></textarea>
+    </div>
+    <div class="section">
+      <h2>Notas</h2>
+      <textarea id="notas" name="notas" rows="5"></textarea>
+    </div>
+  </div>
