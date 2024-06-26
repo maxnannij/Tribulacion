@@ -1,45 +1,49 @@
   body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            line-height: 1.6;
         }
         .container {
             width: 100%;
             margin: auto;
             overflow: hidden;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
         }
         header {
             background: #333;
             color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #77aaff 3px solid;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
         }
         header h1 {
-            text-align: center;
-            text-transform: uppercase;
             margin: 0;
+            font-size: 24px;
         }
         .section {
-            background: #fff;
             margin: 20px 0;
             padding: 20px;
-            border: #ddd 1px solid;
-            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 10px;
         }
         .section h2 {
-            text-align: center;
-            text-transform: uppercase;
-            margin-bottom: 10px;
+                      text-align: center;
+            margin-top: 0;
+            font-size: 20px;
+            color: #333;
         }
         .form-group {
-            margin-bottom: 15px;
-            text-align: center;
+          text-align: center;
+            margin-bottom: 20px;
         }
         .form-group label {
             display: block;
             margin-bottom: 5px;
+            font-weight: bold;
         }
         .form-group input[type="text"],
         .form-group input[type="number"],
@@ -47,70 +51,85 @@
         .form-group textarea {
             width: 50%;
             padding: 8px;
+            margin: 5px 0;
             box-sizing: border-box;
-            display: block;
-            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+         
         }
         .inline-group {
             display: flex;
             justify-content: space-between;
-            width: 50%;
+          width: 50%;
             margin: 0 auto;
+         
         }
         .inline-group .form-group {
-            width: 45%;
+            flex: 1;
+            margin-right: 10px;
+          
+        }
+        .inline-group .form-group:last-child {
+            margin-right: 0;
+          
         }
         .vida-container {
             position: relative;
-            width: 80%;
-            margin: 20px auto;
+            margin: 20px 0;
             height: 40px;
         }
         #vida {
             width: 100%;
-            height: 40px;
-            margin: 10px;
+            height: 30px;
+            margin: 2px;
         }
         .vida-text {
             position: absolute;
-            top: -20px;
+            top: -65%;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             justify-content: center;
             align-items: center;
             font-weight: bold;
-          
         }
         .vida-text div {
-            padding: 1px 10px;
+            padding: 5px 10px;
             color: #fff;
+            border-radius: 5px;
         }
         .total {
             background-color: green;
-          width: 20%;
         }
         .danio {
             background-color: red;
-          width: 20%;
+        }
+        .vida-input {
+            width: 60px;
+        }
+        .vida-resultante-container {
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
+            margin: 20px 0;
         }
         table, th, td {
             border: 1px solid #ddd;
         }
         th, td {
-            padding: 8px;
-            text-align: left;
+            padding: 10px;
+            text-align: center;
         }
-.vida-input {
-            width: 100%;
-  text-align: center;
-        }
-  #fuerza, #agilidad, #inteligencia, #carisma {
+#fuerza, #agilidad, #inteligencia, #carisma {
             width: 50%;
             height: 40px;
 
@@ -139,8 +158,4 @@ text-align: center;
             height: 40px;
 
 text-align: center;
-        }
-
-td {
-    text-align: center;
         }
