@@ -22,10 +22,9 @@
         </header>
 
         <main class="character-body">
-            <!-- COLUMNA IZQUIERDA: Tus Atributos y Habilidades -->
+            <!-- COLUMNA IZQUIERDA -->
             <div class="left-col">
                 <section class="attributes">
-                    <!-- Ahora los stats son el valor puro, no hay modificadores extras -->
                     <div class="stat-box"><label>Fuerza</label><input type="number" value="3" class="stat-score" data-stat="str"></div>
                     <div class="stat-box"><label>Destreza</label><input type="number" value="2" class="stat-score" data-stat="dex"></div>
                     <div class="stat-box"><label>Inteligencia</label><input type="number" value="1" class="stat-score" data-stat="int"></div>
@@ -52,22 +51,22 @@
                 </section>
             </div>
 
-            <!-- COLUMNA DERECHA: Combate, Botones de Acción y Equipo -->
+            <!-- COLUMNA DERECHA -->
             <div class="right-col">
                 <section class="combat-stats">
-                    <div class="combat-box"><span class="value">16</span><label>CA</label></div>
-                    
-                    <!-- Botones de Acción interactivos -->
-                    <div class="combat-box">
-                        <div class="action-points-container">
-                            <div class="action-dot"></div>
-                            <div class="action-dot"></div>
-                            <div class="action-dot"></div>
+                    <!-- Fila superior de combate -->
+                    <div class="combat-row">
+                        <div class="combat-box"><span class="value">16</span><label>CA</label></div>
+                        <div class="combat-box">
+                            <div class="action-points-container">
+                                <div class="action-dot"></div>
+                                <div class="action-dot"></div>
+                                <div class="action-dot"></div>
+                            </div>
+                            <label>Acciones</label>
                         </div>
-                        <label>Acciones</label>
+                        <div class="combat-box"><span class="value">9m</span><label>Veloc</label></div>
                     </div>
-
-                    <div class="combat-box"><span class="value">9m</span><label>Velocidad</label></div>
                     
                     <div class="hp-box">
                         <div class="hp-header">
@@ -80,11 +79,11 @@
                 </section>
 
                 <section class="features-equipment">
-                    <div class="panel actions-panel">
+                    <div class="panel actions-panel full-width">
                         <h3>Ataques Rápidos (Dados)</h3>
                         <div class="action-creator">
-                            <input type="text" id="new-action-name" placeholder="Nombre (Ej: Ataque Espada)">
-                            <input type="text" id="new-action-dice" placeholder="Fórmula (Ej: 1d8+3)">
+                            <input type="text" id="new-action-name" placeholder="Nombre (Ej: Ataque)">
+                            <input type="text" id="new-action-dice" placeholder="Ej: 1d8+3">
                             <button id="add-action-btn" class="btn-create">+</button>
                         </div>
                         <div id="custom-actions-container" class="actions-list"></div>
@@ -94,7 +93,7 @@
                         <h3>Rasgos y Atributos</h3>
                         <textarea placeholder="Anota aquí tus habilidades..."></textarea>
                     </div>
-                    <div class="panel full-width">
+                    <div class="panel">
                         <h3>Equipo e Inventario</h3>
                         <textarea placeholder="Mochila, monedas, pociones..."></textarea>
                     </div>
