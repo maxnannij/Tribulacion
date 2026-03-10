@@ -11,13 +11,13 @@
         <!-- Cabecera EDITABLE -->
         <header class="character-header">
             <div class="char-name">
-                <input type="text" value="" class="header-input-name" placeholder="Nombre">
+                <input type="text" value="-" class="header-input-name" placeholder="Nombre">
             </div>
             <div class="char-details">
-                <div class="detail-box"><input type="text" value="" class="header-input"><label>Clase</label></div>
-                <div class="detail-box"><input type="text" value="" class="header-input"><label>Raza</label></div>
-                <div class="detail-box"><input type="text" value="" class="header-input"><label>Trasfondo</label></div>
-                <div class="detail-box"><input type="text" value="1" class="header-input level-input"><label>Nivel</label></div>
+                <div class="detail-box"><input type="text" value="-" class="header-input"><label>Clase</label></div>
+                <div class="detail-box"><input type="text" value="-" class="header-input"><label>Raza</label></div>
+                <div class="detail-box"><input type="text" value="-" class="header-input"><label>Trasfondo</label></div>
+                <div class="detail-box"><input type="number" value="1" class="header-input level-input"><label>Nivel</label></div>
             </div>
         </header>
 
@@ -36,16 +36,46 @@
                     <div class="skills-box">
                         <h3>Habilidades (Clic para tirar)</h3>
                         <ul class="skills-list" id="skills-list">
-                            <li class="skill-roll-btn" data-stat="int" data-skill-name="Arcano"><span class="skill-mod"></span><span class="skill-name">Arcano <span class="skill-stat">(Int)</span></span></li>
-                            <li class="skill-roll-btn" data-stat="str" data-skill-name="Corpulencia"><span class="skill-mod"></span><span class="skill-name">Corpulencia <span class="skill-stat">(Fue)</span></span></li>
-                            <li class="skill-roll-btn" data-stat="dex" data-skill-name="Finura"><span class="skill-mod"></span><span class="skill-name">Finura <span class="skill-stat">(Des)</span></span></li>
-                            <li class="skill-roll-btn" data-stat="cha" data-skill-name="Influencia"><span class="skill-mod"></span><span class="skill-name">Influencia <span class="skill-stat">(Car)</span></span></li>
-                            <li class="skill-roll-btn" data-stat="int" data-skill-name="Investigación"><span class="skill-mod"></span><span class="skill-name">Investigación <span class="skill-stat">(Int)</span></span></li>
-                            <li class="skill-roll-btn" data-stat="vol" data-skill-name="Naturaleza"><span class="skill-mod"></span><span class="skill-name">Naturaleza <span class="skill-stat">(Vol)</span></span></li>
-                            <li class="skill-roll-btn" data-stat="vol" data-skill-name="Percepción"><span class="skill-mod"></span><span class="skill-name">Percepción <span class="skill-stat">(Vol)</span></span></li>
-                            <li class="skill-roll-btn" data-stat="cha" data-skill-name="Perspicacia"><span class="skill-mod"></span><span class="skill-name">Perspicacia <span class="skill-stat">(Car)</span></span></li>
-                            <li class="skill-roll-btn" data-stat="int" data-skill-name="Sabiduría"><span class="skill-mod"></span><span class="skill-name">Sabiduría <span class="skill-stat">(Int)</span></span></li>
-                            <li class="skill-roll-btn" data-stat="dex" data-skill-name="Sigilo"><span class="skill-mod"></span><span class="skill-name">Sigilo <span class="skill-stat">(Des)</span></span></li>
+                            <li class="skill-roll-btn" data-stat="int" data-skill-name="Arcano">
+                                <span class="skill-mod"></span><span class="skill-name">Arcano <span class="skill-stat">(Int)</span></span>
+                                <span class="info-btn" data-desc="Conocimiento sobre magia, rituales, objetos místicos y lo sobrenatural.">i</span>
+                            </li>
+                            <li class="skill-roll-btn" data-stat="str" data-skill-name="Corpulencia">
+                                <span class="skill-mod"></span><span class="skill-name">Corpulencia <span class="skill-stat">(Fue)</span></span>
+                                <span class="info-btn" data-desc="Fuerza bruta, capacidad para levantar peso, romper objetos y proezas físicas.">i</span>
+                            </li>
+                            <li class="skill-roll-btn" data-stat="dex" data-skill-name="Finura">
+                                <span class="skill-mod"></span><span class="skill-name">Finura <span class="skill-stat">(Des)</span></span>
+                                <span class="info-btn" data-desc="Agilidad corporal, acrobacias, equilibrio, flexibilidad y reflejos rápidos.">i</span>
+                            </li>
+                            <li class="skill-roll-btn" data-stat="cha" data-skill-name="Influencia">
+                                <span class="skill-mod"></span><span class="skill-name">Influencia <span class="skill-stat">(Car)</span></span>
+                                <span class="info-btn" data-desc="Capacidad para persuadir, engañar, intimidar o liderar a otras personas.">i</span>
+                            </li>
+                            <li class="skill-roll-btn" data-stat="int" data-skill-name="Investigación">
+                                <span class="skill-mod"></span><span class="skill-name">Investigación <span class="skill-stat">(Int)</span></span>
+                                <span class="info-btn" data-desc="Buscar pistas, deducir información y analizar el entorno en detalle.">i</span>
+                            </li>
+                            <li class="skill-roll-btn" data-stat="vol" data-skill-name="Naturaleza">
+                                <span class="skill-mod"></span><span class="skill-name">Naturaleza <span class="skill-stat">(Vol)</span></span>
+                                <span class="info-btn" data-desc="Conocimiento del entorno natural, plantas, animales, clima y supervivencia.">i</span>
+                            </li>
+                            <li class="skill-roll-btn" data-stat="vol" data-skill-name="Percepción">
+                                <span class="skill-mod"></span><span class="skill-name">Percepción <span class="skill-stat">(Vol)</span></span>
+                                <span class="info-btn" data-desc="Capacidad para notar cosas ocultas, escuchar ruidos o ver a lo lejos.">i</span>
+                            </li>
+                            <li class="skill-roll-btn" data-stat="cha" data-skill-name="Perspicacia">
+                                <span class="skill-mod"></span><span class="skill-name">Perspicacia <span class="skill-stat">(Car)</span></span>
+                                <span class="info-btn" data-desc="Habilidad para leer las intenciones de otros, detectar mentiras o motivos ocultos.">i</span>
+                            </li>
+                            <li class="skill-roll-btn" data-stat="int" data-skill-name="Sabiduría">
+                                <span class="skill-mod"></span><span class="skill-name">Sabiduría <span class="skill-stat">(Int)</span></span>
+                                <span class="info-btn" data-desc="Sentido común, memoria a largo plazo, conocimiento general y resistencia mental.">i</span>
+                            </li>
+                            <li class="skill-roll-btn" data-stat="dex" data-skill-name="Sigilo">
+                                <span class="skill-mod"></span><span class="skill-name">Sigilo <span class="skill-stat">(Des)</span></span>
+                                <span class="info-btn" data-desc="Habilidad para moverse en silencio, esconderse en las sombras y pasar desapercibido.">i</span>
+                            </li>
                         </ul>
                     </div>
                 </section>
@@ -54,7 +84,6 @@
             <!-- COLUMNA DERECHA -->
             <div class="right-col">
                 <section class="combat-stats">
-                    <!-- Fila superior de combate -->
                     <div class="combat-row">
                         <div class="combat-box"><input type="number" class="value combat-input" value="0=DES"><label>CA</label></div>
                         <div class="combat-box">
@@ -65,25 +94,25 @@
                             </div>
                             <label>Acciones</label>
                         </div>
-                        <div class="combat-box"><span class="value">9m</span><label>Veloc</label></div>
+                        <div class="combat-box"><input type="text" class="value combat-input" value="9m"><label>Veloc</label></div>
                     </div>
                     
                     <div class="hp-box">
                         <div class="hp-header">
                             <label>PV Máximos:</label>
-                            <input type="number" value="28" class="max-hp-input">
+                            <input type="number" value="-" class="max-hp-input">
                         </div>
-                        <input type="number" value="28" class="current-hp">
+                        <input type="number" value="-" class="current-hp">
                         <label>PV Actuales</label>
                     </div>
                 </section>
 
                 <section class="features-equipment">
                     <div class="panel actions-panel full-width">
-                        <h3>Ataques Rápidos (Dados)</h3>
+                        <h3>Botones (dados)</h3>
                         <div class="action-creator">
                             <input type="text" id="new-action-name" placeholder="Nombre (Ej: Ataque)">
-                            <input type="text" id="new-action-dice" placeholder="Ej: 1d8+3">
+                            <input type="text" id="new-action-dice" placeholder="Ej: 1d20+fue o 1d8+3">
                             <button id="add-action-btn" class="btn-create">+</button>
                         </div>
                         <div id="custom-actions-container" class="actions-list"></div>
@@ -112,6 +141,15 @@
                 <div id="dice-total">15</div>
                 <div id="dice-details">[8] + 7</div>
             </div>
+        </div>
+    </div>
+
+    <!-- PANTALLA EMERGENTE DE INFORMACIÓN (NUEVA) -->
+    <div id="info-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <span id="close-info-modal" class="close-btn">&times;</span>
+            <h2 id="info-modal-title">Habilidad</h2>
+            <p id="info-modal-desc" style="font-size: 1.1rem; color: #555; margin-top: 15px;"></p>
         </div>
     </div>
 
