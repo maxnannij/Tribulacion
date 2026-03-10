@@ -44,29 +44,28 @@ body { background-color: var(--bg-color); color: var(--text-color); padding: 10p
 .skills-list li:hover .skill-stat, .skills-list li:active .skill-stat { color: #f4f1ea; }
 .skill-mod { display: inline-block; width: 35px; text-align: center; font-weight: bold; color: var(--primary-color); background: #e0dcd3; border-radius: 4px; padding: 3px 0; font-size: 0.9rem; }
 .skills-list li:hover .skill-mod, .skills-list li:active .skill-mod { background: white; color: var(--primary-color); }
-.skill-stat { font-size: 0.8rem; color: #777; margin-left: auto; }
+.skill-stat { font-size: 0.8rem; color: #777; margin-left: 5px; }
+
+/* Botón de Información (NUEVO) */
+.info-btn { 
+    display: inline-flex; justify-content: center; align-items: center; 
+    width: 22px; height: 22px; border-radius: 50%; background: #ccc; 
+    color: white; font-size: 0.8rem; font-weight: bold; font-family: monospace; 
+    margin-left: auto; transition: background 0.2s; 
+}
+.skills-list li:hover .info-btn { background: #f4f1ea; color: var(--primary-color); }
+.info-btn:hover { transform: scale(1.1); }
 
 /* Combate */
 .combat-stats { display: flex; flex-direction: column; gap: 15px; }
 .combat-row { display: flex; gap: 10px; justify-content: space-between; }
 .combat-box { border: 2px solid var(--primary-color); padding: 10px; border-radius: 10px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center; min-width: 0;}
 
-/* ESTILOS DE CA Y VELOCIDAD EDITABLES */
 .combat-box .value { 
-    width: 100%;
-    text-align: center;
-    border: none;
-    background: transparent;
-    color: var(--text-color);
-    font-size: 1.8rem; 
-    font-weight: bold; 
-    display: block; 
-    margin-bottom: 5px;
+    width: 100%; text-align: center; border: none; background: transparent; 
+    color: var(--text-color); font-size: 1.8rem; font-weight: bold; display: block; margin-bottom: 5px;
 }
-.combat-box .value:focus {
-    outline: none;
-    color: var(--primary-color);
-}
+.combat-box .value:focus { outline: none; color: var(--primary-color); }
 
 .action-points-container { display: flex; justify-content: center; gap: 6px; margin-bottom: 8px; height: 32px; align-items: center;}
 .action-dot { width: 22px; height: 22px; border-radius: 50%; border: 3px solid var(--primary-color); cursor: pointer; background: transparent; touch-action: manipulation;}
@@ -90,35 +89,35 @@ textarea { width: 100%; height: 120px; padding: 10px; border: 1px solid var(--bo
 #new-action-dice { flex: 1; min-width: 80px; }
 .btn-create { background: var(--primary-color); color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 1.2rem; min-width: 44px;}
 
+/* Nuevos Botones de Acción con Borrar */
 .actions-list { display: flex; flex-wrap: wrap; gap: 10px; }
-.action-btn { background: white; border: 2px solid var(--primary-color); color: var(--primary-color); padding: 10px 15px; border-radius: 20px; font-weight: bold; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); touch-action: manipulation;}
+.action-wrapper { display: inline-flex; align-items: stretch; border-radius: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); overflow: hidden; }
+.action-btn { background: white; border: 2px solid var(--primary-color); border-right: none; color: var(--primary-color); padding: 8px 15px; border-radius: 20px 0 0 20px; font-weight: bold; cursor: pointer; transition: all 0.2s; touch-action: manipulation; }
+.action-del-btn { background: var(--primary-color); border: 2px solid var(--primary-color); color: white; padding: 0 12px; border-radius: 0 20px 20px 0; font-weight: bold; cursor: pointer; transition: all 0.2s; touch-action: manipulation; font-size: 1.1rem;}
+.action-btn:hover { background: var(--primary-color); color: white; }
+.action-del-btn:hover { background: #600000; border-color: #600000;}
 
-/* Pantalla de Dados */
+/* Pantallas Emergentes (Modales) */
 .hidden { display: none !important; }
 .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; z-index: 1000; padding: 20px;}
 .modal-content { background: var(--bg-color); width: 100%; max-width: 350px; padding: 30px 20px; border-radius: 12px; text-align: center; border: 4px solid var(--primary-color); position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 .close-btn { position: absolute; top: 10px; right: 15px; font-size: 2rem; cursor: pointer; color: #666; line-height: 1;}
-#modal-title { font-family: Georgia, serif; color: var(--text-color); margin-bottom: 20px; font-size: 1.3rem; }
+#modal-title, #info-modal-title { font-family: Georgia, serif; color: var(--primary-color); margin-bottom: 20px; font-size: 1.5rem; }
 .dice-icon { font-size: 5rem; margin: 20px 0; display: inline-block;}
 .shake-anim { animation: shake 0.4s infinite; }
 @keyframes shake { 0% { transform: rotate(0deg) scale(1); } 25% { transform: rotate(15deg) scale(1.1); } 50% { transform: rotate(0deg) scale(1); } 75% { transform: rotate(-15deg) scale(1.1); } 100% { transform: rotate(0deg) scale(1); } }
 #dice-total { font-size: 4.5rem; font-weight: bold; color: var(--primary-color); line-height: 1; margin: 10px 0; }
 #dice-details { font-size: 1rem; color: #555; background: #e0dcd3; padding: 8px; border-radius: 5px; display: inline-block; word-break: break-all;}
 
-/* --- DISEÑO MÓVIL (Magia Responsiva) --- */
+/* Responsive */
 @media (max-width: 768px) {
     .sheet-container { padding: 15px 10px; border: none; border-radius: 0; box-shadow: none;}
-    
     .character-header { flex-direction: column; align-items: center; }
     .header-input-name { text-align: center; }
     .char-details { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
-    
     .character-body { grid-template-columns: 1fr; }
-    
     .action-creator { flex-direction: column; }
     .action-creator input, .action-creator button { width: 100%; margin-bottom: 5px; }
-    
     .features-equipment { grid-template-columns: 1fr; }
-    
     .stat-box:last-child { width: 100%; } 
 }
