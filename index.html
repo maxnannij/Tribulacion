@@ -1,406 +1,121 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hoja de Personaje</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja de Personaje - Sistema Propio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<div class="sheet">
-
-<!-- PERSONAJE -->
-<div class="panel character">
-<h2>PERSONAJE</h2>
-
-<div class="grid3">
-<div>
-<label>Nombre</label>
-<input id="nombre">
-</div>
-
-<div>
-<label>Clase</label>
-<input id="clase">
-</div>
-
-<div>
-<label>Nivel</label>
-<input id="nivel">
-</div>
-</div>
-
-</div>
-
-
-<!-- ATRIBUTOS -->
-
-<div class="panel">
-<h2>ATRIBUTOS</h2>
-
-<div class="attributes">
-
-<div class="attr">
-<span>FUE</span>
-<input id="FUE" type="number">
-</div>
-
-<div class="attr">
-<span>DES</span>
-<input id="DES" type="number">
-</div>
-
-<div class="attr">
-<span>INT</span>
-<input id="INT" type="number">
-</div>
-
-<div class="attr">
-<span>SAB</span>
-<input id="SAB" type="number">
-</div>
-
-<div class="attr">
-<span>CAR</span>
-<input id="CAR" type="number">
-</div>
-
-</div>
-
-</div>
-
-
-<!-- ACCIONES -->
-
-<div class="panel">
-<h2>ACCIONES</h2>
-
-<div class="dice-container">
-<div class="dice" data-index="0">🎲</div>
-<div class="dice" data-index="1">🎲</div>
-<div class="dice" data-index="2">🎲</div>
-</div>
-
-</div>
-
-
-<!-- VIDA Y COMBATE -->
-
-<div class="panel">
-<h2>COMBATE</h2>
-
-<div class="grid2">
-
-<div>
-<label>Armadura</label>
-<input id="armadura">
-</div>
-
-<div>
-<label>Iniciativa</label>
-<input id="iniciativa">
-</div>
-
-<div>
-<label>Velocidad</label>
-<input id="velocidad">
-</div>
-
-<div>
-<label>Dados de Golpe</label>
-<input id="dadosGolpe">
-</div>
-
-<div>
-<label>Vida Max</label>
-<input id="vidaMax" type="number">
-</div>
-
-<div>
-<label>Vida Actual</label>
-<input id="vidaActual" type="number">
-</div>
-
-<div>
-<label>Vida Temporal</label>
-<input id="vidaTemp" type="number">
-</div>
-
-</div>
-
-</div>
-
-
-<!-- HABILIDADES -->
-
-<div class="panel">
-<h2>HABILIDADES</h2>
-
-<div class="skills">
-
-<div>Arcano <span id="arcano"></span></div>
-<div>Examinación <span id="examinacion"></span></div>
-<div>Finura <span id="finura"></span></div>
-<div>Influencia <span id="influencia"></span></div>
-<div>Perspicacia <span id="perspicacia"></span></div>
-<div>Sabiduría <span id="sabiduria"></span></div>
-<div>Corpulencia <span id="corpulencia"></span></div>
-<div>Naturaleza <span id="naturaleza"></span></div>
-<div>Percepción <span id="percepcion"></span></div>
-<div>Sigilo <span id="sigilo"></span></div>
-
-</div>
-
-</div>
-
-
-<!-- RECURSOS -->
-
-<div class="panel">
-<h2>RECURSOS DE CLASE</h2>
-
-<input id="recursos">
-
-</div>
-
-
-<!-- HERIDAS -->
-
-<div class="panel">
-<h2>HERIDAS</h2>
-
-<div class="wound-track">
-
-<div class="wound" data-index="0"></div>
-<div class="wound" data-index="1"></div>
-<div class="wound" data-index="2"></div>
-<div class="wound" data-index="3"></div>
-<div class="wound" data-index="4"></div>
-<div class="wound" data-index="5"></div>
-
-</div>
-
-</div>
-
-
-<!-- NOTAS -->
-
-<div class="panel">
-<h2>NOTAS</h2>
-<textarea id="notas"></textarea>
-</div>
-
-</div>
-
-
-<script>
-
-let data = {
-
-nombre:"",
-clase:"",
-nivel:"",
-recursos:"",
-vidaMax:"",
-vidaActual:"",
-vidaTemp:"",
-armadura:"",
-iniciativa:"",
-velocidad:"",
-dadosGolpe:"",
-notas:"",
-
-atributos:{
-FUE:0,
-DES:0,
-INT:0,
-SAB:0,
-CAR:0
-},
-
-acciones:[false,false,false],
-heridas:[false,false,false,false,false,false]
-
-}
-
-
-
-function save(){
-
-data.nombre = nombre.value
-data.clase = clase.value
-data.nivel = nivel.value
-data.recursos = recursos.value
-data.vidaMax = vidaMax.value
-data.vidaActual = vidaActual.value
-data.vidaTemp = vidaTemp.value
-data.armadura = armadura.value
-data.iniciativa = iniciativa.value
-data.velocidad = velocidad.value
-data.dadosGolpe = dadosGolpe.value
-data.notas = notas.value
-
-localStorage.setItem("personaje", JSON.stringify(data))
-
-}
-
-
-
-function load(){
-
-let saved = localStorage.getItem("personaje")
-
-if(saved){
-
-data = JSON.parse(saved)
-
-nombre.value = data.nombre
-clase.value = data.clase
-nivel.value = data.nivel
-recursos.value = data.recursos
-vidaMax.value = data.vidaMax
-vidaActual.value = data.vidaActual
-vidaTemp.value = data.vidaTemp
-armadura.value = data.armadura
-iniciativa.value = data.iniciativa
-velocidad.value = data.velocidad
-dadosGolpe.value = data.dadosGolpe
-notas.value = data.notas
-
-}
-
-}
-
-
-
-function calcSkills(){
-
-let a = data.atributos
-
-arcano.innerText = a.INT
-examinacion.innerText = a.INT
-finura.innerText = a.DES
-influencia.innerText = a.CAR
-perspicacia.innerText = a.SAB
-sabiduria.innerText = a.SAB
-corpulencia.innerText = a.FUE
-naturaleza.innerText = a.SAB
-percepcion.innerText = a.SAB
-sigilo.innerText = a.DES
-
-}
-
-
-
-function initAttributes(){
-
-["FUE","DES","INT","SAB","CAR"].forEach(id=>{
-
-let el = document.getElementById(id)
-
-el.addEventListener("input",()=>{
-
-data.atributos[id] = Number(el.value)
-
-calcSkills()
-
-save()
-
-})
-
-})
-
-}
-
-
-
-function initDice(){
-
-document.querySelectorAll(".dice").forEach(d=>{
-
-d.addEventListener("click",()=>{
-
-let i = d.dataset.index
-
-data.acciones[i] = !data.acciones[i]
-
-d.classList.toggle("active")
-
-save()
-
-})
-
-})
-
-}
-
-
-
-function initWounds(){
-
-document.querySelectorAll(".wound").forEach(w=>{
-
-w.addEventListener("click",()=>{
-
-let i = w.dataset.index
-
-data.heridas[i] = !data.heridas[i]
-
-w.classList.toggle("active")
-
-save()
-
-})
-
-})
-
-}
-
-
-
-function restore(){
-
-["FUE","DES","INT","SAB","CAR"].forEach(id=>{
-
-document.getElementById(id).value = data.atributos[id]
-
-})
-
-document.querySelectorAll(".dice").forEach(d=>{
-
-let i = d.dataset.index
-
-if(data.acciones[i]) d.classList.add("active")
-
-})
-
-document.querySelectorAll(".wound").forEach(w=>{
-
-let i = w.dataset.index
-
-if(data.heridas[i]) w.classList.add("active")
-
-})
-
-calcSkills()
-
-}
-
-
-
-document.querySelectorAll("input, textarea").forEach(el=>{
-el.addEventListener("input", save)
-})
-
-load()
-initAttributes()
-initDice()
-initWounds()
-restore()
-
-</script>
-
+    <div class="sheet-container">
+        <!-- Cabecera EDITABLE -->
+        <header class="character-header">
+            <div class="char-name">
+                <input type="text" value="Braulio" class="header-input-name" placeholder="Nombre">
+            </div>
+            <div class="char-details">
+                <div class="detail-box"><input type="text" value="Guerrero" class="header-input"><label>Clase</label></div>
+                <div class="detail-box"><input type="text" value="Humano" class="header-input"><label>Raza</label></div>
+                <div class="detail-box"><input type="text" value="Soldado" class="header-input"><label>Trasfondo</label></div>
+                <div class="detail-box"><input type="text" value="3" class="header-input level-input"><label>Nivel</label></div>
+            </div>
+        </header>
+
+        <main class="character-body">
+            <!-- COLUMNA IZQUIERDA: Tus Atributos y Habilidades -->
+            <div class="left-col">
+                <section class="attributes">
+                    <!-- Ahora los stats son el valor puro, no hay modificadores extras -->
+                    <div class="stat-box"><label>Fuerza</label><input type="number" value="3" class="stat-score" data-stat="str"></div>
+                    <div class="stat-box"><label>Destreza</label><input type="number" value="2" class="stat-score" data-stat="dex"></div>
+                    <div class="stat-box"><label>Inteligencia</label><input type="number" value="1" class="stat-score" data-stat="int"></div>
+                    <div class="stat-box"><label>Carisma</label><input type="number" value="0" class="stat-score" data-stat="cha"></div>
+                    <div class="stat-box"><label>Voluntad</label><input type="number" value="2" class="stat-score" data-stat="vol"></div>
+                </section>
+
+                <section class="skills-section">
+                    <div class="skills-box">
+                        <h3>Habilidades (Clic para tirar)</h3>
+                        <ul class="skills-list" id="skills-list">
+                            <li class="skill-roll-btn" data-stat="int" data-skill-name="Arcano"><span class="skill-mod"></span><span class="skill-name">Arcano <span class="skill-stat">(Int)</span></span></li>
+                            <li class="skill-roll-btn" data-stat="str" data-skill-name="Corpulencia"><span class="skill-mod"></span><span class="skill-name">Corpulencia <span class="skill-stat">(Fue)</span></span></li>
+                            <li class="skill-roll-btn" data-stat="dex" data-skill-name="Finura"><span class="skill-mod"></span><span class="skill-name">Finura <span class="skill-stat">(Des)</span></span></li>
+                            <li class="skill-roll-btn" data-stat="cha" data-skill-name="Influencia"><span class="skill-mod"></span><span class="skill-name">Influencia <span class="skill-stat">(Car)</span></span></li>
+                            <li class="skill-roll-btn" data-stat="int" data-skill-name="Investigación"><span class="skill-mod"></span><span class="skill-name">Investigación <span class="skill-stat">(Int)</span></span></li>
+                            <li class="skill-roll-btn" data-stat="vol" data-skill-name="Naturaleza"><span class="skill-mod"></span><span class="skill-name">Naturaleza <span class="skill-stat">(Vol)</span></span></li>
+                            <li class="skill-roll-btn" data-stat="vol" data-skill-name="Percepción"><span class="skill-mod"></span><span class="skill-name">Percepción <span class="skill-stat">(Vol)</span></span></li>
+                            <li class="skill-roll-btn" data-stat="cha" data-skill-name="Perspicacia"><span class="skill-mod"></span><span class="skill-name">Perspicacia <span class="skill-stat">(Car)</span></span></li>
+                            <li class="skill-roll-btn" data-stat="int" data-skill-name="Sabiduría"><span class="skill-mod"></span><span class="skill-name">Sabiduría <span class="skill-stat">(Int)</span></span></li>
+                            <li class="skill-roll-btn" data-stat="dex" data-skill-name="Sigilo"><span class="skill-mod"></span><span class="skill-name">Sigilo <span class="skill-stat">(Des)</span></span></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- COLUMNA DERECHA: Combate, Botones de Acción y Equipo -->
+            <div class="right-col">
+                <section class="combat-stats">
+                    <div class="combat-box"><span class="value">16</span><label>CA</label></div>
+                    
+                    <!-- Botones de Acción interactivos -->
+                    <div class="combat-box">
+                        <div class="action-points-container">
+                            <div class="action-dot"></div>
+                            <div class="action-dot"></div>
+                            <div class="action-dot"></div>
+                        </div>
+                        <label>Acciones</label>
+                    </div>
+
+                    <div class="combat-box"><span class="value">9m</span><label>Velocidad</label></div>
+                    
+                    <div class="hp-box">
+                        <div class="hp-header">
+                            <label>PV Máximos:</label>
+                            <input type="number" value="28" class="max-hp-input">
+                        </div>
+                        <input type="number" value="28" class="current-hp">
+                        <label>PV Actuales</label>
+                    </div>
+                </section>
+
+                <section class="features-equipment">
+                    <div class="panel actions-panel">
+                        <h3>Ataques Rápidos (Dados)</h3>
+                        <div class="action-creator">
+                            <input type="text" id="new-action-name" placeholder="Nombre (Ej: Ataque Espada)">
+                            <input type="text" id="new-action-dice" placeholder="Fórmula (Ej: 1d8+3)">
+                            <button id="add-action-btn" class="btn-create">+</button>
+                        </div>
+                        <div id="custom-actions-container" class="actions-list"></div>
+                    </div>
+
+                    <div class="panel">
+                        <h3>Rasgos y Atributos</h3>
+                        <textarea placeholder="Anota aquí tus habilidades..."></textarea>
+                    </div>
+                    <div class="panel full-width">
+                        <h3>Equipo e Inventario</h3>
+                        <textarea placeholder="Mochila, monedas, pociones..."></textarea>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- PANTALLA EMERGENTE DEL DADO -->
+    <div id="dice-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <span id="close-modal" class="close-btn">&times;</span>
+            <h2 id="modal-title">Tirando...</h2>
+            <div id="dice-animation-container"><div class="dice-icon">🎲</div></div>
+            <div id="dice-result-container" class="hidden">
+                <div id="dice-total">15</div>
+                <div id="dice-details">[8] + 7</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
