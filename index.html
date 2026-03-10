@@ -1,4 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hoja de Personaje</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
 <div class="sheet">
+
+<!-- PERSONAJE -->
+<div class="panel character">
+<h2>PERSONAJE</h2>
+
+<div class="grid3">
+<div>
+<label>Nombre</label>
+<input id="nombre">
+</div>
+
+<div>
+<label>Clase</label>
+<input id="clase">
+</div>
+
+<div>
+<label>Nivel</label>
+<input id="nivel">
+</div>
+</div>
+
+</div>
+
+
+<!-- ATRIBUTOS -->
 
 <div class="panel">
 <h2>ATRIBUTOS</h2>
@@ -7,42 +44,96 @@
 
 <div class="attr">
 <span>FUE</span>
-<input id="FUE">
+<input id="FUE" type="number">
 </div>
 
 <div class="attr">
 <span>DES</span>
-<input id="DES">
+<input id="DES" type="number">
 </div>
 
 <div class="attr">
 <span>INT</span>
-<input id="INT">
+<input id="INT" type="number">
 </div>
 
 <div class="attr">
 <span>SAB</span>
-<input id="SAB">
+<input id="SAB" type="number">
 </div>
 
 <div class="attr">
 <span>CAR</span>
-<input id="CAR">
+<input id="CAR" type="number">
 </div>
 
 </div>
+
 </div>
+
+
+<!-- ACCIONES -->
 
 <div class="panel">
 <h2>ACCIONES</h2>
 
 <div class="dice-container">
-<div class="dice"></div>
-<div class="dice"></div>
-<div class="dice"></div>
+<div class="dice" data-index="0">🎲</div>
+<div class="dice" data-index="1">🎲</div>
+<div class="dice" data-index="2">🎲</div>
 </div>
 
 </div>
+
+
+<!-- VIDA Y COMBATE -->
+
+<div class="panel">
+<h2>COMBATE</h2>
+
+<div class="grid2">
+
+<div>
+<label>Armadura</label>
+<input id="armadura">
+</div>
+
+<div>
+<label>Iniciativa</label>
+<input id="iniciativa">
+</div>
+
+<div>
+<label>Velocidad</label>
+<input id="velocidad">
+</div>
+
+<div>
+<label>Dados de Golpe</label>
+<input id="dadosGolpe">
+</div>
+
+<div>
+<label>Vida Max</label>
+<input id="vidaMax" type="number">
+</div>
+
+<div>
+<label>Vida Actual</label>
+<input id="vidaActual" type="number">
+</div>
+
+<div>
+<label>Vida Temporal</label>
+<input id="vidaTemp" type="number">
+</div>
+
+</div>
+
+</div>
+
+
+<!-- HABILIDADES -->
 
 <div class="panel">
 <h2>HABILIDADES</h2>
@@ -50,19 +141,266 @@
 <div class="skills">
 
 <div>Arcano <span id="arcano"></span></div>
-<div>Sigilo <span id="sigilo"></span></div>
-<div>Percepción <span id="percepcion"></span></div>
+<div>Examinación <span id="examinacion"></span></div>
+<div>Finura <span id="finura"></span></div>
 <div>Influencia <span id="influencia"></span></div>
+<div>Perspicacia <span id="perspicacia"></span></div>
+<div>Sabiduría <span id="sabiduria"></span></div>
+<div>Corpulencia <span id="corpulencia"></span></div>
+<div>Naturaleza <span id="naturaleza"></span></div>
+<div>Percepción <span id="percepcion"></span></div>
+<div>Sigilo <span id="sigilo"></span></div>
 
 </div>
 
 </div>
+
+
+<!-- RECURSOS -->
+
+<div class="panel">
+<h2>RECURSOS DE CLASE</h2>
+
+<input id="recursos">
+
+</div>
+
+
+<!-- HERIDAS -->
+
+<div class="panel">
+<h2>HERIDAS</h2>
+
+<div class="wound-track">
+
+<div class="wound" data-index="0"></div>
+<div class="wound" data-index="1"></div>
+<div class="wound" data-index="2"></div>
+<div class="wound" data-index="3"></div>
+<div class="wound" data-index="4"></div>
+<div class="wound" data-index="5"></div>
+
+</div>
+
+</div>
+
+
+<!-- NOTAS -->
 
 <div class="panel">
 <h2>NOTAS</h2>
-
 <textarea id="notas"></textarea>
-
 </div>
 
 </div>
+
+
+<script>
+
+let data = {
+
+nombre:"",
+clase:"",
+nivel:"",
+recursos:"",
+vidaMax:"",
+vidaActual:"",
+vidaTemp:"",
+armadura:"",
+iniciativa:"",
+velocidad:"",
+dadosGolpe:"",
+notas:"",
+
+atributos:{
+FUE:0,
+DES:0,
+INT:0,
+SAB:0,
+CAR:0
+},
+
+acciones:[false,false,false],
+heridas:[false,false,false,false,false,false]
+
+}
+
+
+
+function save(){
+
+data.nombre = nombre.value
+data.clase = clase.value
+data.nivel = nivel.value
+data.recursos = recursos.value
+data.vidaMax = vidaMax.value
+data.vidaActual = vidaActual.value
+data.vidaTemp = vidaTemp.value
+data.armadura = armadura.value
+data.iniciativa = iniciativa.value
+data.velocidad = velocidad.value
+data.dadosGolpe = dadosGolpe.value
+data.notas = notas.value
+
+localStorage.setItem("personaje", JSON.stringify(data))
+
+}
+
+
+
+function load(){
+
+let saved = localStorage.getItem("personaje")
+
+if(saved){
+
+data = JSON.parse(saved)
+
+nombre.value = data.nombre
+clase.value = data.clase
+nivel.value = data.nivel
+recursos.value = data.recursos
+vidaMax.value = data.vidaMax
+vidaActual.value = data.vidaActual
+vidaTemp.value = data.vidaTemp
+armadura.value = data.armadura
+iniciativa.value = data.iniciativa
+velocidad.value = data.velocidad
+dadosGolpe.value = data.dadosGolpe
+notas.value = data.notas
+
+}
+
+}
+
+
+
+function calcSkills(){
+
+let a = data.atributos
+
+arcano.innerText = a.INT
+examinacion.innerText = a.INT
+finura.innerText = a.DES
+influencia.innerText = a.CAR
+perspicacia.innerText = a.SAB
+sabiduria.innerText = a.SAB
+corpulencia.innerText = a.FUE
+naturaleza.innerText = a.SAB
+percepcion.innerText = a.SAB
+sigilo.innerText = a.DES
+
+}
+
+
+
+function initAttributes(){
+
+["FUE","DES","INT","SAB","CAR"].forEach(id=>{
+
+let el = document.getElementById(id)
+
+el.addEventListener("input",()=>{
+
+data.atributos[id] = Number(el.value)
+
+calcSkills()
+
+save()
+
+})
+
+})
+
+}
+
+
+
+function initDice(){
+
+document.querySelectorAll(".dice").forEach(d=>{
+
+d.addEventListener("click",()=>{
+
+let i = d.dataset.index
+
+data.acciones[i] = !data.acciones[i]
+
+d.classList.toggle("active")
+
+save()
+
+})
+
+})
+
+}
+
+
+
+function initWounds(){
+
+document.querySelectorAll(".wound").forEach(w=>{
+
+w.addEventListener("click",()=>{
+
+let i = w.dataset.index
+
+data.heridas[i] = !data.heridas[i]
+
+w.classList.toggle("active")
+
+save()
+
+})
+
+})
+
+}
+
+
+
+function restore(){
+
+["FUE","DES","INT","SAB","CAR"].forEach(id=>{
+
+document.getElementById(id).value = data.atributos[id]
+
+})
+
+document.querySelectorAll(".dice").forEach(d=>{
+
+let i = d.dataset.index
+
+if(data.acciones[i]) d.classList.add("active")
+
+})
+
+document.querySelectorAll(".wound").forEach(w=>{
+
+let i = w.dataset.index
+
+if(data.heridas[i]) w.classList.add("active")
+
+})
+
+calcSkills()
+
+}
+
+
+
+document.querySelectorAll("input, textarea").forEach(el=>{
+el.addEventListener("input", save)
+})
+
+load()
+initAttributes()
+initDice()
+initWounds()
+restore()
+
+</script>
+
+</body>
+</html>
