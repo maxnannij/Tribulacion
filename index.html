@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hoja de Personaje</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#1c1c1c;
+color:white;
+margin:0;
+padding:20px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+}
+
+.section{
+border:2px solid #555;
+padding:15px;
+margin-bottom:15px;
+border-radius:10px;
+}
+
+h2{
+margin-top:0;
+}
+
+input{
+width:100%;
+padding:6px;
+margin-top:4px;
+margin-bottom:10px;
+border-radius:6px;
+border:none;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:10px;
+}
+
+.skill-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:8px;
+}
+
+.action-dice{
+display:flex;
+gap:10px;
+}
+
+.dice{
+width:50px;
+height:50px;
+background:#555;
+border-radius:8px;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+font-weight:bold;
+}
+
+.dice.active{
+background:#c0392b;
+}
+
+.wounds{
+display:flex;
+gap:8px;
+}
+
+.wound{
+width:30px;
+height:30px;
+border:2px solid white;
+border-radius:50%;
+cursor:pointer;
+}
+
+.wound.active{
+background:red;
+}
+
+textarea{
+width:100%;
+height:120px;
+border-radius:8px;
+border:none;
+padding:10px;
+}
+
+@media (max-width:600px){
+
+.grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="section">
+
+<h2>Personaje</h2>
+
+<label>Nombre</label>
+<input id="nombre">
+
+<label>Clase</label>
+<input id="clase">
+
+<label>Nivel</label>
+<input id="nivel">
+
+</div>
+
+<div class="section">
+
+<h2>Atributos</h2>
+
+<div class="grid">
+
+<div>FUE<input id="FUE" type="number"></div>
+<div>DES<input id="DES" type="number"></div>
+<div>INT<input id="INT" type="number"></div>
+<div>SAB<input id="SAB" type="number"></div>
+<div>CAR<input id="CAR" type="number"></div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Acciones</h2>
+
+<div class="action-dice">
+
+<div class="dice" data-index="0">🎲</div>
+<div class="dice" data-index="1">🎲</div>
+<div class="dice" data-index="2">🎲</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Recursos de Clase</h2>
+
+<input id="recursos">
+
+</div>
+
+<div class="section">
+
+<h2>Vida</h2>
+
+<label>Max</label>
+<input id="vidaMax" type="number">
+
+<label>Actual</label>
+<input id="vidaActual" type="number">
+
+<label>Temporal</label>
+<input id="vidaTemp" type="number">
+
+</div>
+
+<div class="section">
+
+<h2>Combate</h2>
+
+<label>Armadura</label>
+<input id="armadura">
+
+<label>Iniciativa</label>
+<input id="iniciativa">
+
+<label>Velocidad</label>
+<input id="velocidad">
+
+<label>Dados de golpe</label>
+<input id="dadosGolpe">
+
+</div>
+
+<div class="section">
+
+<h2>Habilidades</h2>
+
+<div class="skill-grid">
+
+<div>Arcano: <span id="arcano"></span></div>
+<div>Examinación: <span id="examinacion"></span></div>
+<div>Finura: <span id="finura"></span></div>
+<div>Influencia: <span id="influencia"></span></div>
+<div>Perspicacia: <span id="perspicacia"></span></div>
+<div>Sabiduría: <span id="sabiduria"></span></div>
+<div>Corpulencia: <span id="corpulencia"></span></div>
+<div>Naturaleza: <span id="naturaleza"></span></div>
+<div>Percepción: <span id="percepcion"></span></div>
+<div>Sigilo: <span id="sigilo"></span></div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Heridas</h2>
+
+<div class="wounds">
+
+<div class="wound" data-index="0"></div>
+<div class="wound" data-index="1"></div>
+<div class="wound" data-index="2"></div>
+<div class="wound" data-index="3"></div>
+<div class="wound" data-index="4"></div>
+<div class="wound" data-index="5"></div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Notas</h2>
+
+<textarea id="notas"></textarea>
+
+</div>
+
+</div>
+
+<script>
+
+let data={
+atributos:{FUE:0,DES:0,INT:0,SAB:0,CAR:0},
+acciones:[false,false,false],
+heridas:[false,false,false,false,false,false]
+}
+
+function save(){
+localStorage.setItem("personaje",JSON.stringify(data))
+}
+
+function load(){
+
+let saved=localStorage.getItem("personaje")
+
+if(saved){
+data=JSON.parse(saved)
+}
+
+}
+
+function calcSkills(){
+
+let a=data.atributos
+
+document.getElementById("arcano").innerText=a.INT
+document.getElementById("examinacion").innerText=a.INT
+document.getElementById("finura").innerText=a.DES
+document.getElementById("influencia").innerText=a.CAR
+document.getElementById("perspicacia").innerText=a.SAB
+document.getElementById("sabiduria").innerText=a.SAB
+document.getElementById("corpulencia").innerText=a.FUE
+document.getElementById("naturaleza").innerText=a.SAB
+document.getElementById("percepcion").innerText=a.SAB
+document.getElementById("sigilo").innerText=a.DES
+
+}
+
+function initInputs(){
+
+["FUE","DES","INT","SAB","CAR"].forEach(id=>{
+let el=document.getElementById(id)
+
+el.addEventListener("input",()=>{
+
+data.atributos[id]=Number(el.value)
+
+calcSkills()
+
+save()
+
+})
+})
+
+document.querySelectorAll("input,textarea").forEach(el=>{
+
+el.addEventListener("input",save)
+
+})
+
+}
+
+function initDice(){
+
+document.querySelectorAll(".dice").forEach(d=>{
+
+d.addEventListener("click",()=>{
+
+let i=d.dataset.index
+
+data.acciones[i]=!data.acciones[i]
+
+d.classList.toggle("active")
+
+save()
+
+})
+
+})
+
+}
+
+function initWounds(){
+
+document.querySelectorAll(".wound").forEach(w=>{
+
+w.addEventListener("click",()=>{
+
+let i=w.dataset.index
+
+data.heridas[i]=!data.heridas[i]
+
+w.classList.toggle("active")
+
+save()
+
+})
+
+})
+
+}
+
+function restore(){
+
+["FUE","DES","INT","SAB","CAR"].forEach(id=>{
+document.getElementById(id).value=data.atributos[id]
+})
+
+document.querySelectorAll(".dice").forEach(d=>{
+let i=d.dataset.index
+if(data.acciones[i]) d.classList.add("active")
+})
+
+document.querySelectorAll(".wound").forEach(w=>{
+let i=w.dataset.index
+if(data.heridas[i]) w.classList.add("active")
+})
+
+calcSkills()
+
+}
+
+load()
+
+window.onload=()=>{
+
+initInputs()
+initDice()
+initWounds()
+restore()
+
+}
+
+</script>
+
+</body>
+</html>
